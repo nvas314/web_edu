@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+  <head><script src="../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Sidebars · Bootstrap v5.3</title>
+    <title>Headers · Bootstrap v5.3</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
 
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -98,7 +98,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="sidebars.css" rel="stylesheet">
+    <link href="headers.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -177,103 +177,98 @@
   </symbol>
 </svg>
 
-<main class="d-flex flex-nowrap">
-  <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
-      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">List group</span>
-    </a>
-    <div class="list-group list-group-flush border-bottom scrollarea">
-      <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 1</strong>
-          <small>1/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 2</strong>
-          <small class="text-body-secondary">2/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 3</strong>
-          <small class="text-body-secondary">3/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 4</strong>
-          <small class="text-body-secondary">4/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 5</strong>
-          <small class="text-body-secondary">5/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-    </div>
-  </div>
+<main>
+  <header>
+    <div class="px-3 py-2 text-bg-dark border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a>
 
-  
-  <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">Test 1</span>
-      </a>
-
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Back</a></li>
-      </ul>
-    </header>
-      <p id="qtext"></p>
-      <input type="radio" id="1" name="answer" value="1">
-      <label for="1">1</label><br>
-      <input type="radio" id="2" name="answer" value="2">
-      <label for="2">2</label><br>
-      <input type="radio" id="3" name="answer" value="3">
-      <label for="3">3</label><br>
-      <input type="radio" id="4" name="answer" value="4">
-      <label for="4">4</label><br><br>
-    <div class="d-grid gap-2">
-      <button class="btn btn-primary" type="button" id="nextb">Next</button>
-      <button class="btn btn-primary" type="button" id="compb">Send</button>
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li>
+              <a href="../index.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="../dashboard.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                Quiz
+              </a>
+            </li>
+            <li>
+              <a href="../learn.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                Learn
+              </a>
+            </li>
+            <li>
+              <a href="account.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Account
+              </a>
+            </li>
+          </ul>
+          <div class="text-end">
+            <a href="sign-in.html">
+            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
+            <a href="sign-up.html">
+              <button type="button" class="btn btn-warning">Sign-up</button></a>
+          </div>
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+      <div class="d-grid gap-2">
+      </div>
+    </div>
+    <div class="d-flex gap-2 justify-content-center py-5"><div class="row">
+        <div class="col-4">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </main>
-<script>
-  const questions = ["Hello<br>the answer is 3.", "answer is 2", "answer is 3","answer is 4","answer is 1"];
-  const answers = ["3","2","3","4","1"];
-  var question = 0;
-  var grade = 100;
-  document.getElementById("compb").style.display = "none";
-  document.getElementById("qtext").innerHTML = questions[question];
-  function next(){
-    if(!document.getElementById(answers[question]).checked) grade -= 20;
-    question++;
-    document.getElementById("qtext").innerHTML = questions[question];
-    if (question == 4) document.getElementById("nextb").style.display = "none";
-    if (question == 4) document.getElementById("compb").style.display = "block";
-  }
-  function complete_quiz(){
-    alert("Bravo , your grade is " + grade);
-    //Save grade to db
-  }
-    document.getElementById("nextb").onclick = function() {next()};
-    document.getElementById("compb").onclick = function() {complete_quiz()};
-    
-    
-    </script>
+<script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="sidebars.js"></script></body>
+    </body>
 </html>

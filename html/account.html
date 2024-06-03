@@ -218,34 +218,76 @@
               </a>
             </li>
           </ul>
+          <div class="text-end">
+            <a href="sign-in.html">
+            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
+            <a href="sign-up.html">
+              <button type="button" class="btn btn-warning">Sign-up</button></a>
+          </div>
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <div class="text-end">
-          <a href="sign-in.html">
-          <button type="button" class="btn btn-outline-light me-2">Login</button></a>
-          <a href="sign-up.html">
-            <button type="button" class="btn btn-warning">Sign-up</button></a>
         </div>
       </div>
     </div>
-        </div>
-      </div>
-    </div>
-    <div class="dropdown text-end">
-      <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-      </a>
-      <ul class="dropdown-menu text-small">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
-    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto">
       <div class="d-grid gap-2">
-        <p>Account details:<br>Name:<br>Surname:<br>Time active:</p>
+        <div class="card border-secondary mb-3" style="max-width: 18rem;">
+          <div class="card-header">Account details:</div>
+          <div class="card-body text-secondary">
+            <h5 class="card-title">Account details:</h5>
+            <p class="card-text">
+              Name: 
+              <br>Surname:
+              <br>Time active:
+              <br>Username:<b> Something &ensp; </b><a href="#">Change</a>
+              <br>Password:<b> ********* &ensp; </b><a href="#">Change</a>
+              <br><br>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-x" viewBox="0 0 16 16">
+    <path d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708"/>
+    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
+  </svg>
+  Delete account
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary ">Delete account</button>
+      </div>
+    </div>
+  </div>
+</div>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </header>

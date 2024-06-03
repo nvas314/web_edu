@@ -218,40 +218,67 @@
               </a>
             </li>
           </ul>
+          <div class="text-end">
+            <a href="sign-in.html">
+            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
+            <a href="sign-up.html">
+              <button type="button" class="btn btn-warning">Sign-up</button></a>
+          </div>
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <div class="text-end">
-          <a href="sign-in.html">
-          <button type="button" class="btn btn-outline-light me-2">Login</button></a>
-          <a href="sign-up.html">
-            <button type="button" class="btn btn-warning">Sign-up</button></a>
         </div>
       </div>
-    </div>
-        </div>
-      </div>
-    </div>
-    <div class="dropdown text-end">
-      <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-      </a>
-      <ul class="dropdown-menu text-small">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
     </div>
     <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
       <div class="d-grid gap-2">
-        <p>The text<br>text</p>
       </div>
     </div>
-    <div class="d-flex gap-2 justify-content-center py-5">
-      <button class="btn btn-info rounded-pill px-3" type="button">Novice</button>
-      <button class="btn btn-warning rounded-pill px-3" type="button">Intemidate</button>
-      <a href="quiz1.html"><button class="btn btn-danger rounded-pill px-3" type="button">Advanced</button></a>
+    <div class="row justify-content-center">
+      <div class="col-sm-2 mb-3 mb-ms-0">
+        <div class="card border-primary" style="width: 18rem;">
+          <img src="img/novice_img.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Novice learning</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="quiz/novice.html" class="btn btn-primary">Start Novice Quiz</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="card border-warning" style="width: 18rem;">
+          <img src="img/novice_img.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Intimidate learning</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="quiz/intimidate.html" class="btn btn-warning">Start Intimidate Quiz</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="card border-danger" style="width: 18rem;">
+          <img src="img/novice_img.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Advanced learning</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="quiz/advanced.html" class="btn btn-danger">Start Advanced Quiz</a>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
   </header>
 </main>

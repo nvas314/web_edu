@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../html"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web_edu"
+	}
+}
