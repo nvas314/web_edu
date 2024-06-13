@@ -244,32 +244,118 @@
       </div>
     </div>
     <!-- buttn levels-->
-    <div class="container text-center">
-      <div class="row justify-content-md-center">
-        <div class="col col-lg-2">
-          <div class="grid gap-0 row-gap-3">
-          <a href="intimidate/1.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 1</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 2</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 3</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 4</button></a>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Col 1</div>
+            <div class="card-body text-secondary">
+          <a href="intimidate/1.html"><button class="btn btn-warning rounded-pill px-3" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Level 1</button></a>
+          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Level 2</button></a>
+          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Level 3</button></a>
+          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Level 4</button></a>
+            </div>
+          </div>
         </div>
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Col 2</div>
+            <div class="card-body text-secondary" id="col2">
+              <div id="col2in"></div>
+            </div>
+          </div>
         </div>
-        <div class="col col-lg-2">
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 5</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 6</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 7</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 8</button></a>
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Col 3</div>
+            <div class="card-body text-secondary">
+              <div class="col-sm">
+                <a href="intimidate/1.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 1</button></a>
+                <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 2</button></a>
+                <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 3</button></a>
+                <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 4</button></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col col-lg-2">
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 9</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 10</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 11</button></a>
-          <a href="quiz/intimidate.html"><button class="btn btn-warning rounded-pill px-3" type="button">Level 12</button></a>
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Description</div>
+            <div class="card-body text-secondary">
+              <h5 class="card-title" id="dh">title</h5>
+              <p class="card-text" id="dp">Hover text</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+</div>
   </header>
 </main>
+<script>
+  title = ["start of level","2","3","4"];
+  description = ["this is a test","2","3","4"];
+  level_name = ["Level 1","Level 2","Level 3","Level 4","Level 5"];
+
+  var b = document.getElementById("grade_bars");
+  var i=0;
+  function addElement(g,i,c)
+  {
+
+  newh = document.createElement("h4");
+  newh.className = "small font-weight-bold";
+  newh.id = "ppp";
+  newh.innerHTML = i+": "+g+"%";
+  news = document.createElement("span");
+  news.className = "float-right";
+  newDiv = document.createElement("div");
+  newDiv.className = "progress mb-4";
+  newDiv.id = "ppp";
+  newContent = document.createElement("div");
+  newContent.className = "progress-bar bg-"+c;
+  newContent.style = "width: "+g+"%";
+  newh.appendChild(news);
+  newDiv.appendChild(newh);
+  newDiv.appendChild(newContent);
+
+  my_div = document.getElementById("gr");
+  b.insertBefore(newh, my_div);
+  b.insertBefore(newDiv, my_div);
+  }
+
+  function add(accumulator, a) {
+    return accumulator + a;
+  }
+
+  
+  function remove(){
+    for(let j=0;j<i*2;j++){
+    document.getElementById("ppp").remove();
+  }
+  i=0;
+  }
+
+  function set_novice(){
+    remove();
+    grades_novice.forEach(g => {
+    i+=1;
+    addElement(g,"Level "+i,"warning");
+  });
+  document.getElementById("prgth").innerHTML = parseInt(grades_novice.reduce(add, 0)/7)+"%";
+  document.getElementById("prgt").style = "width: "+parseInt(grades_novice.reduce(add, 0)/7)+"%";
+  }
+
+  function show_text(a){
+    document.getElementById("dh").innerHTML = title[a-1];
+    document.getElementById("dp").innerHTML = description[a-1];
+  }
+
+  function reset_text(){
+    document.getElementById("dh").innerHTML = "title";
+    document.getElementById("dp").innerHTML = "Hover text";
+  }
+  
+</script>
 <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>
