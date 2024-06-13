@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+  <head><script src="js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -403,15 +404,26 @@
 
       <!-- Content Column -->
       <div class="col-lg-6 mb-4">
-          <div class="card shadow mb-4">
+          <div class="card shadow mb-4 col-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Badges</h6>
             </div>
             <div class="card-body">
-              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="Completed after completing all the novice tests">Novice complete</button>
-              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="Completed after completing all the intimidate tests">Intimidate complete</button>
-              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="Completed after completing all the advanced tests">Advanced complete</button>
-              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="Completed after completing all the advanced tests with grade 100%">Advanced master</button>
+              <div class="container">
+                <div class="d-grid gap-3">
+                <div class="row align-items-center">
+              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Completed all puzzles in novice mode" data-content="Completed after completing all the novice tests">Novice complete</button>
+                </div>
+              <div class="row align-items-center">
+              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Completed all puzzles in intimidate mode" data-content="Completed after completing all the intimidate tests">Intimidate complete</button>
+            </div>
+              <div class="row align-items-center">
+              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Completed all puzzles in advanced mode" data-content="Completed after completing all the advanced tests">Advanced complete</button>
+            </div>
+              <div class="row align-items-center">
+              <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Finish all advanced puzzles with grade 100" data-content="Completed after completing all the advanced tests with grade 100%">Advanced master</button>
+            </div>
+          </div>
             </div>
           </div>
       </div>
@@ -422,6 +434,10 @@
   </header>
 </main>
 <script>
+  $(document).ready(function(){
+  $('[data-toggle="popover"]').popover();   
+  });
+
   grades_novice=[70,50,60,20,30,10,15];
   grades_intimidate=[60,30,20,70,20,50,40];
   grades_advanced=[20,10,10,10,30,10,20];
@@ -493,8 +509,11 @@
   document.getElementById("prgt").style = "width: "+parseInt(grades_advanced.reduce(add, 0)/7)+"%";
   }
 </script>
+
 <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
     </body>
 </html>

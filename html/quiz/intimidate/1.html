@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../../../assets/js/color-modes.js"></script>
+  <head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Sidebars · Bootstrap v5.3</title>
+    <title>Test 1 - Intimidate</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
@@ -98,7 +100,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="sidebars.css" rel="stylesheet">
+    <link href="../../css/sidebars.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -183,42 +185,8 @@
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       <span class="fs-5 fw-semibold">List group</span>
     </a>
-    <div class="list-group list-group-flush border-bottom scrollarea">
-      <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 1</strong>
-          <small>1/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 2</strong>
-          <small class="text-body-secondary">2/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 3</strong>
-          <small class="text-body-secondary">3/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 4</strong>
-          <small class="text-body-secondary">4/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
-        <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">Step 5</strong>
-          <small class="text-body-secondary">5/5</small>
-        </div>
-        <div class="col-10 mb-1 small">Instructions</div>
-      </a>
+    <div id="list1" class="list-group list-group-flush border-bottom scrollarea">
+      <div id="list"></div>
     </div>
   </div>
 
@@ -250,6 +218,18 @@
   </div>
 </main>
 <script>
+var a = 0;
+$(document).ready(function (){
+  $('#a0').addClass('active');
+})
+$('#nextb').click(function () { 
+   a += 1;
+   $("a").removeClass('active');
+  $('#a'+a).addClass('active');
+   console.log(a);
+})
+  const title = ["Step 1","Step 2","Step 3","Step 4","Step 5"]
+  const subtitle = ["Instructions 1","Instructions 2","Instructions 3","Instructions 4","Instructions 5"]
   const questions = ["Hello<br>the answer is 3.", "answer is 2", "answer is 3","answer is 4","answer is 1"];
   const answers = ["3","2","3","4","1"];
   var question = 0;
@@ -270,7 +250,36 @@
     document.getElementById("nextb").onclick = function() {next()};
     document.getElementById("compb").onclick = function() {complete_quiz()};
     
-    
+    function addElement(t,s,i)
+  {
+
+  aa = document.createElement("a");
+  aa.className = "list-group-item list-group-item-action py-3 lh-sm";
+  aa.id = "a"+i;
+  flex = document.createElement("div");
+  flex.className = "d-flex w-100 align-items-center justify-content-between";
+  str = document.createElement("strong");
+  str.className = "mb-1"
+  str.innerHTML = t;
+  sma = document.createElement("small");
+  sma.innerHTML = i+"/"+title.length;
+  sub = document.createElement("div");
+  sub.className = "col-10 mb-1 small";
+  sub.innerHTML = s;
+  aa.appendChild(flex);
+  flex.appendChild(str);
+  flex.appendChild(sma);
+  aa.appendChild(sub);
+
+  b = document.getElementById("list1");
+  my_div = document.getElementById("list");
+  b.insertBefore(aa, my_div);
+  }
+  var i = 0;
+    title.forEach(g => {
+    addElement(title[i],subtitle[i],i);
+    i+=1;
+  });
     </script>
 
 <script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
