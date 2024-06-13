@@ -218,15 +218,8 @@
   </div>
 </main>
 <script>
-var a = 0;
 $(document).ready(function (){
   $('#a0').addClass('active');
-})
-$('#nextb').click(function () { 
-   a += 1;
-   $("a").removeClass('active');
-  $('#a'+a).addClass('active');
-   console.log(a);
 })
   const title = ["Step 1","Step 2","Step 3","Step 4","Step 5"]
   const subtitle = ["Instructions 1","Instructions 2","Instructions 3","Instructions 4","Instructions 5"]
@@ -237,11 +230,15 @@ $('#nextb').click(function () {
   document.getElementById("compb").style.display = "none";
   document.getElementById("qtext").innerHTML = questions[question];
   function next(){
+    if (document.querySelectorAll('input[type="radio"]:checked').length === 0) return;
+    console.log(question);
     if(!document.getElementById(answers[question]).checked) grade -= 20;
     question++;
     document.getElementById("qtext").innerHTML = questions[question];
     if (question == 4) document.getElementById("nextb").style.display = "none";
     if (question == 4) document.getElementById("compb").style.display = "block";
+    $("a").removeClass('active');
+    $('#a'+question).addClass('active');
   }
   function complete_quiz(){
     alert("Bravo , your grade is " + grade);
@@ -262,7 +259,7 @@ $('#nextb').click(function () {
   str.className = "mb-1"
   str.innerHTML = t;
   sma = document.createElement("small");
-  sma.innerHTML = i+"/"+title.length;
+  sma.innerHTML = i+1+"/"+title.length;
   sub = document.createElement("div");
   sub.className = "col-10 mb-1 small";
   sub.innerHTML = s;
