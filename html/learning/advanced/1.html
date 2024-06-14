@@ -1,21 +1,23 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+  <head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Headers · Bootstrap v5.3</title>
+    <title>Lesson 1 / Advanced</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -98,7 +100,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
+    <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -177,124 +179,116 @@
   </symbol>
 </svg>
 
-<main>
-  <header>
-    <div class="px-3 py-2 text-bg-dark border-bottom">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-          </a>
+<main class="d-flex flex-nowrap">
+  <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Lesson 1 / Advanced</span>
+    </a>
+    <div id="list1" class="list-group list-group-flush border-bottom scrollarea">
+      <div id="list"></div>
+    </div>
+  </div>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span class="fs-4">Getting Started</span>
+      </a>
 
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="index.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="dashboard.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="quiz.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
-              </a>
-            </li>
-            <li>
-              <a href="" class="nav-link text-secondary">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Learn
-              </a>
-            </li>
-            <li>
-              <a href="account.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Account
-              </a>
-            </li>
-          </ul>
-          <div class="text-end">
-            <a href="sign-in.html">
-            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
-            <a href="sign-up.html">
-              <button type="button" class="btn btn-warning">Sign-up</button></a>
-          </div>
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        </div>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a id="not" href="../../index.html" class="nav-link active" aria-current="page">Back</a></li>
+      </ul>
+    </header>
+    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+      <div class="d-grid gap-2">
+        <h1 id="slide_text">Welcome<br>text</h1>
       </div>
     </div>
     <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
       <div class="d-grid gap-2">
+        <button class="btn btn-outline-secondary" type="button" id="prevb">Previous slide</button>
+        <button class="btn btn-primary" type="button" id="nextb">Next slide</button>
+        <button class="btn btn-primary" type="button" id="compb">Complete</button>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Novice</div>
-            <div class="card-body text-secondary">
-              <div class="col-sm">
-                <div class="d-flex gap-2 justify-content-center py-5">
-              <a href="learning/novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 1</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-        </div>
-        <div class="col-sm">
-          <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Intimidate</div>
-            <div class="card-body text-secondary">
-              <div class="col-sm">
-                <div class="d-flex gap-2 justify-content-center py-5">
-              <a href="learning/intimidate/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 2</button></a>
-            </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Advanced</div>
-            <div class="card-body text-secondary">
-              <div class="col-sm">
-                <div class="d-flex gap-2 justify-content-center py-5">
-                  <button id="adv" class="btn btn-primary rounded-pill px-3" type="button">Lesson 3</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>        
-      </div>
-    </div>
-  </header>
-</main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js">
-
-
-document.getElementById("adv").disabled = true;
+  </div>
   
-</script>
+</main>
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+    <script src="../../sidebars.js"></script>
+  
+  <script>
+        const text = ["Welcome<br>text",
+        "page 2",
+        "page 3",
+        "page 4",
+        "End"];
+        var page = 0;
+        document.getElementById("prevb").style.display = "none";
+        document.getElementById("compb").style.display = "none";
+        function prev_Slide(){
+          page--;
+          document.getElementById("slide_text").innerHTML = text[page];
+          page == 0 ? document.getElementById("prevb").style.display = "none" : document.getElementById("nextb").style.display = "block";
+          page == 4 ? document.getElementById("compb").style.display = "block" : document.getElementById("compb").style.display = "none";
+          $("a").removeClass('active');
+          $('#a'+page).addClass('active');
+          $('#not').addClass('active');
+        }
+        function next_Slide(){
+          page++;
+          document.getElementById("slide_text").innerHTML = text[page];
+          page == 4 ? document.getElementById("nextb").style.display = "none" : document.getElementById("prevb").style.display = "block";
+          page == 4 ? document.getElementById("compb").style.display = "block" : document.getElementById("compb").style.display = "none";
+          $("a").removeClass('active');
+          $('#a'+page).addClass('active');
+          $('#not').addClass('active');
+        }
+        function complete_lesson(){
+          alert("Bravo");
+        }
+          document.getElementById("prevb").onclick = function() {prev_Slide()};
+          document.getElementById("nextb").onclick = function() {next_Slide()};
+          document.getElementById("compb").onclick = function() {complete_lesson()};
+          
+          
+$(document).ready(function (){
+  $('#a0').addClass('active');
+})
+  const title = ["Quetsion 1","Quetsion 2","Quetsion 3","Quetsion 4","Quetsion 5"]
+  const subtitle = ["Instructions 1","Instructions 2","Instructions 3","Instructions 4","Instructions 5"]
+
+    function addElement(t,s,i)
+  {
+
+  aa = document.createElement("a");
+  aa.className = "list-group-item list-group-item-action py-3 lh-sm";
+  aa.id = "a"+i;
+  flex = document.createElement("div");
+  flex.className = "d-flex w-100 align-items-center justify-content-between";
+  str = document.createElement("strong");
+  str.className = "mb-1"
+  str.innerHTML = t;
+  sma = document.createElement("small");
+  sma.innerHTML = i+1+"/"+title.length;
+  sub = document.createElement("div");
+  sub.className = "col-10 mb-1 small";
+  sub.innerHTML = s;
+  aa.appendChild(flex);
+  flex.appendChild(str);
+  flex.appendChild(sma);
+  aa.appendChild(sub);
+
+  b = document.getElementById("list1");
+  my_div = document.getElementById("list");
+  b.insertBefore(aa, my_div);
+  }
+  var i = 0;
+    title.forEach(g => {
+    addElement(title[i],subtitle[i],i);
+    i+=1;
+  });
+          </script>
+  </body>
 </html>
