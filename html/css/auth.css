@@ -1,0 +1,62 @@
+.container{
+height:90%;
+align-content: center;
+align-items: center;
+height: 100vh;
+
+}
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(12,12,12,0.6);
+}
+
+.card-header h3{
+color: white;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #2596be;
+color: white;
+border:0;
+}
+
+input:focus{
+outline: 0 0 0 0;
+box-shadow: 0 0 0 0;
+
+}
+
+.show{
+color: white;
+margin-left:4px;
+}
+
+.show ut
+{
+width: 20px;
+height: 20px;
+}
+
+.login_btn{
+color: white;
+background-color: #2596be;
+width: 100px;
+}
+
+.login_btn:hover{
+color: #2596be;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
