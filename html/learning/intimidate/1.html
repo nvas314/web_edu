@@ -1,23 +1,25 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../../assets/js/color-modes.js"></script>
-<script src="../bootstrap-5.0.2-dist/js/bootstrap.js"></script>
-<script src="../bootstrap-5.0.2-dist/js/bootstrap.js.map"></script>
+  <head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../css/bootstrap.css"></script>
+    <script src="../../js/vendor/bootstrap.min.js"></script>
+    <script src="../../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Headers · Bootstrap v5.3</title>
+    <title>Lesson 1 / Intimidate</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -100,7 +102,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
+    <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -179,109 +181,73 @@
   </symbol>
 </svg>
 
-<main>
-  <header>
-    <div class="px-3 py-2 text-bg-dark border-bottom">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-          </a>
-
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="../index.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="../dashboard.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="" class="nav-link text-secondary">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
-              </a>
-            </li>
-            <li>
-              <a href="../learn.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Learn
-              </a>
-            </li>
-            <li>
-              <a href="../account.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Account
-              </a>
-            </li>
-          </ul>
-          <div class="text-end">
-            <a href="sign-in.html">
-            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
-            <a href="sign-up.html">
-              <button type="button" class="btn btn-warning">Sign-up</button></a>
-          </div>
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
-      <div class="d-grid gap-2">
-      </div>
-    </div>
-    <div class="row">
-      <div class="d-flex align-items-start">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
-            Level 1</button>
-          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">
-            Level 2</button>
-        </div>
-        <div class="tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-            A quick start a new quiz
-            <a href="novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Start Quiz</button></a></div>
-          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-            A quiz with more advanced theories
-            <a href="novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Start Quiz</button></a></div>
-          </div>
-          <div class="tab-pane fade" id="v-pills-profile1" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-            A challenge
-            <a href="novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Start Quiz</button></a></div>
-          </div>
-          <div class="tab-pane fade" id="v-pills-profile2" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-            another one
-            <a href="novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Start Quiz</button></a></div>
-          </div>
-          <div class="tab-pane fade" id="v-pills-profile3" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-            yes
-            <a href="novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Start Quiz</button></a></div>
-          </div>
-        </div>
-      </div>
-  </header>
+<main class="d-flex flex-nowrap">
+  <nav id="navbar-example3" class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="nav nav-pills flex-column">
+      <a class="nav-link" href="#item-1">Item 1</a>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
+        <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
+      </nav>
+      <a class="nav-link" href="#item-2">Item2</a>
+      <a class="nav-link" href="#item-3">Item3</a>
+      <nav class="nav nav-pills flex-column">
+        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+        <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+      </nav>
+    </nav>
+  </nav>
+  
+  <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+    <h4 id="item-1">Item 1</h4>
+    <p>...</p>
+    <h5 id="item-1-1">Item 1-1</h5>
+    <p>...</p>
+    <h5 id="item-1-2">Item 2-2</h5>
+    <p>...</p>
+    <h4 id="item-2">Item 2</h4>
+    <p>...</p>
+    <h4 id="item-3">Item 3</h4>
+    <p>...</p>
+    <h5 id="item-3-1">Item 3-1</h5>
+    <p>...</p>
+    <h5 id="item-3-2">Item 3-2</h5>
+    <p>...</p>
+  </div>
 </main>
-<script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+    <script src="../../sidebars.js"></script>
+  
+  <script>
+        const text = ["Welcome<br>text",
+        "page 2",
+        "page 3",
+        "page 4",
+        "End"];
+        var page = 0;
+        document.getElementById("prevb").style.display = "none";
+        document.getElementById("compb").style.display = "none";
+        function prev_Slide(){
+          page--;
+          document.getElementById("slide_text").innerHTML = text[page];
+          page == 0 ? document.getElementById("prevb").style.display = "none" : document.getElementById("nextb").style.display = "block";
+        }
+        function next_Slide(){
+          page++;
+          document.getElementById("slide_text").innerHTML = text[page];
+          page == 4 ? document.getElementById("nextb").style.display = "none" : document.getElementById("prevb").style.display = "block";
+          page == 4 ? document.getElementById("compb").style.display = "block" : document.getElementById("compb").style.display = "none";
+        }
+        function complete_lesson(){
+          alert("Bravo");
+        }
+          document.getElementById("prevb").onclick = function() {prev_Slide()};
+          document.getElementById("nextb").onclick = function() {next_Slide()};
+          document.getElementById("compb").onclick = function() {complete_lesson()};
+          
+          
+          </script>
+  </body>
 </html>
