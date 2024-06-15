@@ -1,13 +1,11 @@
 .container{
-height:90%;
 align-content: center;
 align-items: center;
-height: 100vh;
+height: 95vh;
 
 }
 
 .card{
-height: 370px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;

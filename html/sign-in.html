@@ -9,17 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Login</title>
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <title>Sign in</title>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/auth.css" />
-
-	<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-	<link href="css/style.css" rel="stylesheet" />
-	<link href="css/responsive.css" rel="stylesheet" />
-	<head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
@@ -43,7 +36,7 @@
 <main>
   <div class="container">
 	<div class="d-flex justify-content-center h-100">
-		<div class="card">
+		<div class="card" style="height:350px;">
 			<div class="card-header">
 				<h3>Είσοδος σε λογαριασμό</h3>
 			</div>
@@ -78,11 +71,15 @@
 					<a href="forget.html">Ξεχάσατε τον κωδικό σας;</a>
 				</div>
 			</div>
-		</div>
+			<br>
+			<a href="index.html" class="btn btn-outline-secondary" role="button" aria-pressed="true">Επιστροφή στην αρχική</a>
+			</div>
+	</div>
+</div>
 </main>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script > //show password
-	function emfanish_kwdikou() 
+<script > 
+	function emfanish_kwdikou() //show password
 	{
 		var fields = ["password", "password2"];
 		for (var i = 0; i < fields.length; i++) {
