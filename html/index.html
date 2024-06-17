@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
-<head><script src="../assets/js/color-modes.js"></script>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="shortcut icon"  />
   <meta name="description" content="" />
@@ -9,19 +9,20 @@
   <meta charset="UTF-8" />
   <title>Web Edu</title>
  
-  <link rel="stylesheet" href="css/bootstrap.css" />
+ <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/headers.css" />
-    <link rel="stylesheet" href="css/sidebars.css" />
-
-
-  
+  <link rel="stylesheet" href="css/sidebars.css" />
+  <link rel="stylesheet" href="css/carousel.css" />
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-	<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
+  
 </head>
 
-<body>
+<body onload="document.body.classList.add('loaded')">
 	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -95,7 +96,7 @@
     <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
   </symbol>
 </svg>
-  <!-- ================================= -->
+  <!-- ================ header ================= -->
   <header class="default-header">
     <nav class="navbar navbar-expand-lg  navbar-light">
       <div class="container">
@@ -112,11 +113,11 @@
                   <button type="button" class="btn btn-warning">Sign-up</button></a>
               </div>
             </div>
-          </div>
+        </div>
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a class="nav-link text-secondary">
+              <a href="index.html" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                 Home
               </a>
@@ -127,35 +128,19 @@
                 Dashboard
               </a>
             </li>
-			
-			<li class="dropdown">
-				<a class="nav-link dropdown-toggle text-white" href="quiz.html" id="navbarDropdownQuiz" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-				  Quiz
-				</a>
-				<ul class="dropdown-menu" aria-labelledby="navbarDropdownQuiz">
-				  <li><a class="dropdown-item" href="#">Novice</a></li>
-				  <li><hr class="dropdown-divider"></li>
-				  <li><a class="dropdown-item" href="#">Intemidate</a></li>
-				  <li><hr class="dropdown-divider"></li>
-				  <li><a class="dropdown-item" href="#">Advanced</a></li>
-				</ul>
-		    </li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle text-white" href="learn.html" id="navbarDropdownLearn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				  <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-				  Learn
-				</a>
-				<ul class="dropdown-menu" aria-labelledby="navbarDropdownLearn">
-				  <li><a class="dropdown-item" href="#">Novice</a></li>
-				  <li><hr class="dropdown-divider"></li>
-				  <li><a class="dropdown-item" href="#">Intemidate</a></li>
-				  <li><hr class="dropdown-divider"></li>
-				  <li><a class="dropdown-item" href="#">Advanced</a></li>
-				</ul>
-		  </li>
-		  
-		  
+            <li>
+              <a href="quiz.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                Quiz
+              </a>
+            </li>
+            <li>
+              <a href="learn.html" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                Learn
+              </a>
+            </li>
+            <li>
               <a href="account.html" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                 Account
@@ -167,30 +152,53 @@
     </nav>
     
   </header>
-  <!-- ================================= -->
 
   <!-- ================================= -->
+  
   <section class="home-banner-area">
-    <div class="container">
-      <div class="row justify-content-center fullscreen align-items-center">
-        <div class="col-lg-5 col-md-8 home-banner-left">
-          <h1 class="text-white">
-            Text the text text <br />
-            text text text text
-          </h1>
-          <p class="mx-auto text-white  mt-20 mb-40">
-            text text text text text text text text text text text text text  text text text text text text text text text text
-          </p>
-        </div>
-        <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
-          <img class="img-fluid" src="img/header-img.png" alt="" />
+  <div class="container">
+    <div class="row justify-content-center fullscreen align-items-center">
+      <div class="col-lg-5 col-md-8 home-banner-left">
+        <div id="textCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h1 class="text-white">Text text 1</h1>
+              <p class="mx-auto text-white mt-20 mb-40">
+                text text text text text text text text text text text text text  text text text text text text text text text text
+              </p>
+            </div>
+            <div class="carousel-item">
+              <h1 class="text-white">Text text 2</h1>
+              <p class="mx-auto text-white mt-20 mb-40">
+                text text text text text text text text text text text text text  text text text text text text text text text text
+              </p>
+            </div>
+			<div class="carousel-item">
+              <h1 class="text-white">Text text 3</h1>
+              <p class="mx-auto text-white mt-20 mb-40">
+                text text text text text text text text text text text text text  text text text text text text text text text text
+              </p>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#textCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#textCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
+      <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
+        <img class="img-fluid" src="img/header-img.png" alt="" />
+      </div>
     </div>
-  </section>
-  <!-- ================================= -->
+  </div>
+</section>
 
   <!-- ================================= -->
+  
   <section class="feature-area">
     <div class="container-fluid">
       <div class="feature-inner row">
@@ -198,7 +206,7 @@
           <div class="feature-item d-flex">
             <i class="ti-book"></i>
             <div class="ml-20">
-              <h4>Text1</h4>
+              <h4>Novice Learning</h4>
               <p>
                 text text text text text text text text text text text text text  text text text text text text text text text text
               </p>
@@ -209,7 +217,7 @@
           <div class="feature-item d-flex">
             <i class="ti-cup"></i>
             <div class="ml-20">
-              <h4>Text2</h4>
+              <h4>Intimidate Learning</h4>
               <p>
                 text text text text text text text text text text text text text  text text text text text text text text text text
               </p>
@@ -220,7 +228,7 @@
           <div class="feature-item d-flex border-right-0">
             <i class="ti-desktop"></i>
             <div class="ml-20">
-              <h4>Text3</h4>
+              <h4>Advanced Learning</h4>
               <p>
                 text text text text text text text text text text text text text  text text text text text text text text text text
               </p>
@@ -285,6 +293,8 @@
   <script src="js/waypoints.min.js"></script>
   <script src="js/jquery.nice-select.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="../assets/js/color-modes.js"></script>
+  
 </body>
 
 </html>
