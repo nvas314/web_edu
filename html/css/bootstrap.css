@@ -4759,7 +4759,7 @@ input[type=submit].btn-block {
         margin-bottom: 0
     }
     .card-group>.card+.card {
-        margin-left: 0;
+        margin-left: 1;
         border-left: 0
     }
     .card-group>.card:first-child {
