@@ -651,7 +651,7 @@ th {
   background: -moz-linear-gradient(90deg, #7c32ff 0%, #c738d8 100%);
   background: -o-linear-gradient(90deg, #7c32ff 0%, #c738d8 100%);
   background: -ms-linear-gradient(90deg, #7c32ff 0%, #c738d8 100%);
-  background: linear-gradient(90deg, #7c32ff 0%, #c738d8 100%); }
+  background: linear-gradient(90deg, #2596be 0%, #78ac99 100%); }
 
 .gradient-bg-reverse, #search-input-box {
   background: -webkit-linear-gradient(270deg, #7c32ff 0%, #c738d8 100%);
@@ -2577,7 +2577,7 @@ h6 {
       outline: none;
       box-shadow: none; }
   .footer-area .footer-bottom {
-    margin-top: 90px; }
+    margin-top: 20px; }
     @media (max-width: 991px) {
       .footer-area .footer-bottom {
         margin-top: 20px; } }
@@ -2607,4 +2607,7 @@ h6 {
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
-
+	
+	.footer-area .footer-bottom .footer-social a:hover {
+		background-color: gray; 
+	}	
