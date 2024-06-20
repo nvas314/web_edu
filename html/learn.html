@@ -18,10 +18,6 @@
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-		body {
-			background-image: url('img/blue2.jpg');
-			background-position: center;
-		}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -226,10 +222,10 @@
             <a href="sign-in.html">
             <button type="button" class="btn btn-outline-light me-2">Login</button></a>
             <a href="sign-up.html">
-              <button type="button" class="btn btn-warning">Sign-up</button></a>
+              <button type="button" class="btn btn-warning me-2">Sign-up</button></a>
           </div>
           <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <a data-bs-toggle="dropdown" aria-expanded="false">
               <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small">
@@ -255,28 +251,36 @@
       <div class="row">
         <div class="col-sm">
           <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Col 1</div>
+            <div class="card-header">Novice</div>
             <div class="card-body text-secondary">
+              <div class="col-sm">
+                <div class="d-flex gap-2 justify-content-center py-5">
               <a href="learning/novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 1</button></a>
             </div>
           </div>
         </div>
+      </div>
+        </div>
         <div class="col-sm">
           <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Col 2</div>
+            <div class="card-header">Intimidate</div>
             <div class="card-body text-secondary">
+              <div class="col-sm">
+                <div class="d-flex gap-2 justify-content-center py-5">
               <a href="learning/intimidate/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 2</button></a>
+            </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-sm">
           <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Col 3</div>
+            <div class="card-header">Intimidate</div>
             <div class="card-body text-secondary">
               <div class="col-sm">
                 <div class="d-flex gap-2 justify-content-center py-5">
-                  <button class="btn btn-primary rounded-pill px-3" type="button">Lesson 3</button>
-                </div>
+              <a href="learning/advanced/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 3</button></a>
+            </div>
               </div>
             </div>
           </div>
@@ -285,7 +289,12 @@
     </div>
   </header>
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js">
+
+
+document.getElementById("adv").disabled = true;
+  
+</script>
 
     </body>
 </html>
