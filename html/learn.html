@@ -218,44 +218,83 @@
               </a>
             </li>
           </ul>
+          <div class="text-end">
+            <a href="sign-in.html">
+            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
+            <a href="sign-up.html">
+              <button type="button" class="btn btn-warning me-2">Sign-up</button></a>
+          </div>
+          <div class="dropdown text-end">
+            <a data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <div class="text-end">
-          <a href="sign-in.html">
-          <button type="button" class="btn btn-outline-light me-2">Login</button></a>
-          <a href="sign-up.html">
-            <button type="button" class="btn btn-warning">Sign-up</button></a>
         </div>
       </div>
-    </div>
-        </div>
-      </div>
-    </div>
-    <div class="dropdown text-end">
-      <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-      </a>
-      <ul class="dropdown-menu text-small">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
     </div>
     <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
       <div class="d-grid gap-2">
-        <p>The text<br>text</p>
       </div>
     </div>
-    <div class="d-flex gap-2 justify-content-center py-5">
-      <a href="learn1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 1</button></a>
-      <button class="btn btn-primary rounded-pill px-3" type="button">Lesson 2</button>
-      <button class="btn btn-primary rounded-pill px-3" type="button">Lesson 3</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Novice</div>
+            <div class="card-body text-secondary">
+              <div class="col-sm">
+                <div class="d-flex gap-2 justify-content-center py-5">
+              <a href="learning/novice/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 1</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Intimidate</div>
+            <div class="card-body text-secondary">
+              <div class="col-sm">
+                <div class="d-flex gap-2 justify-content-center py-5">
+              <a href="learning/intimidate/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 2</button></a>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Intimidate</div>
+            <div class="card-body text-secondary">
+              <div class="col-sm">
+                <div class="d-flex gap-2 justify-content-center py-5">
+              <a href="learning/advanced/1.html"><button class="btn btn-primary rounded-pill px-3" type="button">Lesson 3</button></a>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
     </div>
   </header>
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js">
+
+
+document.getElementById("adv").disabled = true;
+  
+</script>
 
     </body>
 </html>

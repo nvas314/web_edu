@@ -1,31 +1,23 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head>
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="../assets/js/color-modes.js"></script>
-
+  <head><script src="../../../assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
-    <title>Headers · Bootstrap v5.3</title>
+    <title>Lesson 1 / Advanced</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-		body {
-			background-image: url('img/blue2.jpg');
-			background-position: center;
-		}
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -106,7 +98,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
+    <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -185,132 +177,107 @@
   </symbol>
 </svg>
 
-<main>
-  <header>
-    <div class="px-3 py-2 text-bg-dark border-bottom">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-          </a>
+<main class="d-flex flex-nowrap">
+  <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+      <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Lesson 1 / Advanced</span>
+    </a>
+    <div class="list-group list-group-flush border-bottom scrollarea">
+      <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true" id="gs">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Getting started</strong>
+          <small>1/5</small>
+        </div>
+        <div class="col-10 mb-1 small">We will start the lesson</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true" id="lf">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Learning the fundementalics</strong>
+          <small class="text-body-secondary">2/5</small>
+        </div>
+        <div class="col-10 mb-1 small">Move your cursor to the icons to see the text</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Specification</strong>
+          <small class="text-body-secondary">3/5</small>
+        </div>
+        <div class="col-10 mb-1 small">Understand the meaning of the words</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">At last</strong>
+          <small class="text-body-secondary">4/5</small>
+        </div>
+        <div class="col-10 mb-1 small">The End</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Comming next...</strong>
+          <small class="text-body-secondary">5/5</small>
+        </div>
+        <div class="col-10 mb-1 small"></div>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span class="fs-4">Getting Started</span>
+      </a>
 
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="index.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="dashboard.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="quiz.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
-              </a>
-            </li>
-            <li>
-              <a href="learn.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Learn
-              </a>
-            </li>
-            <li>
-              <a href="" class="nav-link text-secondary">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Account
-              </a>
-            </li>
-          </ul>
-          <div class="text-end">
-            <a href="sign-in.html">
-            <button type="button" class="btn btn-outline-light me-2">Login</button></a>
-            <a href="sign-up.html">
-              <button type="button" class="btn btn-warning">Sign-up</button></a>
-          </div>
-          <div class="dropdown text-end">
-            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-            </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        </div>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="../../index.html" class="nav-link active" aria-current="page">Back</a></li>
+      </ul>
+    </header>
+    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+      <div class="d-grid gap-2">
+        <h1 id="slide_text">Welcome<br>text</h1>
       </div>
     </div>
-    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto">
+    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
       <div class="d-grid gap-2">
-        <div class="card border-secondary mb-3" style="max-width: 18rem;">
-          <div class="card-header">Account details:</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Account details:</h5>
-            <p class="card-text">
-              Name: 
-              <br>Surname:
-              <br>Time active:
-              <br>Username:<b> Something &ensp; </b><a href="#">Change</a>
-              <br>Password:<b> ********* &ensp; </b><a href="#">Change</a>
-              <br><br>
-              <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-x" viewBox="0 0 16 16">
-    <path d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708"/>
-    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
-  </svg>
-  Delete account
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary " onclick="delete_account()" data-dismiss="modal">Delete account</button>
+        <button class="btn btn-outline-secondary" type="button" id="prevb">Previous slide</button>
+        <button class="btn btn-primary" type="button" id="nextb">Next slide</button>
+        <button class="btn btn-primary" type="button" id="compb">Complete</button>
       </div>
     </div>
   </div>
-</div>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-function delete_account(){
-  window.location.href="index.html";
-}
-
-</script>
-
-    </body>
+    <script src="../../sidebars.js"></script>
+  
+  <script>
+        const text = ["Welcome<br>text",
+        "page 2",
+        "page 3",
+        "page 4",
+        "End"];
+        var page = 0;
+        document.getElementById("prevb").style.display = "none";
+        document.getElementById("compb").style.display = "none";
+        function prev_Slide(){
+          page--;
+          document.getElementById("slide_text").innerHTML = text[page];
+          page == 0 ? document.getElementById("prevb").style.display = "none" : document.getElementById("nextb").style.display = "block";
+        }
+        function next_Slide(){
+          page++;
+          document.getElementById("slide_text").innerHTML = text[page];
+          page == 4 ? document.getElementById("nextb").style.display = "none" : document.getElementById("prevb").style.display = "block";
+          page == 4 ? document.getElementById("compb").style.display = "block" : document.getElementById("compb").style.display = "none";
+        }
+        function complete_lesson(){
+          alert("Bravo");
+        }
+          document.getElementById("prevb").onclick = function() {prev_Slide()};
+          document.getElementById("nextb").onclick = function() {next_Slide()};
+          document.getElementById("compb").onclick = function() {complete_lesson()};
+          
+          
+          </script>
+  </body>
 </html>
