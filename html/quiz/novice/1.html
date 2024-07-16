@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Quiz 1 -Novice</title>
+
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+  </head>
+  <body style="background-color: green;">
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <h1 id="w1">Welcome to the test</h1>
+      <h3 id="w2">Answer to the questions correctly and complete the gaps (answers are in parenthesis)</h3>
+      <h4><p id="qtext"></p></h4>
+      <button class="btn btn-primary" type="button" id="startb">Start</button>
+      <button class="btn btn-primary" type="button" id="nextb">Next</button>
+      <button class="btn btn-primary" type="button" id="compb">Send</button>
+    </div>
+</main>
+<script>
+  const questions = [
+  "After a long time the answers of the questions are (3) {} (b) {}.",
+  "(c) {} (d) {}.",
+  "(e) {}.",
+  "(f) {} (g) {} (h) {}.",
+  "(i) {}."
+];
+  const answers = [["3","b"],["c","d"],["e"],["f","g","h"],["i"]];
+  var ans_n = 0;
+  answers.forEach(ar => {ans_n += ar.length;});
+  var question = 0;
+  var grade = 100;
+  document.getElementById("qtext").style.display = "none";
+  document.getElementById("nextb").style.display = "none";
+  document.getElementById("compb").style.display = "none";
+  function text_to_html(q,a){
+    var out;
+    for(let i=0;i<a.length;i++){
+      q = q.replace("{}","<input type=\"text\" id=\"q"+i+"\" name=\"fname\">")
+    }
+    return q;
+  }
+  function start(){
+  document.getElementById("w1").style.display = "none";
+  document.getElementById("w2").style.display = "none";
+  document.getElementById("qtext").style.display = "block";
+  document.getElementById("qtext").innerHTML = text_to_html(questions[question],answers[question]);
+  document.getElementById("startb").style.display = "none";
+  document.getElementById("nextb").style.display = "block";
+  }
+  function next(){
+    for(let i = 0;i<answers[question].length;i++){
+      console.log(answers[question][i]);
+      if(!( $('#q' + i).val() == answers[question][i])) grade -= 1/ans_n;
+    }
+    question++;
+    document.getElementById("qtext").innerHTML = text_to_html(questions[question],answers[question]);
+    if (question == 4) document.getElementById("nextb").style.display = "none";
+    if (question == 4) document.getElementById("compb").style.display = "block";
+  }
+  function complete_quiz(){
+    alert("Bravo , your grade is " + grade);
+    //Save grade to db
+  }
+    document.getElementById("startb").onclick = function() {start()};
+    document.getElementById("nextb").onclick = function() {next()};
+    document.getElementById("compb").onclick = function() {complete_quiz()};
+    
+    
+    </script>
+
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
