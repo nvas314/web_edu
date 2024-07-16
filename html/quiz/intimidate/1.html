@@ -199,7 +199,7 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Back</a></li>
+        <li class="nav-item"><a id="not" href="../../index.html" class="nav-link active" aria-current="page">Back</a></li>
       </ul>
     </header>
       <p id="qtext"></p>
@@ -239,6 +239,7 @@ $(document).ready(function (){
     if (question == 4) document.getElementById("compb").style.display = "block";
     $("a").removeClass('active');
     $('#a'+question).addClass('active');
+    $('#not').addClass('active');
   }
   function complete_quiz(){
     alert("Bravo , your grade is " + grade);

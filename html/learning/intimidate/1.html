@@ -1,253 +1,179 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.122.0" />
     <script src="../../js/jquery-3.7.1.min.js"></script>
-    <script src="../../css/bootstrap.css"></script>
-    <script src="../../js/vendor/bootstrap.min.js"></script>
     <script src="../../../assets/js/color-modes.js"></script>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/sidebars/"
+    />
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Lesson 1 / Advanced</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Lesson 1 / Intimidate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
-
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="sidebars.css" rel="stylesheet">
+    <style></style>
   </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
+  <body data-spy="scroll" data-target="#navbar-example3" data-offset="20">
+    <div class="container-fluid">
+      <div class="row">
+      <header class="py-3 mb-3 fixed-top bg-light">
+        <div class="container-fluid d-grid gap-3 align-items-center col" style="grid-template-columns: 1fr 2fr;">
+            <span class="fs-4">Lesson 1</span>
+          <div class="d-flex align-items-center col">
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 offset-md-7">
+              <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
     
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="bootstrap" viewBox="0 0 118 94">
-    <title>Bootstrap</title>
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
-  </symbol>
-  <symbol id="home" viewBox="0 0 16 16">
-    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-  </symbol>
-  <symbol id="speedometer2" viewBox="0 0 16 16">
-    <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
-    <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
-  </symbol>
-  <symbol id="table" viewBox="0 0 16 16">
-    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
-  </symbol>
-  <symbol id="people-circle" viewBox="0 0 16 16">
-    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-  </symbol>
-  <symbol id="grid" viewBox="0 0 16 16">
-    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-  </symbol>
-</svg>
-
-<main class="d-flex flex-nowrap">
-  <nav id="navbar-example3" class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <nav class="nav nav-pills flex-column">
-      <a class="nav-link" href="#item-1">Item 1</a>
-      <nav class="nav nav-pills flex-column">
-        <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>
-        <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>
-      </nav>
-      <a class="nav-link" href="#item-2">Item2</a>
-      <a class="nav-link" href="#item-3">Item3</a>
-      <nav class="nav nav-pills flex-column">
-        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
-        <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
-      </nav>
-    </nav>
-  </nav>
-  
-  <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-    <h4 id="item-1">Item 1</h4>
-    <p>...</p>
-    <h5 id="item-1-1">Item 1-1</h5>
-    <p>...</p>
-    <h5 id="item-1-2">Item 2-2</h5>
-    <p>...</p>
-    <h4 id="item-2">Item 2</h4>
-    <p>...</p>
-    <h4 id="item-3">Item 3</h4>
-    <p>...</p>
-    <h5 id="item-3-1">Item 3-1</h5>
-    <p>...</p>
-    <h5 id="item-3-2">Item 3-2</h5>
-    <p>...</p>
-  </div>
-</main>
-<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="../../sidebars.js"></script>
-  
-  <script>
-        const text = ["Welcome<br>text",
-        "page 2",
-        "page 3",
-        "page 4",
-        "End"];
-        var page = 0;
-        document.getElementById("prevb").style.display = "none";
-        document.getElementById("compb").style.display = "none";
-        function prev_Slide(){
-          page--;
-          document.getElementById("slide_text").innerHTML = text[page];
-          page == 0 ? document.getElementById("prevb").style.display = "none" : document.getElementById("nextb").style.display = "block";
-        }
-        function next_Slide(){
-          page++;
-          document.getElementById("slide_text").innerHTML = text[page];
-          page == 4 ? document.getElementById("nextb").style.display = "none" : document.getElementById("prevb").style.display = "block";
-          page == 4 ? document.getElementById("compb").style.display = "block" : document.getElementById("compb").style.display = "none";
-        }
-        function complete_lesson(){
-          alert("Bravo");
-        }
-          document.getElementById("prevb").onclick = function() {prev_Slide()};
-          document.getElementById("nextb").onclick = function() {next_Slide()};
-          document.getElementById("compb").onclick = function() {complete_lesson()};
+            <div class="flex-shrink-0 dropdown col">
+              <a id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+            <a  href="../../learn.html"><button type="button" class="btn btn-primary">Back</button></a>
+          </div>
+        </div>
+      </header>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 navbar-fixed-top position-fixed" style="margin-top: 75px;">
+        <nav
+          id="navbar-example3"
+          class="navbar navbar-light bg-light flex-column align-items-stretch p-3 navbar-fixed-top"
+        >
+          <a class="navbar-brand" href="#">Navbar</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#item-1">Item 1</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+              <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+            </nav>
+            <a class="nav-link" href="#item-2">Item 2</a>
+            <a class="nav-link" href="#item-3">Item 3</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+              <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+            </nav>
+          </nav>
+        </nav>
+        </div>
+        <div class="col-sm-9" style="margin-top: 75px;">
           
-          
-          </script>
-  </body>
+      
+      <div class="main offset-md-3 pt-1" style="margin-top: 75px;">
+          <div 
+            data-bs-spy="scroll"
+            data-bs-target="#navbar-example3"
+            data-bs-offset="0"
+            tabindex="0"
+            
+          >
+            <h4 id="item-1">Item 1</h4>
+            <p id="item-1p">Η Ακρόπολη Αθηνών είναι βραχώδης λόφος ύψους 157 μ. από την επιφάνεια της θάλασσας και 70 μ. περίπου από το επίπεδο της πόλεως των Αθηνών. Η κορυφή του έχει σχήμα τραπεζοειδές μήκους 300 μ. και μέγιστου πλάτους 150 μ. Ο λόφος είναι απρόσιτος απ’ όλες τις πλευρές εκτός της δυτικής, όπου και βρίσκεται η οχυρή είσοδος, η διακοσμημένη με τα λαμπρά Προπύλαια.[4].
+
+              Ιστορία
+              Διαπιστώθηκε ότι ο λόφος ήταν κατοικημένος από την 3η χιλιετία π.Χ.. Εκεί υπήρχε συνοικισμός καθώς επρόκειτο για φυσικό οχυρό, με πρόσβαση μόνο από τη δυτική πλευρά, ενώ η επάνω επιφάνεια του λόφου ήταν αρκετά πλατιά ώστε να μπορεί να κατοικηθεί, στις πλαγιές υπήρχαν υδάτινες πηγές. Ο Θουκυδίδης μάλιστα γράφει ότι «ἡ Ἀκρόπολις ἡ νῦν οὖσα πόλις ῆν» (2.15.3)[5]. Το μέγαρο του τοπικού άρχοντα βρισκόταν στη θέση όπου πολλούς αιώνες αργότερα χτίστηκε το Ερέχθειο. Συν τω χρόνω ο άρχοντας του συνοικισμού της Ακρόπολης απέκτησε μεγάλη δύναμη και κάποια στιγμή ένωσε υπό την εξουσία του με ειρηνικό τρόπο ολόκληρη την Αττική με εξαίρεση την Ελευσίνα. Η παράδοση λέει ότι ο άρχοντας που ένωσε τους οικισμούς της Αττικής ήταν ο Θησέας. Το γεγονός αυτό τοποθετείται στο δεύτερο ήμισυ της δεύτερης προ Χριστού χιλιετίας. Ο κίνδυνος εχθρικών επιδρομών ανάγκασε τον ηγεμόνα αυτό να οχυρώσει την Ακρόπολη με ένα τείχος από μεγάλες πέτρες, το γνωστό αργότερα ως Κυκλώπειο Τείχος.
+              Ο θεσμός της κληρονομικής μοναρχίας καταργήθηκε μετά την αποτυχημένη εισβολή των Δωριέων (11ος αιώνας). Η τάξη των γαιοκτημόνων αναλαμβάνει την εξουσία και επικρατεί το αριστοκρατικό πολίτευμα. Η Ακρόπολη παύει να είναι διοικητικό κέντρο. Η διοίκηση ασκείται από την κάτω πόλη, το άστυ. Ο λόφος της Ακρόπολης χρησιμοποιείται πλέον ως χώρος θρησκευτικών τελετών, αν και έως τον 4ο αιώνα αποκαλείται «πόλις». Εκεί όπου αρχικά βρισκόταν το μέγαρο του άρχοντα των μυκηναϊκών χρόνων ανοικοδομήθηκε τον 8ο αιώνα μικρός ναός αφιερωμένα στην προστάτιδα της πόλης, την Αθηνά Πολιάδα. Ο ναός αυτός αναφέρεται από τον Όμηρο στην Οδύσσεια, αλλα και στην Ιλιάδα (Β 546-549)[6]:
+              Οἳ δ᾽ ἄρ᾽ Ἀθήνας εἶχον ἐϋκτίμενον πτολίεθρον
+              δῆμον Ἐρεχθῆος μεγαλήτορος, ὅν ποτ᾽ Ἀθήνη
+              θρέψε Διὸς θυγάτηρ, τέκε δὲ ζείδωρος ἄρουρα,
+              κὰδ δ᾽ ἐν Ἀθήνῃς εἷσεν ἑῷ ἐν πίονι νηῷ·
+              Στον ναό αυτό φυλασσόταν ξύλινο από ελιά άγαλμα της θεάς (ξόανον) που κατά την παράδοση είχε πέσει από τον ουρανό. Κοντά στο ναό υπήρχαν ο τάφος του Κέκροπα, η ελιά της Αθηνάς, η Ερεχθηίδα θάλασσα, ίχνη από το χτύπημα της τρίαινας του Ποσειδώνα. Από τον ναό εκείνο απέμειναν δύο λίθινες βάσεις κοντά στο νότιο τοίχο του Ερεχθείου. Σ' αυτές τις βάσεις στηρίζονταν οι ξύλινοι κίονες του προδόμου του παλιού ναού.</p>
+            <h5 id="item-1-1">Item 1-1</h5>
+            <p id="item-1-1p">...</p>
+            <h5 id="item-1-2">Item 1-2</h5>
+            <p id="item-1-2p">...</p>
+            <h4 id="item-2">Item 2</h4>
+            <p id="item-2p">...</p>
+            <h4 id="item-3">Item 3</h4>
+            <p id="item-3p">Ο Παρθενώνας είναι το μεγαλύτερο και πιο επίσημο οικοδόμημα της Ακρόπολης και συγκεντρώνει τον θαυμασμό όλου του κόσμου αιώνες τώρα. Οι εργασίες για την ανέγερση του ολομάρμαρου αυτού ναού της Αθηνάς άρχισαν το 447 π.Χ. υπό τη διεύθυνση των αρχιτεκτόνων Ικτίνου και Καλλικράτη. Ο ναός ολοκληρώθηκε το 438 π.Χ. και κατά τα Παναθήναια του επόμενου χρόνου αφιερώθηκε στην πολιούχο θεά. Παρ' όλα αυτά οι εργασίες συνεχίστηκαν μέχρι το 432 π.Χ.. Είναι ναός δωρικού ρυθμού περίπτερος με οκτώ κίονες στις στενές και δεκαεπτά στις μακριές πλευρές. Οι κίονες έχουν ύψος 10,5 μ. και πάνω τους στηρίζεται ο θριγκός (επιστύλια), οι μετόπες, τα τρίγλυφα, τα γείσα και τα αετώματα. Ο σηκός ήταν χτισμένος ολόκληρος με μαρμάρινες πέτρες σε οριζόντιες σειρές και σε καθεμία στενή πλευρά είχε από έξι δωρικούς κίονες, οι οποίοι τον χώριζαν σε δύο μέρη: τον κυρίως ναό και τον οπισθόδομο. Η ζωφόρος στους τοίχους του σηκού είχε παραστάσεις της πομπής των Παναθηναίων.
+
+              Ο κυρίως ναός στο εσωτερικό του χωριζόταν σε τρία μέρη· αυτό γινόταν με δύο κάθετες δωρικές κιονοστοιχίες. Το μεσαίο από τα τρία μέρη ήταν το πλατύτερο και σ' αυτό ήταν στημένο πάνω σε βάθρο το περίφημο χρυσελεφάντινο άγαλμα της Παρθένου Αθηνάς, το οποίο ο Φειδίας είχε ολοκληρώσει και τοποθετήσει το 438 π.Χ. στη θέση του. Οι 92 μετόπες εσωτερικά ήταν ανάγλυφες και παρίσταναν διάφορα μυθολογικά θέματα: Γιγαντομαχία, Αμαζονομαχία, Κενταυρομαχία και επεισόδια από την άλωση της Τροίας.
+              
+              Από αιώνες οι Έλληνες αρχιτέκτονες ποτέ δε σταμάτησαν να δουλεύουν για να ανυψωθεί ένας ναός από απλό λειτουργικό οικοδόμημα σε ένα αισθητικό δημιούργημα. Ο Παρθενώνας βρίσκεται στην κορυφή όλων των αρχαίων οικοδομημάτων ακριβώς γι' αυτόν τον λόγο.
+              
+              
+              Ακρόπολη Αθηνών
+              Ας εξετάσουμε ένα προς ένα τα στοιχεία της αισθητικής αυτής υπεροχής: α) Η τοποθέτηση στο χώρο. Βγαίνοντας από τα Προπύλαια, ο επισκέπτης αντίκριζε όχι το μέτωπο του ναού αλλά ολόκληρο το σώμα του, χαρίζοντάς του την «ευμετρίαν» του, δηλαδή το ισοδύναμο ζύγισμα του πλάτους προς το μήκος και το ύψος του. β) Οι τρεις κατά μήκος διαιρέσεις ενός ναού (το κρηπίδωμα, η κιονοστοιχία και ο θριγκός) έχουν την αρμονικότερη σχέση την οποία γνώρισε ποτέ η ελληνική τέχνη. Πρώτοι ο Γερμανός Hoffner και ο Άγγλος Pennethorne διαπίστωσαν ότι οι βαθμίδες του Παρθενώνος είναι καμπύλες. Οι βαθμίδες φουσκώνουν προς το κέντρο, στις μεν μακριές πλευρές 0,11 μ. συνολικά, στις δε στενές 0,06μ., σχηματίζοντας τις «υπερβολικές» λεγόμενες καμπύλες. Οι επάλληλες αυτές καμπύλες δίνουν την εντύπωση πως ο ναός έχει πάρει μια βαθιά ανάσα πριν σταθεί στον χώρο. γ) Αντίθετα, οι τοίχοι και η κιονοστοιχία, που αποτελούν τη δεύτερη καθ' ύψος διαίρεση του κτηρίου, κλίνουν προς τα μέσα με τρόπο, ώστε το κτήριο σχηματίζει τη βάση μιας μεγάλης πυραμίδας. Οι γωνιαίοι κίονες έχουν φυσικά διπλή κλίση, δηλαδή γέρνουν προς τα μέσα ιδωμένοι τόσο από τη στενή όσο και από τη μακριά πλευρά του κτηρίου. δ) Μείωση - Ένταση - Βηματισμός: Η «μείωση» είναι το αδυνάτισμα του πάχους των κιόνων προς τα πάνω. Η μείωση αυτή δεν είναι ενιαία και ακολουθεί μία ιδιόρρυθμη καμπύλη. Στα 2/5 περίπου του ύψους του κίονος παρουσιάζεται μία αντίθετη κίνηση, η οποία μοιάζει με φούσκωμα και ονομαζόταν «ένταση», ακριβώς επειδή αποσκοπούσε στην εντύπωση πως ο κίονας εντείνει τη δύναμή του, για να κρατήσει το βάρος του θριγκού. Αλλά και ο «βηματισμός» των κιόνων είναι πολύ προσεγμένος. Καμία απόσταση μεταξύ των κιόνων δεν είναι ακριβώς η ίδια και επί πλέον οι αποστάσεις των γωνιαίων κιόνων με τους διπλανούς τους είναι μεγαλύτερες απ' ό,τι μεταξύ των ενδιάμεσων κιόνων. Όλες αυτές οι λεπτότητες, οι οποίες δεν είναι αμέσως φανερές στο μάτι, επεδίωκαν να εξασφαλίσουν για το κτήριο μία δική του ζωή αλλά και μία κρυφή αρμονία. Έτσι ο Παρθενώνας συνιστά ένα έργο πολύπλοκων υπολογισμών, που αποδεικνύει πόσο προηγμένη ήταν η μαθηματική επιστήμη, αλλά και πόσο υψηλές ήταν οι απαιτήσεις του κοινού της εποχής εκείνης.</p>
+            <h5 id="item-3-1">Item 3-1</h5>
+            <p id="item-3-1p">...</p>
+            <h5 id="item-3-2">Item 3-2</h5>
+            <p id="item-3-2p">...</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+<script>
+//document.getElementById("item-1p").innerHTML= "";
+
+
+
+
+
+
+
+
+</script>
+
+    </div>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 </html>
