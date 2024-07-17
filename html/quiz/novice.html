@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Μεσαίο επίπεδο μάθησης</title>
+    <title>Αρχάριο επίπεδο quiz</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <link rel="icon" href="../../ico.png">
     <link rel="stylesheet" href="../css/main.css" />
-
     <meta
       name="author"
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
@@ -20,74 +19,143 @@
       href="https://getbootstrap.com/docs/5.3/examples/sidebars/"
     />
     <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
     <title>Lesson 1 / Advanced</title>
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
     />
     <style>
-	  header {
-		background-image: url('../img/blue.jpg');
-	  }
-  </style>	
+      header {
+        background-image: url('../img/blue.jpg');
+      }
+      body {
+        background-image: url('../img/blue_light.jpg');
+      }
+    </style>
   </head>
   <body data-spy="scroll" data-target="#navbar-example3" data-offset="20">
     <div class="container-fluid">
       <div class="row">
         <header class="py-3 mb-3 fixed-top">
-            <div class="container-fluid d-grid gap-3 align-items-center col" style="grid-template-columns: 1fr 2fr;">
-              <span class="fs-4">Μεσαίο επίπεδο quiz</span>
-            <div class="d-flex align-items-center col">
-              <a  href="../../learn.html"><button type="button" class="btn btn-primary float-right">Επιστροφή</button></a>
+          <div class="container-fluid d-flex justify-content-between align-items-center">
+            <span class="fs-4">Αρχάριο επίπεδο quiz</span>
+            <div>
+              <a href="../quiz.html"><button type="button" class="btn btn-outline-dark float-right">Επιστροφή</button></a>
             </div>
           </div>
         </header>
       </div>
-      
+    </div>
+    <div class="container" style="padding-top:200px;">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card border-primary mb-3" style="text-align:center;max-width: 12rem;">
+            <div class="card-header">Κεφάλαιο 1</div>
+            <div class="card-body">
+              <a href="intimidate/1.html"><button class="btn btn-primary rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 1&nbsp;&nbsp;</button></a>
+              <a href="quiz/intimidate.html"><button class="btn btn-primary rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 1.1</button></a>
+              <a href="quiz/intimidate.html"><button class="btn btn-primary rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 1.2</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card border-primary mb-3" style="text-align:center;max-width: 12rem;">
+            <div class="card-header">Κεφάλαιο 2</div>
+            <div class="card-body">
+              <a href="intimidate/1.html"><button class="btn btn-primary rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 2&nbsp;&nbsp;</button></a>
+              <a href="quiz/intimidate.html"><button class="btn btn-primary rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 2.1</button></a>
+              <a href="quiz/intimidate.html"><button class="btn btn-primary rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 2.2</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card border-primary mb-3" style="text-align:center;max-width: 12rem;">
+            <div class="card-header">Κεφάλαιο 3</div>
+            <div class="card-body">
+              <a href="intimidate/1.html"><button class="btn btn-primary rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 3&nbsp;&nbsp;</button></a>
+              <a href="quiz/intimidate.html"><button class="btn btn-primary rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 3.1</button></a>
+              <a href="quiz/intimidate.html"><button class="btn btn-primary rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 3.2</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card border-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Περιγραφή</div>
+            <div class="card-body">
+              <h5 class="card-title" id="dh">Κεφάλαιο</h5>
+              <p class="card-text" id="dp">Τίτλος Ενότητας</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-<script>
-//document.getElementById("item-1p").innerHTML= "";
-</script>
-    </div>
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-</body>
-</html>
+    <script>
+      title = ["start of level","2","3","4"];
+      description = ["this is a test","2","3","4"];
+      level_name = ["Level 1","Level 2","Level 3","Level 4","Level 5"];
+    
+      var b = document.getElementById("grade_bars");
+      var i=0;
+      function addElement(g,i,c)
+      {
+    
+      newh = document.createElement("h4");
+      newh.className = "small font-weight-bold";
+      newh.id = "ppp";
+      newh.innerHTML = i+": "+g+"%";
+      news = document.createElement("span");
+      news.className = "float-right";
+      newDiv = document.createElement("div");
+      newDiv.className = "progress mb-4";
+      newDiv.id = "ppp";
+      newContent = document.createElement("div");
+      newContent.className = "progress-bar bg-"+c;
+      newContent.style = "width: "+g+"%";
+      newh.appendChild(news);
+      newDiv.appendChild(newh);
+      newDiv.appendChild(newContent);
+    
+    
+      my_div = document.getElementById("gr");
+      b.insertBefore(newh, my_div);
+      b.insertBefore(newDiv, my_div);
+      }
+    
+      function add(accumulator, a) {
+        return accumulator + a;
+      }
+    
+      
+      function remove(){
+        for(let j=0;j<i*2;j++){
+        document.getElementById("ppp").remove();
+      }
+      i=0;
+      }
+    
+      function set_novice(){
+        remove();
+        grades_novice.forEach(g => {
+        i+=1;
+        addElement(g,"Level "+i,"warning");
+      });
+      document.getElementById("prgth").innerHTML = parseInt(grades_novice.reduce(add, 0)/7)+"%";
+      document.getElementById("prgt").style = "width: "+parseInt(grades_novice.reduce(add, 0)/7)+"%";
+      }
+    
+      function show_text(a){
+        document.getElementById("dh").innerHTML = title[a-1];
+        document.getElementById("dp").innerHTML = description[a-1];
+      }
+    
+      function reset_text(){
+        document.getElementById("dh").innerHTML = "title";
+        document.getElementById("dp").innerHTML = "Hover text";
+      }
+      
+    </script>
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
+        </body>
+    </html>
