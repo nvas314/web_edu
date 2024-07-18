@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../../assets/js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="../../ico.png">
+    <link rel="stylesheet" href="../../css/bg.css" />
+    <link rel="stylesheet" href="../../css/btn.css" />
+
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Quiz 1 - Αρχάριο επίπεδο</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .container-center {
+        max-width: 2000px; /* Μπορείτε να προσαρμόσετε το μέγιστο πλάτος ανάλογα με τις ανάγκες σας */
+        padding: 20px;
+        margin:100px;
+      }
+      .bordered-container {
+      border: 1px solid #000;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    .list-group-item.active {
+      background-image: url('../../img/blue.jpg');
+      background-color:rgb(169, 255, 255);
+      color:black;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+
+    }
+    </style>
+  </head>
+
+
+  <body> 
+    <main class="d-flex justify-content-center">
+      <div class="container-center bg-body-tertiary bordered-container">
+        <div class="d-flex flex-nowrap">
+          <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+              <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+              <span class="fs-5 fw-semibold">Αρχάριο επίπεδο</span>
+            </a>
+            <div id="list1" class="list-group list-group-flush border-bottom scrollarea">
+              <div id="list"></div>
+            </div>
+          </div>
+  
+          <div class="container" style="margin: 30px;">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                <span class="fs-4">Κεφάλαιο 1: Ιστορία της Ακρόπολης</span>
+              </a>
+            </header>
+            <p id="qtext"></p>
+            <input type="radio" id="1" name="answer" value="1">
+            <label for="1">1</label><br>
+            <input type="radio" id="2" name="answer" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="answer" value="3">
+            <label for="3">3</label><br>
+            <input type="radio" id="4" name="answer" value="4">
+            <label for="4">4</label><br><br>
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-dark" type="button" id="nextb">Next</button>
+              <button class="btn btn-custom1" type="button" id="compb">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+<script>
+$(document).ready(function (){
+  $('#a0').addClass('active');
+})
+  const title = ["Step 1","Step 2","Step 3","Step 4","Step 5"]
+  const subtitle = ["Instructions 1","Instructions 2","Instructions 3","Instructions 4","Instructions 5"]
+  const questions = ["Hello<br>the answer is 3.", "answer is 2", "answer is 3","answer is 4","answer is 1"];
+  const answers = ["3","2","3","4","1"];
+  var question = 0;
+  var grade = 100;
+  document.getElementById("compb").style.display = "none";
+  document.getElementById("qtext").innerHTML = questions[question];
+  function next(){
+    if (document.querySelectorAll('input[type="radio"]:checked').length === 0) return;
+    console.log(question);
+    if(!document.getElementById(answers[question]).checked) grade -= 20;
+    question++;
+    document.getElementById("qtext").innerHTML = questions[question];
+    if (question == 4) document.getElementById("nextb").style.display = "none";
+    if (question == 4) document.getElementById("compb").style.display = "block";
+    $("a").removeClass('active');
+    $('#a'+question).addClass('active');
+    $('#not').addClass('active');
+  }
+  function complete_quiz(){
+    alert("Bravo , your grade is " + grade);
+    //Save grade to db
+  }
+    document.getElementById("nextb").onclick = function() {next()};
+    document.getElementById("compb").onclick = function() {complete_quiz()};
+    
+    function addElement(t,s,i)
+  {
+
+  aa = document.createElement("a");
+  aa.className = "list-group-item list-group-item-action py-3 lh-sm";
+  aa.id = "a"+i;
+  flex = document.createElement("div");
+  flex.className = "d-flex w-100 align-items-center justify-content-between";
+  str = document.createElement("strong");
+  str.className = "mb-1"
+  str.innerHTML = t;
+  sma = document.createElement("small");
+  sma.innerHTML = i+1+"/"+title.length;
+  sub = document.createElement("div");
+  sub.className = "col-10 mb-1 small";
+  sub.innerHTML = s;
+  aa.appendChild(flex);
+  flex.appendChild(str);
+  flex.appendChild(sma);
+  aa.appendChild(sub);
+
+  b = document.getElementById("list1");
+  my_div = document.getElementById("list");
+  b.insertBefore(aa, my_div);
+  }
+  var i = 0;
+    title.forEach(g => {
+    addElement(title[i],subtitle[i],i);
+    i+=1;
+  });
+    </script>
+
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../sidebars.js"></script></body>
+</html>
