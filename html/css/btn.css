@@ -11,12 +11,20 @@
     .btn-custom1:hover {
       background-image: url('../img/blue2.jpg');
     }
-    a .btn-custom1 {
-      background-image: url('../img/blue.jpg');
+    .btn-custom2:hover {
+      background-image: url('../img/yellow2.jpg');
+    }
+    .btn-custom3:hover {
+      background-image: url('../img/red2.jpg');
     }
     
     a .btn-custom1:hover {
-      background-image: url('../img/blue2.jpg');
+      color: black;
+    }
+    a .btn-custom2:hover {
+      color: black;
+    }
+    a .btn-custom3:hover {
       color: black;
     }
 
@@ -25,8 +33,6 @@
     }
     a .btn-signup:hover{
       background-color: rgb(108, 117, 125,0.6) !important;
-      
-      color: #fff;
-
+      color: black;
     }
     
