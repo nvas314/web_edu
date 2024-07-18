@@ -20,8 +20,13 @@
       color: black;
     }
 
-    .btn-signup{
-      background-image: url('../img/blue.jpg'); /*xreiazetai allagh*/
+    a .btn-signup{
+      background-color: rgb(120,172,153) !important;
+    }
+    a .btn-signup:hover{
+      background-color: rgb(108, 117, 125,0.6) !important;
+      
+      color: #fff;
 
     }
     
