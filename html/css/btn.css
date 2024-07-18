@@ -1,0 +1,27 @@
+
+    .btn-custom1{
+      background-image: url('../img/blue.jpg');
+    }
+    .btn-custom2{
+      background-image: url('../img/yellow.jpg');
+    }
+    .btn-custom3{
+      background-image: url('../img/red.jpg');
+    }
+    .btn-custom1:hover {
+      background-image: url('../img/blue2.jpg');
+    }
+    a .btn-custom1 {
+      background-image: url('../img/blue.jpg');
+    }
+    
+    a .btn-custom1:hover {
+      background-image: url('../img/blue2.jpg');
+      color: black;
+    }
+
+    .btn-signup{
+      background-image: url('../img/blue.jpg'); /*xreiazetai allagh*/
+
+    }
+    
