@@ -378,80 +378,78 @@
 
 <script>
   $(document).ready(function(){
-  $('[data-toggle="popover"]').popover();   
+    $('[data-toggle="popover"]').popover();   
   });
-
-  grades_novice=[70,50,60,20,30,10,15];
-  grades_intimidate=[60,30,20,70,20,50,40];
-  grades_advanced=[20,10,10,10,30,10,20];
+  
+  grades_novice = [70,50,60,20,30,10,15];
+  grades_intimidate = [60,30,20,70,20,50,40];
+  grades_advanced = [20,10,10,10,30,10,20];
   var b = document.getElementById("grade_bars");
-  var i=0;
-  function addElement(g,i,c)
-  {
-
-  newh = document.createElement("h4");
-  newh.className = "small font-weight-bold";
-  newh.id = "ppp";
-  newh.innerHTML = i+": "+g+"%";
-  news = document.createElement("span");
-  news.className = "float-right";
-  newDiv = document.createElement("div");
-  newDiv.className = "progress mb-4";
-  newDiv.id = "ppp";
-  newContent = document.createElement("div");
-  newContent.className = "progress-bar bg-"+c;
-  newContent.style = "width: "+g+"%";
-  newh.appendChild(news);
-  newDiv.appendChild(newh);
-  newDiv.appendChild(newContent);
-
-  my_div = document.getElementById("gr");
-  b.insertBefore(newh, my_div);
-  b.insertBefore(newDiv, my_div);
+  var i = 0;
+  
+  function addElement(g, i, c) {
+    var newh = document.createElement("h4");
+    newh.className = "small font-weight-bold";
+    newh.id = "ppp";
+    newh.innerHTML = i + ": " + g + "%";
+    var news = document.createElement("span");
+    news.className = "float-right";
+    var newDiv = document.createElement("div");
+    newDiv.className = "progress mb-4";
+    newDiv.id = "ppp";
+    var newContent = document.createElement("div");
+    newContent.className = "progress-bar " + c;
+    newContent.style = "width: " + g + "%";
+    newh.appendChild(news);
+    newDiv.appendChild(newh);
+    newDiv.appendChild(newContent);
+  
+    var my_div = document.getElementById("gr");
+    b.insertBefore(newh, my_div);
+    b.insertBefore(newDiv, my_div);
   }
-
+  
   function add(accumulator, a) {
     return accumulator + a;
   }
-
   
-  function remove(){
-    for(let j=0;j<i*2;j++){
-    document.getElementById("ppp").remove();
+  function remove() {
+    for (let j = 0; j < i * 2; j++) {
+      document.getElementById("ppp").remove();
+    }
+    i = 0;
   }
-  i=0;
-  }
-
-  function set_novice(){
+  
+  function set_novice() {
     remove();
     grades_novice.forEach(g => {
-    i+=1;
-    addElement(g,"Level "+i,"primary");
-  });
-  document.getElementById("prgth").innerHTML = parseInt(grades_novice.reduce(add, 0)/7)+"%";
-  document.getElementById("prgt").style = "width: "+parseInt(grades_novice.reduce(add, 0)/7)+"%";
+      i += 1;
+      addElement(g, "Level " + i, "bar1");
+    });
+    document.getElementById("prgth").innerHTML = parseInt(grades_novice.reduce(add, 0) / 7) + "%";
+    document.getElementById("prgt").style = "width: " + parseInt(grades_novice.reduce(add, 0) / 7) + "%";
   }
-
-  function set_intimidate(){
+  
+  function set_intimidate() {
     remove();
     grades_intimidate.forEach(g => {
-    i+=1;
-    addElement(g,"Level "+i,"warning");
-  });
-  document.getElementById("prgth").innerHTML = parseInt(grades_intimidate.reduce(add, 0)/7)+"%";
-  document.getElementById("prgt").style = "width: "+parseInt(grades_intimidate.reduce(add, 0)/7)+"%";
+      i += 1;
+      addElement(g, "Level " + i, "bar2");
+    });
+    document.getElementById("prgth").innerHTML = parseInt(grades_intimidate.reduce(add, 0) / 7) + "%";
+    document.getElementById("prgt").style = "width: " + parseInt(grades_intimidate.reduce(add, 0) / 7) + "%";
   }
-
-  function set_advanced(){
+  
+  function set_advanced() {
     remove();
     grades_advanced.forEach(g => {
-    i+=1;
-    addElement(g,"Level "+i,"danger");
-  });
-  document.getElementById("prgth").innerHTML = parseInt(grades_advanced.reduce(add, 0)/7)+"%";
-  document.getElementById("prgt").style = "width: "+parseInt(grades_advanced.reduce(add, 0)/7)+"%";
+      i += 1;
+      addElement(g, "Level " + i, "bar3");
+    });
+    document.getElementById("prgth").innerHTML = parseInt(grades_advanced.reduce(add, 0) / 7) + "%";
+    document.getElementById("prgt").style = "width: " + parseInt(grades_advanced.reduce(add, 0) / 7) + "%";
   }
-</script>
+  </script>
 
 <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
