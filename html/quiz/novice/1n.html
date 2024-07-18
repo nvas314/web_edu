@@ -7,19 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link rel="icon" href="../../ico.png">
-    <link rel="stylesheet" href="../../css/bg.css" />
-    <link rel="stylesheet" href="../../css/btn.css" />
-
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
     <title>Quiz 1 - Αρχάριο επίπεδο</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+      body{
+        background-image: url('../../img/blue.jpg');
+      }
       .container-center {
-        max-width: 2000px; /* Μπορείτε να προσαρμόσετε το μέγιστο πλάτος ανάλογα με τις ανάγκες σας */
+        max-width: 1000px;
         padding: 20px;
         margin:100px;
       }
@@ -36,6 +34,14 @@
       border-top: 1px solid #000;
 
     }
+    .btn-top-right {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+    }
+    .btn-group {
+      gap: 10px;
+    }
     </style>
   </head>
 
@@ -43,6 +49,12 @@
   <body> 
     <main class="d-flex justify-content-center">
       <div class="container-center bg-body-tertiary bordered-container">
+        <div class="btn-top-right">
+          <div class="btn-group">
+            <a href="../../quiz.html" class="btn btn-outline-dark">Quiz</a>
+            <a href="../novice.html" class="btn btn-outline-dark">Ακύρωση</a>
+          </div>
+        </div>
         <div class="d-flex flex-nowrap">
           <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 280px;">
             <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
@@ -71,8 +83,8 @@
             <input type="radio" id="4" name="answer" value="4">
             <label for="4">4</label><br><br>
             <div class="d-grid gap-2">
-              <button class="btn btn-outline-dark" type="button" id="nextb">Next</button>
-              <button class="btn btn-custom1" type="button" id="compb">Send</button>
+              <button class="btn btn-outline-dark" type="button" id="nextb">Επόμενη ερώτηση</button>
+              <button class="btn btn-outline-dark" type="button" id="compb">Υποβολή</button>
             </div>
           </div>
         </div>
@@ -90,18 +102,23 @@ $(document).ready(function (){
   var grade = 100;
   document.getElementById("compb").style.display = "none";
   document.getElementById("qtext").innerHTML = questions[question];
-  function next(){
-    if (document.querySelectorAll('input[type="radio"]:checked').length === 0) return;
-    console.log(question);
-    if(!document.getElementById(answers[question]).checked) grade -= 20;
-    question++;
-    document.getElementById("qtext").innerHTML = questions[question];
-    if (question == 4) document.getElementById("nextb").style.display = "none";
-    if (question == 4) document.getElementById("compb").style.display = "block";
-    $("a").removeClass('active');
-    $('#a'+question).addClass('active');
-    $('#not').addClass('active');
-  }
+  function next() {
+        if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
+          alert("Παρακαλώ επιλέξτε μια απάντηση πριν προχωρήσετε.");
+          return;
+        }
+        if (!document.getElementById(answers[question]).checked) grade -= 20;
+        question++;
+        if (question < questions.length) {
+          document.getElementById("qtext").innerHTML = questions[question];
+          document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+          if (question == 4) document.getElementById("nextb").style.display = "none";
+          if (question == 4) document.getElementById("compb").style.display = "block";
+          $("a").removeClass('active');
+          $('#a' + question).addClass('active');
+          $('#not').addClass('active');
+        }
+      }
   function complete_quiz(){
     alert("Bravo , your grade is " + grade);
     //Save grade to db
