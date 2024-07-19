@@ -42,7 +42,10 @@
     .btn-group {
       gap: 10px;
     }
-    </style>
+  .subtitle-small {
+    font-size: 0.8rem; 
+  }
+  </style>
   </head>
 
 
@@ -93,29 +96,30 @@
           $(document).ready(function (){
             $('#a0').addClass('active');
           });
-          const title = ["Ερώτηση 1","Ερώτηση 2","Ερώτηση 3","Ερώτηση 4","Ερώτηση 5"];
+          const title = ["Ερώτηση 1", "Ερώτηση 2", "Ερώτηση 3", "Ερώτηση 4", "Ερώτηση 5"];
           const subtitle = [
             "Ποια είναι η κεντρική τοποθεσία της Ακρόπολης στην Αθήνα;",
             "Ποιον τύπο κτιρίου δεν περιλαμβάνει η Ακρόπολη;",
             "Πότε ξεκίνησε η ανάπτυξη της Ακρόπολης;",
             "Ποιο ήταν το κύριο χρήσιμο της Ακρόπολης στην αρχαία Αθήνα;",
-            "Ποια είναι η σημασία της λέξης 'Ακρόπολη';"
+            "Ποιο είναι το κύριο κτίριο της Ακρόπολης;"
           ];
           const questions = [
             "Ποια είναι η κεντρική τοποθεσία της Ακρόπολης στην Αθήνα;",
             "Ποιον τύπο κτιρίου δεν περιλαμβάνει η Ακρόπολη;",
             "Πότε ξεκίνησε η ανάπτυξη της Ακρόπολης;",
             "Ποιο ήταν το κύριο χρήσιμο της Ακρόπολης στην αρχαία Αθήνα;",
-            "Ποια είναι η σημασία της λέξης 'Ακρόπολη';"
+            "Ποιο είναι το κύριο κτίριο της Ακρόπολης;"
           ];
           const options = [
-            ["Κάτω από τη θάλασσα", "Στο βουνό", "Στο κέντρο της πόλης", "Στα περίχωρα της πόλης"],
-            ["Ναοί", "Θέατρα", "Πολιτιστικά κέντρα", "Πολιτικά κτίρια"],
-            ["Στον 5ο αιώνα π.Χ.", "Στον 4ο αιώνα π.Χ.", "Στον 6ο αιώνα π.Χ.", "Στον 3ο αιώνα π.Χ."],
-            ["Θρησκευτικές τελετές", "Αθλητικές εκδηλώσεις", "Πολεμικές επιχειρήσεις", "Αγορά και εμπόριο"],
-            ["Χαμηλή πόλη", "Απομονωμένη πόλη", "Κεντρική πόλη", "Υψηλή πόλη"]
+            ["Κάτω από τη θάλασσα", "Στο κέντρο της πόλης", "Στο βουνό", "Στα περίχωρα της πόλης"],
+            ["Ναοί", "Θέατρα", "Πολιτικά κτίρια", "Πολιτιστικά κέντρα"],
+            ["Στον 4ο αιώνα π.Χ.", "Στον 5ο αιώνα π.Χ.", "Στον 6ο αιώνα π.Χ.", "Στον 3ο αιώνα π.Χ."],
+            ["Αθλητικές εκδηλώσεις", "Θρησκευτικές τελετές", "Πολεμικές επιχειρήσεις", "Αγορά και εμπόριο"],
+            ["Παρθενώνας", "Ερεχθείο", "Ναός της Αθηνάς Νίκης", "Ναός του Ηρακλή"]
           ];
-          const answers = ["3", "2", "1", "2", "4"];
+          const answers1 = ["2", "4", "2", "2", "1"];
+
           var question = 0;
           var grade = 100;
           document.getElementById("compb").style.display = "none";
@@ -162,21 +166,19 @@ function complete_quiz() {
 document.getElementById("nextb").onclick = function() { next() };
 document.getElementById("compb").onclick = function() { complete_quiz() };
     
-    function addElement(t,s,i)
-  {
-
+function addElement(t, s, i) {
   aa = document.createElement("a");
   aa.className = "list-group-item list-group-item-action py-3 lh-sm";
-  aa.id = "a"+i;
+  aa.id = "a" + i;
   flex = document.createElement("div");
   flex.className = "d-flex w-100 align-items-center justify-content-between";
   str = document.createElement("strong");
-  str.className = "mb-1"
+  str.className = "mb-1";
   str.innerHTML = t;
   sma = document.createElement("small");
-  sma.innerHTML = i+1+"/"+title.length;
+  sma.innerHTML = i + 1 + "/" + title.length;
   sub = document.createElement("div");
-  sub.className = "col-10 mb-1 small";
+  sub.className = "col-10 mb-1 small subtitle-small";
   sub.innerHTML = s;
   aa.appendChild(flex);
   flex.appendChild(str);
@@ -186,7 +188,7 @@ document.getElementById("compb").onclick = function() { complete_quiz() };
   b = document.getElementById("list1");
   my_div = document.getElementById("list");
   b.insertBefore(aa, my_div);
-  }
+}
   var i = 0;
     title.forEach(g => {
     addElement(title[i],subtitle[i],i);

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link rel="icon" href="../../ico.png">
-    <title>Quiz 1 - Αρχάριο επίπεδο</title>
+    <title>Quiz 2 - Αρχάριο επίπεδο</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +42,9 @@
     .btn-group {
       gap: 10px;
     }
+    .subtitle-small {
+    font-size: 0.8rem; 
+  }
     </style>
   </head>
 
@@ -94,29 +97,29 @@
           $(document).ready(function (){
             $('#a0').addClass('active');
           });
-          const title = ["Ερώτηση 1","Ερώτηση 2","Ερώτηση 3","Ερώτηση 4","Ερώτηση 5"];
-          const subtitle = [
-            "Ποια είναι η κεντρική τοποθεσία της Ακρόπολης στην Αθήνα;",
-            "Ποιον τύπο κτιρίου δεν περιλαμβάνει η Ακρόπολη;",
-            "Πότε ξεκίνησε η ανάπτυξη της Ακρόπολης;",
-            "Ποιο ήταν το κύριο χρήσιμο της Ακρόπολης στην αρχαία Αθήνα;",
-            "Ποια είναι η σημασία της λέξης 'Ακρόπολη';"
-          ];
-          const questions = [
-            "Ποια είναι η κεντρική τοποθεσία της Ακρόπολης στην Αθήνα;",
-            "Ποιον τύπο κτιρίου δεν περιλαμβάνει η Ακρόπολη;",
-            "Πότε ξεκίνησε η ανάπτυξη της Ακρόπολης;",
-            "Ποιο ήταν το κύριο χρήσιμο της Ακρόπολης στην αρχαία Αθήνα;",
-            "Ποια είναι η σημασία της λέξης 'Ακρόπολη';"
-          ];
-          const options = [
-            ["Κάτω από τη θάλασσα", "Στο βουνό", "Στο κέντρο της πόλης", "Στα περίχωρα της πόλης"],
-            ["Ναοί", "Θέατρα", "Πολιτιστικά κέντρα", "Πολιτικά κτίρια"],
-            ["Στον 5ο αιώνα π.Χ.", "Στον 4ο αιώνα π.Χ.", "Στον 6ο αιώνα π.Χ.", "Στον 3ο αιώνα π.Χ."],
-            ["Θρησκευτικές τελετές", "Αθλητικές εκδηλώσεις", "Πολεμικές επιχειρήσεις", "Αγορά και εμπόριο"],
-            ["Χαμηλή πόλη", "Απομονωμένη πόλη", "Κεντρική πόλη", "Υψηλή πόλη"]
-          ];
-          const answers = ["3", "2", "1", "2", "4"];
+        const title = ["Ερώτηση 6", "Ερώτηση 7", "Ερώτηση 8", "Ερώτηση 9", "Ερώτηση 10"];
+        const subtitle = [
+        "Ποια είναι η σημασία της λέξης 'Ακρόπολη';",
+        "Ποιος ήταν ο πρωταρχικός σκοπός της κατασκευής της Ακρόπολης;",
+        "Ποιος από τους παρακάτω ναούς δεν ανήκει στην Ακρόπολη;",
+        "Πόσοι αιώνες περιλαμβάνει η ιστορία της Ακρόπολης;",
+        "Ποιο είναι το χρονικό διάστημα που εκτείνεται η ιστορία της Ακρόπολης;"
+        ];
+        const questions = [
+        "Ποια είναι η σημασία της λέξης 'Ακρόπολη';",
+        "Ποιος ήταν ο πρωταρχικός σκοπός της κατασκευής της Ακρόπολης;",
+        "Ποιος από τους παρακάτω ναούς δεν ανήκει στην Ακρόπολη;",
+        "Πόσοι αιώνες περιλαμβάνει η ιστορία της Ακρόπολης;",
+        "Ποιο είναι το χρονικό διάστημα που εκτείνεται η ιστορία της Ακρόπολης;"
+        ];
+        const options = [
+        ["Χαμηλή πόλη", "Υψηλή πόλη", "Απομονωμένη πόλη", "Κεντρική πόλη"],
+        ["Αναψυχή και ψυχαγωγία", "Αντιπολίτευση και πολεμική άμυνα", "Θρησκευτικές τελετές και εκδηλώσεις", "Εκπαίδευση και πολιτιστική ανάπτυξη"],
+        ["Ναός της Αφροδίτης", "Ναός της Αθηνάς Νίκης", "Παρθενώνας", "Ερεχθείο"],
+        ["Περίπου 1.500 χρόνια", "Περίπου 2.500 χρόνια", "Περίπου 3.500 χρόνια", "Περίπου 4.500 χρόνια"],
+        ["Από τον 1ο αιώνα μ.Χ. έως σήμερα", "Από τον 1ο αιώνα π.Χ. έως τον 4ο αιώνα μ.Χ.", "Από τον 5ο αιώνα π.Χ. έως σήμερα", "Από τον 5ο αιώνα π.Χ. έως τον 5ο αιώνα μ.Χ."]
+        ];
+        const answers = ["2", "3", "1", "2", "3"];
           var question = 0;
           var grade = 100;
           document.getElementById("compb").style.display = "none";
@@ -163,21 +166,19 @@ function complete_quiz() {
 document.getElementById("nextb").onclick = function() { next() };
 document.getElementById("compb").onclick = function() { complete_quiz() };
     
-    function addElement(t,s,i)
-  {
-
+function addElement(t, s, i) {
   aa = document.createElement("a");
   aa.className = "list-group-item list-group-item-action py-3 lh-sm";
-  aa.id = "a"+i;
+  aa.id = "a" + i;
   flex = document.createElement("div");
   flex.className = "d-flex w-100 align-items-center justify-content-between";
   str = document.createElement("strong");
-  str.className = "mb-1"
+  str.className = "mb-1";
   str.innerHTML = t;
   sma = document.createElement("small");
-  sma.innerHTML = i+1+"/"+title.length;
+  sma.innerHTML = i + 1 + "/" + title.length;
   sub = document.createElement("div");
-  sub.className = "col-10 mb-1 small";
+  sub.className = "col-10 mb-1 small subtitle-small";
   sub.innerHTML = s;
   aa.appendChild(flex);
   flex.appendChild(str);
@@ -187,7 +188,7 @@ document.getElementById("compb").onclick = function() { complete_quiz() };
   b = document.getElementById("list1");
   my_div = document.getElementById("list");
   b.insertBefore(aa, my_div);
-  }
+}
   var i = 0;
     title.forEach(g => {
     addElement(title[i],subtitle[i],i);
