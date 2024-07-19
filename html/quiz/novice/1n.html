@@ -19,7 +19,7 @@
       .container-center {
         max-width: 1000px;
         padding: 20px;
-        margin:100px;
+        margin:70px;
       }
       .bordered-container {
       border: 1px solid #000;
@@ -69,62 +69,98 @@
           <div class="container" style="margin: 30px;">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
               <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
                 <span class="fs-4">Κεφάλαιο 1: Ιστορία της Ακρόπολης</span>
               </a>
             </header>
             <p id="qtext"></p>
             <input type="radio" id="1" name="answer" value="1">
-            <label for="1">1</label><br>
+            <label for="1" id="opt1"></label><br>
             <input type="radio" id="2" name="answer" value="2">
-            <label for="2">2</label><br>
+            <label for="2" id="opt2"></label><br>
             <input type="radio" id="3" name="answer" value="3">
-            <label for="3">3</label><br>
+            <label for="3" id="opt3"></label><br>
             <input type="radio" id="4" name="answer" value="4">
-            <label for="4">4</label><br><br>
+            <label for="4" id="opt4"></label><br><br>
             <div class="d-grid gap-2">
-              <button class="btn btn-outline-dark" type="button" id="nextb">Επόμενη ερώτηση</button>
+              <button class="btn btn-outline-dark" type="button" id="nextb" onclick="next()">Επόμενη ερώτηση</button>
               <button class="btn btn-outline-dark" type="button" id="compb">Υποβολή</button>
             </div>
           </div>
-        </div>
-      </div>
-    </main>
-<script>
-$(document).ready(function (){
-  $('#a0').addClass('active');
-})
-  const title = ["Step 1","Step 2","Step 3","Step 4","Step 5"]
-  const subtitle = ["Instructions 1","Instructions 2","Instructions 3","Instructions 4","Instructions 5"]
-  const questions = ["Hello<br>the answer is 3.", "answer is 2", "answer is 3","answer is 4","answer is 1"];
-  const answers = ["3","2","3","4","1"];
-  var question = 0;
-  var grade = 100;
-  document.getElementById("compb").style.display = "none";
-  document.getElementById("qtext").innerHTML = questions[question];
-  function next() {
-        if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
-          alert("Παρακαλώ επιλέξτε μια απάντηση πριν προχωρήσετε.");
-          return;
-        }
-        if (!document.getElementById(answers[question]).checked) grade -= 20;
-        question++;
-        if (question < questions.length) {
+          </div>
+          </div>
+          </main>
+          <script>
+          $(document).ready(function (){
+            $('#a0').addClass('active');
+          });
+          const title = ["Ερώτηση 1","Ερώτηση 2","Ερώτηση 3","Ερώτηση 4","Ερώτηση 5"];
+          const subtitle = [
+            "Ποια είναι η κεντρική τοποθεσία της Ακρόπολης στην Αθήνα;",
+            "Ποιον τύπο κτιρίου δεν περιλαμβάνει η Ακρόπολη;",
+            "Πότε ξεκίνησε η ανάπτυξη της Ακρόπολης;",
+            "Ποιο ήταν το κύριο χρήσιμο της Ακρόπολης στην αρχαία Αθήνα;",
+            "Ποια είναι η σημασία της λέξης 'Ακρόπολη';"
+          ];
+          const questions = [
+            "Ποια είναι η κεντρική τοποθεσία της Ακρόπολης στην Αθήνα;",
+            "Ποιον τύπο κτιρίου δεν περιλαμβάνει η Ακρόπολη;",
+            "Πότε ξεκίνησε η ανάπτυξη της Ακρόπολης;",
+            "Ποιο ήταν το κύριο χρήσιμο της Ακρόπολης στην αρχαία Αθήνα;",
+            "Ποια είναι η σημασία της λέξης 'Ακρόπολη';"
+          ];
+          const options = [
+            ["Κάτω από τη θάλασσα", "Στο βουνό", "Στο κέντρο της πόλης", "Στα περίχωρα της πόλης"],
+            ["Ναοί", "Θέατρα", "Πολιτιστικά κέντρα", "Πολιτικά κτίρια"],
+            ["Στον 5ο αιώνα π.Χ.", "Στον 4ο αιώνα π.Χ.", "Στον 6ο αιώνα π.Χ.", "Στον 3ο αιώνα π.Χ."],
+            ["Θρησκευτικές τελετές", "Αθλητικές εκδηλώσεις", "Πολεμικές επιχειρήσεις", "Αγορά και εμπόριο"],
+            ["Χαμηλή πόλη", "Απομονωμένη πόλη", "Κεντρική πόλη", "Υψηλή πόλη"]
+          ];
+          const answers = ["3", "2", "1", "2", "4"];
+          var question = 0;
+          var grade = 100;
+          document.getElementById("compb").style.display = "none";
           document.getElementById("qtext").innerHTML = questions[question];
-          document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
-          if (question == 4) document.getElementById("nextb").style.display = "none";
-          if (question == 4) document.getElementById("compb").style.display = "block";
-          $("a").removeClass('active');
-          $('#a' + question).addClass('active');
-          $('#not').addClass('active');
-        }
-      }
-  function complete_quiz(){
-    alert("Bravo , your grade is " + grade);
-    //Save grade to db
+          document.getElementById("opt1").innerHTML = options[question][0];
+          document.getElementById("opt2").innerHTML = options[question][1];
+          document.getElementById("opt3").innerHTML = options[question][2];
+          document.getElementById("opt4").innerHTML = options[question][3];
+          
+          function next() {
+  if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
+    alert("Παρακαλώ επιλέξτε μια απάντηση πριν προχωρήσετε.");
+    return;
   }
-    document.getElementById("nextb").onclick = function() {next()};
-    document.getElementById("compb").onclick = function() {complete_quiz()};
+  if (!document.getElementById(answers[question]).checked) grade -= 20;
+  question++;
+  if (question < questions.length) {
+    document.getElementById("qtext").innerHTML = questions[question];
+    document.getElementById("opt1").innerHTML = options[question][0];
+    document.getElementById("opt2").innerHTML = options[question][1];
+    document.getElementById("opt3").innerHTML = options[question][2];
+    document.getElementById("opt4").innerHTML = options[question][3];
+    document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+    if (question == 4) {
+      document.getElementById("nextb").style.display = "none";
+      document.getElementById("compb").style.display = "block";
+    }
+    $("a").removeClass('active');
+    $('#a' + question).addClass('active');
+    $('#not').addClass('active');
+  }
+}
+
+function complete_quiz() {
+  if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
+    alert("Παρακαλώ επιλέξτε μια απάντηση πριν προχωρήσετε.");
+    return;
+  }
+  if (!document.getElementById(answers[question]).checked) grade -= 20;
+  alert("Bravo, your grade is " + grade);
+  // Save grade to db
+}
+
+document.getElementById("nextb").onclick = function() { next() };
+document.getElementById("compb").onclick = function() { complete_quiz() };
     
     function addElement(t,s,i)
   {
