@@ -7,48 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link rel="icon" href="../../ico.png">
+    <link rel="stylesheet" href="../../css/quiz.css"/>
+    <link rel="stylesheet" href="../../css/quiz_n.css"/>
     <title>Quiz 4 - Αρχάριο επίπεδο</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      body{
-        background-image: url('../../img/blue.jpg');
-      }
-      .container-center {
-        max-width: 1000px;
-        padding: 20px;
-        margin:70px;
-      }
-      .bordered-container {
-      border: 1px solid #000;
-      border-radius: 8px;
-      padding: 15px;
-    }
-    .list-group-item.active {
-      background-image: url('../../img/blue.jpg');
-      background-color:rgb(169, 255, 255);
-      color:black;
-      border-bottom: 1px solid #000;
-      border-top: 1px solid #000;
-
-    }
-    .btn-top-right {
-      position: absolute;
-      top: 16px;
-      right: 24px;
-    }
-    .btn-group {
-      gap: 10px;
-    }
-    .subtitle-small {
-    font-size: 0.8rem; 
-  }
-    </style>
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet"> 
   </head>
-
-
   <body> 
     <main class="d-flex justify-content-center">
       <div class="container-center bg-body-tertiary bordered-container">
@@ -77,18 +42,27 @@
               </a>
             </header>
             <p id="qtext"></p>
-            <input type="radio" id="1" name="answer" value="1">
-            <label for="1" id="opt1"></label><br>
-            <input type="radio" id="2" name="answer" value="2">
-            <label for="2" id="opt2"></label><br>
-            <input type="radio" id="3" name="answer" value="3">
-            <label for="3" id="opt3"></label><br>
-            <input type="radio" id="4" name="answer" value="4">
-            <label for="4" id="opt4"></label><br><br>
-            <div class="d-grid gap-2">
+          <div class="radio-container" style="margin-top:30px;">
+              <input type="radio" id="1" name="answer" value="1">
+              <label for="1" id="opt1">Option 1</label>
+          </div>
+          <div class="radio-container">
+              <input type="radio" id="2" name="answer" value="2">
+              <label for="2" id="opt2">Option 2</label>
+          </div>
+          <div class="radio-container">
+              <input type="radio" id="3" name="answer" value="3">
+              <label for="3" id="opt3">Option 3</label>
+          </div>
+          <div class="radio-container">
+              <input type="radio" id="4" name="answer" value="4">
+              <label for="4" id="opt4">Option 4</label>
+          </div>
+          <br>
+          <div class="d-grid gap-2">
               <button class="btn btn-outline-dark" type="button" id="nextb" onclick="next()">Επόμενη ερώτηση</button>
               <button class="btn btn-outline-dark" type="button" id="compb">Υποβολή</button>
-            </div>
+          </div>
           </div>
           </div>
           </div>
