@@ -1,0 +1,11 @@
+body{
+    background-image: url('../img/blue.jpg');
+  }
+  
+.list-group-item.active {
+  background-image: url('../img/blue.jpg');
+  background-color:rgb(169, 255, 255);
+  color:black !important;
+  border-bottom: 1px solid #000 !important;
+  border-top: 1px solid #000 !important;
+}
