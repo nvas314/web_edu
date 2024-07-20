@@ -38,7 +38,7 @@
           <div class="container" style="margin: 30px;">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
               <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <span class="fs-4">Κεφάλαιο 1: Ιστορία της Ακρόπολης</span>
+                <span class="fs-4" id="chapter"></span>
               </a>
             </header>
             <p id="qtext"></p>
@@ -87,7 +87,10 @@
             const questions = quiz.questions;
             const options = quiz.options;
             const answers = quiz.answers;
-    
+            const chapter = quiz.chapter;
+
+            document.getElementById("chapter").innerText = chapter;
+
             var question = 0;
             var grade = 100;
             document.getElementById("compb").style.display = "none";
@@ -157,9 +160,7 @@
                 my_div = document.getElementById("list");
                 b.insertBefore(aa, my_div);
             }
-    
-            // Προσθέτουμε τα στοιχεία στην λίστα
-            var i = 0;
+                var i = 0;
             title.forEach((item, index) => {
                 addElement(title[index], subtitle[index], index);
             });
