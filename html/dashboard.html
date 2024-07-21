@@ -220,7 +220,7 @@
                     <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                         aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">Intimidate <span
+                <h4 class="small font-weight-bold">intermediate <span
                         class="float-right">50%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar2" role="progressbar" style="width: 50%"
@@ -251,7 +251,7 @@
                   <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                       aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <h4 class="small font-weight-bold">Intimidate <span
+              <h4 class="small font-weight-bold">intermediate <span
                       class="float-right">50%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar2" role="progressbar" style="width: 50%"
@@ -279,7 +279,7 @@
           </div>
           <div class="card-body" id="grade_bars">
             <button type="button" class="btn btn-custom1" onclick="set_novice()">Novice</button>
-            <button type="button" class="btn btn-custom2" onclick="set_intimidate()">Intimidate</button>
+            <button type="button" class="btn btn-custom2" onclick="set_intermediate()">intermediate</button>
             <button type="button" class="btn btn-custom3" onclick="set_advanced()">Advanced</button>
             <br><br><br>
               <div id="gr"></div>
@@ -308,7 +308,7 @@
               <button type="button" class="btn btn-lg btn-custom1" data-toggle="popover" title="Completed all puzzles in novice mode" data-content="Completed after completing all the novice tests">Novice complete</button>
                 </div>
               <div class="row align-items-center">
-              <button type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intimidate mode" data-content="Completed after completing all the intimidate tests">Intimidate complete</button>
+              <button type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intermediate mode" data-content="Completed after completing all the intermediate tests">intermediate complete</button>
             </div>
               <div class="row align-items-center">
               <button type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Completed all puzzles in advanced mode" data-content="Completed after completing all the advanced tests">Advanced complete</button>
@@ -333,7 +333,7 @@
   });
   
   grades_novice = [70,50,60,20,30,10,15];
-  grades_intimidate = [60,30,20,70,20,50,40];
+  grades_intermediate = [60,30,20,70,20,50,40];
   grades_advanced = [20,10,10,10,30,10,20];
   var b = document.getElementById("grade_bars");
   var i = 0;
@@ -381,14 +381,14 @@
     document.getElementById("prgt").style = "width: " + parseInt(grades_novice.reduce(add, 0) / 7) + "%";
   }
   
-  function set_intimidate() {
+  function set_intermediate() {
     remove();
-    grades_intimidate.forEach(g => {
+    grades_intermediate.forEach(g => {
       i += 1;
       addElement(g, "Level " + i, "bar2");
     });
-    document.getElementById("prgth").innerHTML = parseInt(grades_intimidate.reduce(add, 0) / 7) + "%";
-    document.getElementById("prgt").style = "width: " + parseInt(grades_intimidate.reduce(add, 0) / 7) + "%";
+    document.getElementById("prgth").innerHTML = parseInt(grades_intermediate.reduce(add, 0) / 7) + "%";
+    document.getElementById("prgt").style = "width: " + parseInt(grades_intermediate.reduce(add, 0) / 7) + "%";
   }
   
   function set_advanced() {
