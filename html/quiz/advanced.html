@@ -54,9 +54,9 @@
           <div class="card border-danger mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 1</div>
             <div class="card-body">
-              <a href="advanced/1a.html"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 1</button></a>
-              <a href="advanced/2a.html"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 2</button></a>
-              <a href="advanced/3a.html"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 3</button></a>
+              <a href="advanced/quiz_advanced.html?quizId=1"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 1</button></a>
+              <a href="advanced/quiz_advanced.html?quizId=2"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 2</button></a>
+              <a href="advanced/3n.html"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 3</button></a>
             </div>
           </div>
         </div>
@@ -64,9 +64,9 @@
           <div class="card border-danger mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 2</div>
             <div class="card-body">
-              <a href="intermediate/1.html"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 4</button></a>
-              <a href="quiz/intermediate.html"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 5</button></a>
-              <a href="quiz/intermediate.html"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 6</button></a>
+              <a href="advanced/quiz_advanced.html?quizId=4"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 4</button></a>
+              <a href="advanced/quiz_advanced.html?quizId=5"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 5</button></a>
+              <a href="advanced/6n.html"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 6</button></a>
             </div>
           </div>
         </div>
@@ -74,10 +74,10 @@
           <div class="card border-danger mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 3</div>
             <div class="card-body">
-              <a href="intermediate/1.html"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 7</button></a>
-              <a href="quiz/intermediate.html"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 8</button></a>
-              <a href="quiz/intermediate.html"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 9</button></a>
-            </div>
+              <a href="advanced/quiz_advanced.html?quizId=7"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 7</button></a>
+              <a href="advanced/quiz_advanced.html?quizId=8"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 8</button></a>
+              <a href="advanced/9n.html"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 9</button></a>
+            </div> 
           </div>
         </div>
         <div class="col-sm">
@@ -136,14 +136,14 @@
       i=0;
       }
     
-      function set_novice(){
+      function set_advanced(){
         remove();
-        grades_novice.forEach(g => {
+        grades_advanced.forEach(g => {
         i+=1;
         addElement(g,"Level "+i,"warning");
       });
-      document.getElementById("prgth").innerHTML = parseInt(grades_novice.reduce(add, 0)/7)+"%";
-      document.getElementById("prgt").style = "width: "+parseInt(grades_novice.reduce(add, 0)/7)+"%";
+      document.getElementById("prgth").innerHTML = parseInt(grades_advanced.reduce(add, 0)/7)+"%";
+      document.getElementById("prgt").style = "width: "+parseInt(grades_advanced.reduce(add, 0)/7)+"%";
       }
     
       function show_text(a){
