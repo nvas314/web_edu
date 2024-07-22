@@ -1,3 +1,10 @@
+<!-- Modified today start--> 
+<?php
+  session_start();
+?>
+<!-- Modified today end--> 
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -68,10 +75,12 @@
 		<div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div class="text-end">
-                <a href="sign-in.html">
-                <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.php">
-                  <button type="button" class="btn btn-signup">Εγγραφή</button></a>
+                <a href="sign-in.php">
+                <?php if (!isset($_SESSION['user'])): ?>
+                  <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
+                  <a href="sign-up.php">
+                  <button type="button" class="btn" style="background-color:#78ac99;">Εγγραφή</button></a>
+              <?php endif; ?>
               </div>
             </div>
         </div>
@@ -84,7 +93,7 @@
               </a>
             </li>
             <li>
-              <a href="dashboard.html" class="nav-link text-white">
+              <a href="dashboard.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
                 Πρόοδος
               </a>

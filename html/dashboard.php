@@ -1,3 +1,9 @@
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('location: sign-in.php');
+} ?>
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -83,7 +89,7 @@
 		<div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div class="text-end">
-                <a href="sign-in.html">
+                <a href="sign-in.php">
                 <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
                 <a href="sign-up.php">
                   <button type="button" class="btn btn-signup">Εγγραφή</button></a>

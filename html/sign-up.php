@@ -98,7 +98,7 @@
  <!-- Modified today end-->
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Έχετε ήδη λογαριασμό;<a href="sign-in.html">Σύνδεση</a>
+					Έχετε ήδη λογαριασμό;<a href="sign-in.php">Σύνδεση</a>
 				</div>
 			</div><br>
 			<a href="index.php" class="btn btn-outline-secondary" role="button" aria-pressed="true">Επιστροφή στην αρχική</a>

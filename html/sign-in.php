@@ -41,12 +41,12 @@
 				<h3>Είσοδος σε λογαριασμό</h3>
 			</div>
 			<div class="card-body">
-				<form name="login_form" onsubmit="return elegxos_null()">
-					<div class="input-group form-group">
+				<form action="control.php" method="post" name="login_form" onsubmit="return elegxos_null()">
+				<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</div>
-						<input type="email" name="email" class="form-control" placeholder="Email">
+						<input type="text" name="username" class="form-control" placeholder="Username">
 						
 					</div>
 					<div class="input-group form-group">
@@ -61,6 +61,7 @@
 					<div class="form-group">
 						<input type="submit" value="Σύνδεση" class="btn float-right login_btn">
 					</div>
+					<input type="hidden" name="form_name" value="login_form">
 				</form>
 			</div>
 			<div class="card-footer">
@@ -120,3 +121,16 @@
     </script>
 </body>
 </html>
+
+
+
+  <!-- Modified today start--> 
+<?php if (isset($_GET['msg2'])): ?>
+	<p style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">Invalid username! Sign up if you don't have an account.</p>
+<?php endif; ?>
+
+<?php if (isset($_GET['msg3'])): ?>
+	<p style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">Invalid password! Please type your credentials again.</p>
+<?php endif; ?>
+<!-- Modified today end-->
+
