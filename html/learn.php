@@ -1,3 +1,10 @@
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('location: sign-in.php');
+} ?>
+
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -7,7 +14,7 @@
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta charset="UTF-8" />
-  <title>Προφίλ • AcropolisOnline</title>
+  <title>Learn • AcropolisOnline</title>
  
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -29,7 +36,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  
 </head>
 
 <body onload="document.body.classList.add('loaded')">
@@ -68,9 +74,9 @@
 		<div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div class="text-end">
-                <a href="sign-in.html">
+                <a href="sign-in.php">
                 <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.html">
+                <a href="sign-up.php">
                   <button type="button" class="btn btn-signup">Εγγραφή</button></a>
               </div>
             </div>
@@ -78,38 +84,37 @@
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="index.html" class="nav-link text-white">
+              <a href="index.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                 Αρχική
               </a>
             </li>
             <li>
-              <a href="dashboard.html" class="nav-link text-white">
+              <a href="dashboard.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
                 Πρόοδος
               </a>
             </li>
             <li>
-              <a href="quiz.html" class="nav-link text-white">
+              <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                 Quiz
               </a>
             </li>
             <li>
-              <a href="learn.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Γνώση
-              </a>
-            </li>
-            <li>
 			  <a href="#" class="nav-link text-secondary">
 				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
-				  <use xlink:href="#people-circle"/>
+				  <use xlink:href="#grid"/>
 				</svg>
-				Προφίλ
+				Γνώση?
 			  </a>
 			</li>
-
+            <li>
+              <a href="account.php" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Προφίλ
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -117,81 +122,56 @@
     
   </header>
 	
-	<div class="container" style="padding:10px;">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+	<div class="container" style="padding:60px;">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    </div>
+  </div>
+  <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+    <div class="d-grid gap-2">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center" style="gap:30px;">
+      <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header text-dark">Αρχάριο επίπεδο μάθησης</div>
+        <div class="card-body text-primary">
+          <h5 class="card-title text-dark">Βασική γνώση για την ιστορία και την αρχιτεκτονική της Ακρόπολης.</h5>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <a href="learning/novice/novice.html">
+            <button type="button" class="btn btn-custom1">Μαθήματα lvl 1</button>
+          </a>
         </div>
       </div>
-    </div>
-    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
-      <div class="d-grid gap-2">
-      </div>
-    </div>
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <div class="card border-warning mb-3" style="max-width: 20rem;">
+        <div class="card-header text-dark">Μεσαίο επίπεδο μάθησης</div>
+        <div class="card-body text-warning">
+          <h5 class="card-title text-dark">Εμβάθυνση στην ανάλυση των καλλιτεχνικών και ιστορικών πτυχών της Ακρόπολης.</h5>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <a href="learning/intermediate/intermediate.html">
+            <button type="button" class="btn btn-custom2">Μαθήματα lvl 2</button>
+          </a>
         </div>
       </div>
-    </div>
-    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto">
-      <div class="d-grid gap-2">
-        <div class="card border-secondary mb-3" style="max-width: 18rem;">
-          <div class="card-header">Λεπτομέρειες λογαριασμού</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Στοιχεία χρήστη:</h5>
-            <p class="card-text">
-              Όνομα: 
-              <br>Επώνυμο:
-              <br>Time active:
-              <br>Username:<b> Something &ensp; </b><a href="#">Αλλαγή</a>
-              <br>Κωδικός:<b> ********* &ensp; </b><a href="#">Αλλαγή</a>
-              <br><br>
-              <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-x" viewBox="0 0 16 16">
-    <path d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708"/>
-    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
-  </svg>
-  Διαγραφή λογαριασμού
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary " onclick="delete_account()" data-dismiss="modal">Delete account</button>
+      <div class="card border-danger mb-3" style="max-width: 20rem;">
+        <div class="card-header text-dark">Προχωρημένο επίπεδο μάθησης</div>
+        <div class="card-body text-danger">
+          <h5 class="card-title text-dark">Εξειδικευμένη μελέτη στην τέχνη και την επίδραση στην παγκόσμια κληρονομιά.</h5>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <a href="learning/advanced/advanced.html">
+            <button type="button" class="btn btn-custom3">Μαθήματα lvl 3</button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+<script src="../assets/dist/js/bootstrap.bundle.min.js">
 
-function delete_account(){
-  window.location.href="index.html";
-}
 
+document.getElementById("adv").disabled = true;
 </script>
 <!-- ================================= -->
 

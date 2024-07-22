@@ -1,3 +1,10 @@
+<!-- Modified today start--> 
+<?php
+  session_start();
+?>
+<!-- Modified today end--> 
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -68,10 +75,12 @@
 		<div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div class="text-end">
-                <a href="sign-in.html">
-                <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.html">
-                  <button type="button" class="btn btn-signup">Εγγραφή</button></a>
+                <a href="sign-in.php">
+                <?php if (!isset($_SESSION['user'])): ?>
+                  <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
+                  <a href="sign-up.php">
+                  <button type="button" class="btn" style="background-color:#78ac99;">Εγγραφή</button></a>
+              <?php endif; ?>
               </div>
             </div>
         </div>
@@ -84,29 +93,39 @@
               </a>
             </li>
             <li>
-              <a href="dashboard.html" class="nav-link text-white">
+              <a href="dashboard.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
                 Πρόοδος
               </a>
             </li>
             <li>
-              <a href="quiz.html" class="nav-link text-white">
+              <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                 Quiz
               </a>
             </li>
             <li>
-              <a href="learn.html" class="nav-link text-white">
+              <a href="learn.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                 Γνώση?
               </a>
             </li>
             <li>
-              <a href="account.html" class="nav-link text-white">
+              <a href="account.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                 Προφίλ
               </a>
             </li>
+  <!-- Modified today start-->
+            <?php if (isset($_SESSION['user'])): ?>  
+            <li>
+              <a href="logout.php" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Log out
+              </a>
+            </li>
+            <?php endif; ?>
+  <!-- Modified today end-->
           </ul>
         </div>
       </div>
@@ -199,7 +218,12 @@
     </div>
     
   </section>
-  
+    <!-- Modified today start--> 
+     <?php if (isset($_GET['msg1'])): ?>
+    <p style="text-align: center; font: size 20px; background: palegreen; border: 2px solid green; border-radius: 20px; color: #000; padding:1em">Account has been succesfully created. Login to access our homepage.</p>
+    <?php endif; ?>
+    <!-- Modified today end-->
+
   <!-- ================================= -->
 
   <!-- ================================= -->

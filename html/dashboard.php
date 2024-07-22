@@ -1,3 +1,9 @@
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('location: sign-in.php');
+} ?>
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -83,9 +89,9 @@
 		<div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div class="text-end">
-                <a href="sign-in.html">
+                <a href="sign-in.php">
                 <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.html">
+                <a href="sign-up.php">
                   <button type="button" class="btn btn-signup">Εγγραφή</button></a>
               </div>
             </div>
@@ -93,7 +99,7 @@
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="index.html" class="nav-link text-white">
+              <a href="index.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                 Αρχική
               </a>
@@ -107,19 +113,19 @@
 			  </a>
 			</li>
             <li>
-              <a href="quiz.html" class="nav-link text-white">
+              <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                 Quiz
               </a>
             </li>
             <li>
-              <a href="learn.html" class="nav-link text-white">
+              <a href="learn.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                 Γνώση?
               </a>
             </li>
             <li>
-              <a href="account.html" class="nav-link text-white">
+              <a href="account.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                 Προφίλ
               </a>
