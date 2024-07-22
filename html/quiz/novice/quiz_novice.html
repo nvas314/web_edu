@@ -20,7 +20,7 @@
       <div class="container-center bg-body-tertiary bordered-container">
         <div class="btn-top-right">
           <div class="btn-group">
-            <a href="../../quiz.php" class="btn btn-outline-dark">Quiz</a>
+            <a href="../../quiz.html" class="btn btn-outline-dark">Quiz</a>
             <a href="../novice.html" class="btn btn-outline-dark">Ακύρωση</a>
           </div>
         </div>
@@ -43,19 +43,19 @@
             </header>
             <p id="qtext"></p>
             <p id="subtitle"></p>
-            <div class="radio-container" style="margin-top:30px;">
+            <div id="radiobox1" class="radio-container" style="margin-top:30px;">
               <input type="radio" id="1" name="answer" value="1">
               <label for="1" id="opt1">Option 1</label>
             </div>
-            <div class="radio-container">
+            <div id="radiobox2" class="radio-container">
               <input type="radio" id="2" name="answer" value="2">
               <label for="2" id="opt2">Option 2</label>
             </div>
-            <div class="radio-container">
+            <div id="radiobox3" class="radio-container">
               <input type="radio" id="3" name="answer" value="3">
               <label for="3" id="opt3">Option 3</label>
             </div>
-            <div class="radio-container">
+            <div id="radiobox4" class="radio-container">
               <input type="radio" id="4" name="answer" value="4">
               <label for="4" id="opt4">Option 4</label>
             </div>
@@ -64,6 +64,12 @@
               <button class="btn btn-outline-dark" type="button" id="nextb" onclick="next()">Επόμενη ερώτηση</button>
               <button class="btn btn-outline-dark" type="button" id="compb">Υποβολή</button>
             </div>
+            <form id="send_grade" action="../../control.php" method="post">
+              <input type="hidden" name="id" value="<?php echo $_SESSION[username'] ?>;">
+              <input type="hidden" id="quiz_id" name="quiz_id">
+              <input type="hidden" id="grade_v" name="grade_v">
+              <input type="hidden" id="form_name" name="form_name">
+            </form>
           </div>
         </div>
       </div>
@@ -78,7 +84,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const quizId = urlParams.get('quizId');
         const quiz = quizzes[quizId];
-    
+        
         if (quiz) {
             document.getElementById('page-title').textContent = quiz.title;
             const title = quiz.title1;
@@ -92,22 +98,81 @@
 
             var question = 0;
             var grade = 100;
+            var ans_n = 0;
+            for (let i =0;i<answers.length;i++){
+              ans_n+= answers[i].length;//show all required answers (input text only)
+            }
+
             document.getElementById("compb").style.display = "none";
-            document.getElementById("qtext").innerHTML = questions[question];
-            document.getElementById("opt1").innerHTML = options[question][0];
-            document.getElementById("opt2").innerHTML = options[question][1];
-            document.getElementById("opt3").innerHTML = options[question][2];
-            document.getElementById("opt4").innerHTML = options[question][3];
             
+           function show_radio(s){
+              document.getElementById("radiobox1").style.display = s;
+                  document.getElementById("radiobox2").style.display = s;
+                  document.getElementById("radiobox3").style.display = s;
+                  document.getElementById("radiobox4").style.display = s;
+            }
+            function start(){
+              if (question < questions.length) {
+              
+              if(options[question].length == 0){
+                show_radio("none");
+                q =questions[question];
+                for(let i=0;i<answers[question].length;i++){
+                  q = q.replace("{}","<input type=\"text\" id=\"q"+i+"\" name=\"fname\">")
+                }
+                document.getElementById("qtext").innerHTML = q;
+                document.getElementById("q0").focus();
+            }
+            else{
+              show_radio("block");
+              document.getElementById("qtext").innerHTML = questions[question];
+                  document.getElementById("opt1").innerHTML = options[question][0];
+                  document.getElementById("opt2").innerHTML = options[question][1];
+                  document.getElementById("opt3").innerHTML = options[question][2];
+                  document.getElementById("opt4").innerHTML = options[question][3];
+                  document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+                  if (question == questions.length - 1) {
+                      document.getElementById("nextb").style.display = "none";
+                      document.getElementById("compb").style.display = "block";
+                  }
+              }
+                  $("a").removeClass('active');
+                  $('#a' + question).addClass('active');
+                  $('#not').addClass('active');
+            }
+            }
             function next() {
+              if(options){
+                if(options[question].length == 0){
+                for(let i = 0;i<answers[question].length;i++){
+                if(!( $('#q' + i).val() == answers[question][i])) grade -= 100/ans_n;//ans_n = how many false answers you can get (if all false answers then ans_n almost 0)
+                }
+                console.log(grade);
+                }
+                else{
                 if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
                     alert("Παρακαλώ επιλέξτε μια απάντηση πριν προχωρήσετε.");
                     return;
                 }
                 if (!document.getElementById(answers[question]).checked) grade -= 20;
-                question++;
-                if (question < questions.length) {
-                    document.getElementById("qtext").innerHTML = questions[question];
+              }
+               question++;
+               
+               if (question < questions.length) {
+              
+                if(options[question].length == 0){
+                  show_radio("none");
+                  q =questions[question];
+                  a=0;
+                  for(let i=0;i<answers[question].length;i++){
+                    q = q.replace("{}","<input type=\"text\" id=\"q"+i+"\" name=\"fname\">")
+                  }
+                  document.getElementById("q0").focus();
+                  document.getElementById("qtext").innerHTML = q;
+              }
+              else{
+                show_radio("block");
+                document.getElementById("qtext").innerHTML = questions[question];
                     document.getElementById("opt1").innerHTML = options[question][0];
                     document.getElementById("opt2").innerHTML = options[question][1];
                     document.getElementById("opt3").innerHTML = options[question][2];
@@ -117,25 +182,42 @@
                         document.getElementById("nextb").style.display = "none";
                         document.getElementById("compb").style.display = "block";
                     }
+                  }
                     $("a").removeClass('active');
                     $('#a' + question).addClass('active');
                     $('#not').addClass('active');
                 }
+              
+              }
+              if (question == 4) document.getElementById("nextb").style.display = "none";
+              if (question == 4) document.getElementById("compb").style.display = "block";
             }
     
             function complete_quiz() {
+              if(options[question].length == 0){
+                for(let i = 0;i<answers[question].length;i++){
+                  console.log(answers[question][i]);
+                if(!( $('#q' + i).val() == answers[question][i])) grade -= 100/ans_n;
+                }
+                }
+                else{
                 if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
                     alert("Παρακαλώ επιλέξτε μια απάντηση πριν προχωρήσετε.");
                     return;
                 }
-                if (!document.getElementById(answers[question]).checked) grade -= 20;
+                if (!document.getElementById(answers[question]).checked) grade -= 20;//ans_n = 5
+              }
                 alert("Bravo, your grade is " + grade);
+                document.getElementById('grade_v').value = grade;
+                document.getElementById('quiz_id').value = quizId;
+                document.getElementById('form_name').value = 'grade_form';
+                //document.getElementById('send_grade').submit();
                 // Save grade to db
             }
-    
+            start();
             document.getElementById("nextb").onclick = function() { next() };
             document.getElementById("compb").onclick = function() { complete_quiz() };
-    
+            
             function addElement(t, s, i) {
                 aa = document.createElement("a");
                 aa.className = "list-group-item list-group-item-action py-3 lh-sm";
@@ -162,9 +244,9 @@
                 var i = 0;
             title.forEach((item, index) => {
                 addElement(title[index], subtitle[index], index);
-            });
-        }
-    </script>
+            }); 
+          }
+            </script>
     
 
 <script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
