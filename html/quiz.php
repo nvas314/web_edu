@@ -1,3 +1,10 @@
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('location: sign-in.php');
+} ?>
+
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -7,7 +14,7 @@
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta charset="UTF-8" />
-  <title>Προφίλ • AcropolisOnline</title>
+  <title>Quiz • AcropolisOnline</title>
  
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -17,6 +24,7 @@
   <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="css/btn.css" />
   <link rel="stylesheet" href="css/bg.css" />
+
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,12 +36,11 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">			
+		
 </head>
 
 <body onload="document.body.classList.add('loaded')">
-	
 	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="bootstrap" viewBox="0 0 16 16">
     <title>Web Edu</title>
@@ -90,26 +97,25 @@
               </a>
             </li>
             <li>
-              <a href="quiz.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
-              </a>
-            </li>
-            <li>
-              <a href="learn.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Γνώση
-              </a>
-            </li>
-            <li>
 			  <a href="#" class="nav-link text-secondary">
 				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
-				  <use xlink:href="#people-circle"/>
+				  <use xlink:href="#table"/>
 				</svg>
-				Προφίλ
+				Quiz
 			  </a>
 			</li>
-
+            <li>
+              <a href="learn.php" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
+                Γνώση?
+              </a>
+            </li>
+            <li>
+              <a href="account.php" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Προφίλ
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -117,7 +123,7 @@
     
   </header>
 	
-	<div class="container" style="padding:10px;">
+	<div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         </div>
       </div>
@@ -126,73 +132,42 @@
       <div class="d-grid gap-2">
       </div>
     </div>
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        </div>
+<div class="row justify-content-center"  style="margin-top:110px;">
+  <div class="col-sm-2 mb-3 mb-sm-0">
+    <div class="card border-primary" style="width: 15.5rem;">
+      <img src="img/novice_img.png" class="card-img-top mx-auto d-block" alt="..." style="width: 200px; height: auto;">
+      <div class="card-body">
+        <h5 class="card-title">Αρχάριο επίπεδο</h5>
+        <p class="card-text">Βασική εξοικείωση με την ιστορία και την αρχιτεκτονική της Ακρόπολης.</p>
+        <a href="quiz/novice.html" class="btn btn-custom1">Έναρξη Quiz lvl 1</a>
       </div>
     </div>
-    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto">
-      <div class="d-grid gap-2">
-        <div class="card border-secondary mb-3" style="max-width: 18rem;">
-          <div class="card-header">Λεπτομέρειες λογαριασμού</div>
-          <div class="card-body text-secondary">
-            <h5 class="card-title">Στοιχεία χρήστη:</h5>
-            <p class="card-text">
-              Όνομα: 
-              <br>Επώνυμο:
-              <br>Time active:
-              <br>Username:<b> Something &ensp; </b><a href="#">Αλλαγή</a>
-              <br>Κωδικός:<b> ********* &ensp; </b><a href="#">Αλλαγή</a>
-              <br><br>
-              <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-x" viewBox="0 0 16 16">
-    <path d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708"/>
-    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
-  </svg>
-  Διαγραφή λογαριασμού
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Are you sure?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  </div>
+  <div class="col-sm-2">
+    <div class="card border-warning" style="width: 15.5rem;">
+      <img src="img/intermediate_img.png" class="card-img-top mx-auto d-block" alt="..." style="width: 200px; height: auto;">
+      <div class="card-body">
+        <h5 class="card-title">Μεσαίο επίπεδο</h5>
+        <p class="card-text">Αναλυτική εξέταση της καλλιτεχνικής και ιστορικής πλευράς της Ακρόπολης.</p>
+        <br>
+        <a href="quiz/intermediate.html" class="btn btn-custom2">Έναρξη Quiz lvl 2</a>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary " onclick="delete_account()" data-dismiss="modal">Delete account</button>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <div class="card border-danger" style="width: 15.5rem;">
+      <img src="img/advanced_img.png" class="card-img-top mx-auto d-block" alt="..." style="width: 200px; height: auto;">
+      <div class="card-body">
+        <h5 class="card-title">Προχωρημένο επίπεδο</h5>
+        <p class="card-text">Συνεκτική μελέτη της τέχνης και της επιρροής της Ακρόπολης στην παγκόσμια κληρονομιά.</p>
+        <a href="quiz/advanced.html" class="btn btn-custom3">Έναρξη Quiz lvl 3</a>
       </div>
     </div>
   </div>
 </div>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+<br><br><br><br><br><br><br><br><br>
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
 
-function delete_account(){
-  window.location.href="index.php";
-}
-
-</script>
 <!-- ================================= -->
 
 <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>

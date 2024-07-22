@@ -1,3 +1,10 @@
+<?php session_start();
+if (!isset($_SESSION['user'])){
+    header('location: sign-in.php');
+} ?>
+
+
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -7,7 +14,7 @@
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta charset="UTF-8" />
-  <title>Quiz • AcropolisOnline</title>
+  <title>Learn • AcropolisOnline</title>
  
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -17,7 +24,6 @@
   <link rel="stylesheet" href="css/contact.css" />
   <link rel="stylesheet" href="css/btn.css" />
   <link rel="stylesheet" href="css/bg.css" />
-
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,11 +35,11 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">			
-		
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body onload="document.body.classList.add('loaded')">
+	
 	<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="bootstrap" viewBox="0 0 16 16">
     <title>Web Edu</title>
@@ -90,21 +96,21 @@
               </a>
             </li>
             <li>
-			  <a href="#" class="nav-link text-secondary">
-				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
-				  <use xlink:href="#table"/>
-				</svg>
-				Quiz
-			  </a>
-			</li>
-            <li>
-              <a href="learn.html" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Γνώση?
+              <a href="quiz.php" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
+                Quiz
               </a>
             </li>
             <li>
-              <a href="account.html" class="nav-link text-white">
+			  <a href="#" class="nav-link text-secondary">
+				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
+				  <use xlink:href="#grid"/>
+				</svg>
+				Γνώση?
+			  </a>
+			</li>
+            <li>
+              <a href="account.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                 Προφίλ
               </a>
@@ -116,51 +122,57 @@
     
   </header>
 	
-	<div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+	<div class="container" style="padding:60px;">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    </div>
+  </div>
+  <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
+    <div class="d-grid gap-2">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center" style="gap:30px;">
+      <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header text-dark">Αρχάριο επίπεδο μάθησης</div>
+        <div class="card-body text-primary">
+          <h5 class="card-title text-dark">Βασική γνώση για την ιστορία και την αρχιτεκτονική της Ακρόπολης.</h5>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <a href="learning/novice/novice.html">
+            <button type="button" class="btn btn-custom1">Μαθήματα lvl 1</button>
+          </a>
+        </div>
+      </div>
+      <div class="card border-warning mb-3" style="max-width: 20rem;">
+        <div class="card-header text-dark">Μεσαίο επίπεδο μάθησης</div>
+        <div class="card-body text-warning">
+          <h5 class="card-title text-dark">Εμβάθυνση στην ανάλυση των καλλιτεχνικών και ιστορικών πτυχών της Ακρόπολης.</h5>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <a href="learning/intermediate/intermediate.html">
+            <button type="button" class="btn btn-custom2">Μαθήματα lvl 2</button>
+          </a>
+        </div>
+      </div>
+      <div class="card border-danger mb-3" style="max-width: 20rem;">
+        <div class="card-header text-dark">Προχωρημένο επίπεδο μάθησης</div>
+        <div class="card-body text-danger">
+          <h5 class="card-title text-dark">Εξειδικευμένη μελέτη στην τέχνη και την επίδραση στην παγκόσμια κληρονομιά.</h5>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <a href="learning/advanced/advanced.html">
+            <button type="button" class="btn btn-custom3">Μαθήματα lvl 3</button>
+          </a>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-xxl-4 my-5 mx-auto">
-      <div class="d-grid gap-2">
-      </div>
-    </div>
-<div class="row justify-content-center"  style="margin-top:110px;">
-  <div class="col-sm-2 mb-3 mb-sm-0">
-    <div class="card border-primary" style="width: 15.5rem;">
-      <img src="img/novice_img.png" class="card-img-top mx-auto d-block" alt="..." style="width: 200px; height: auto;">
-      <div class="card-body">
-        <h5 class="card-title">Αρχάριο επίπεδο</h5>
-        <p class="card-text">Βασική εξοικείωση με την ιστορία και την αρχιτεκτονική της Ακρόπολης.</p>
-        <a href="quiz/novice.html" class="btn btn-custom1">Έναρξη Quiz lvl 1</a>
-      </div>
-    </div>
   </div>
-  <div class="col-sm-2">
-    <div class="card border-warning" style="width: 15.5rem;">
-      <img src="img/intermediate_img.png" class="card-img-top mx-auto d-block" alt="..." style="width: 200px; height: auto;">
-      <div class="card-body">
-        <h5 class="card-title">Μεσαίο επίπεδο</h5>
-        <p class="card-text">Αναλυτική εξέταση της καλλιτεχνικής και ιστορικής πλευράς της Ακρόπολης.</p>
-        <br>
-        <a href="quiz/intermediate.html" class="btn btn-custom2">Έναρξη Quiz lvl 2</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-    <div class="card border-danger" style="width: 15.5rem;">
-      <img src="img/advanced_img.png" class="card-img-top mx-auto d-block" alt="..." style="width: 200px; height: auto;">
-      <div class="card-body">
-        <h5 class="card-title">Προχωρημένο επίπεδο</h5>
-        <p class="card-text">Συνεκτική μελέτη της τέχνης και της επιρροής της Ακρόπολης στην παγκόσμια κληρονομιά.</p>
-        <a href="quiz/advanced.html" class="btn btn-custom3">Έναρξη Quiz lvl 3</a>
-      </div>
-    </div>
-  </div>
-</div>
-<br><br><br><br><br><br><br><br><br>
-</main>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+
+</main>
+<script src="../assets/dist/js/bootstrap.bundle.min.js">
+
+
+document.getElementById("adv").disabled = true;
+</script>
 <!-- ================================= -->
 
 <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>

@@ -99,19 +99,19 @@
               </a>
             </li>
             <li>
-              <a href="quiz.html" class="nav-link text-white">
+              <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
                 Quiz
               </a>
             </li>
             <li>
-              <a href="learn.html" class="nav-link text-white">
+              <a href="learn.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
                 Γνώση?
               </a>
             </li>
             <li>
-              <a href="account.html" class="nav-link text-white">
+              <a href="account.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
                 Προφίλ
               </a>
