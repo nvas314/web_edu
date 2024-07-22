@@ -42,7 +42,13 @@
 				<h3>Δημιουργία νέου λογαριασμού</h3>
 			</div>
 			<div class="card-body">
-				<form name="login_form" onsubmit="return elegxos_null()">
+				<form action="control.php" method="post" name="register_form" onsubmit="return elegxos_null()">
+				<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" name="username" class="form-control" placeholder="Username">
+					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -79,14 +85,23 @@
 					<div class="form-group">
 						<input type="submit" value="Εγγραφή" class="btn float-right login_btn">
 					</div>
+  <!-- Modified today start-->
+						
+					<input type="hidden" name="form_name" value="register_form">
+ <!-- Modified today end-->			
 				</form>
 			</div>
+  <!-- Modified today start-->
+			<?php if (isset($_GET['msg2'])): ?>
+				<p class="text-middle" style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">Username already exists! Use another username to create your account.</p>
+			<?php endif; ?>
+ <!-- Modified today end-->
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
 					Έχετε ήδη λογαριασμό;<a href="sign-in.html">Σύνδεση</a>
 				</div>
 			</div><br>
-			<a href="index.html" class="btn btn-outline-secondary" role="button" aria-pressed="true">Επιστροφή στην αρχική</a>
+			<a href="index.php" class="btn btn-outline-secondary" role="button" aria-pressed="true">Επιστροφή στην αρχική</a>
 		</div>
 	</div>
 </div>
@@ -118,13 +133,13 @@
 
 			for (var i = 0; i < fields.length; i++) {
 				var field = fields[i];
-				var value = document.forms["login_form"][field].value;
+				var value = document.forms["register_form"][field].value;
 				if (value == "") {
 					alert("Το πεδίο " + fieldNames[field] + " δεν μπορεί να είναι κενό.");
 					return false;
 				}
 			}
-			if (document.forms["login_form"]["password"].value != document.forms["login_form"]["password2"].value) 
+			if (document.forms["register_form"]["password"].value != document.forms["register_form"]["password2"].value) 
 			{
 				alert("Ο κωδικός και η επιβεβαίωση κωδικού δεν ταιριάζουν.");
 				return false;

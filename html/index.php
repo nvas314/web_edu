@@ -70,7 +70,7 @@
               <div class="text-end">
                 <a href="sign-in.html">
                 <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.html">
+                <a href="sign-up.php">
                   <button type="button" class="btn btn-signup">Εγγραφή</button></a>
               </div>
             </div>
@@ -107,6 +107,16 @@
                 Προφίλ
               </a>
             </li>
+  <!-- Modified today start-->
+            <?php if (isset($_SESSION['user'])): ?>  
+            <li>
+              <a href="logout.php" class="nav-link text-white">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+                Log out
+              </a>
+            </li>
+            <?php endif; ?>
+  <!-- Modified today end-->
           </ul>
         </div>
       </div>
@@ -199,7 +209,12 @@
     </div>
     
   </section>
-  
+    <!-- Modified today start--> 
+     <?php if (isset($_GET['msg1'])): ?>
+    <p style="text-align: center; font: size 20px; background: palegreen; border: 2px solid green; border-radius: 20px; color: #000; padding:1em">Account has been succesfully created. Login to access our homepage.</p>
+    <?php endif; ?>
+    <!-- Modified today end-->
+
   <!-- ================================= -->
 
   <!-- ================================= -->
