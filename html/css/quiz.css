@@ -1,0 +1,24 @@
+.container-center {
+    max-width: 1000px;
+    padding: 20px;
+    margin:70px;
+  }
+  .bordered-container {
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 15px;
+}
+  .btn-top-right {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+  .btn-group {
+    gap: 10px;
+  }
+  .subtitle-small {
+    font-size: 0.8rem !important;
+  }
+  .radio-container {
+          margin-bottom: 10px;
+  }

@@ -56,9 +56,9 @@
           <div class="card border-primary mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 1</div>
             <div class="card-body">
-              <a href="novice/1n.html"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 1</button></a>
-              <a href="novice/2n.html"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 2</button></a>
-              <a href="novice/3n.html"><button class="btn btn-custom1 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 3</button></a>
+              <a href="novice/quiz_novice.html?quizId=1"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 1</button></a>
+              <a href="novice/quiz_novice.html?quizId=2"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 2</button></a>
+              <a href="novice/3n.html"><button class="btn btn-custom1 rounded-pill px-3" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 3</button></a>
             </div>
           </div>
         </div>
@@ -66,9 +66,9 @@
           <div class="card border-primary mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 2</div>
             <div class="card-body">
-              <a href="intimidate/1.html"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 4</button></a>
-              <a href="quiz/intimidate.html"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 5</button></a>
-              <a href="quiz/intimidate.html"><button class="btn btn-custom1 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 6</button></a>
+              <a href="novice/quiz_novice.html?quizId=4"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 4</button></a>
+              <a href="novice/quiz_novice.html?quizId=5"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 5</button></a>
+              <a href="novice/6n.html"><button class="btn btn-custom1 rounded-pill px-3" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 6</button></a>
             </div>
           </div>
         </div>
@@ -76,9 +76,9 @@
           <div class="card border-primary mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 3</div>
             <div class="card-body">
-              <a href="intimidate/1.html"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 7</button></a>
-              <a href="quiz/intimidate.html"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 8</button></a>
-              <a href="quiz/intimidate.html"><button class="btn btn-custom1 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 9</button></a>
+              <a href="novice/quiz_novice.html?quizId=7"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 7</button></a>
+              <a href="novice/quiz_novice.html?quizId=8"><button class="btn btn-custom1 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 8</button></a>
+              <a href="novice/9n.html"><button class="btn btn-custom1 rounded-pill px-3" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 9</button></a>
             </div>  
           </div>
         </div>
@@ -87,7 +87,7 @@
             <div class="card-header">Περιγραφή</div>
             <div class="card-body">
               <h5 class="card-title" id="dh">Κεφάλαιο</h5>
-              <p class="card-text" id="dp">Τίτλος Ενότητας</p>
+              <p class="card-text" id="dp">Τίτλος κεφαλαίου</p>
             </div>
           </div>
         </div>
@@ -95,9 +95,9 @@
     </div>
 
     <script>
-      title = ["start of level","2","3","4"];
-      description = ["this is a test","2","3","4"];
-      level_name = ["Level 1","Level 2","Level 3","Level 4","Level 5"];
+      title = ["Κεφάλαιο 1","Κεφάλαιο 2","Κεφάλαιο 3"];
+      description = ["Ιστορία της Ακρόπολης","Αρχιτεκτονικά θαύματα","Σημασία και σύγχρονη σημασία"];
+      //level_name = ["Level 1","Level 2","Level 3","Level 4","Level 5"];
     
       var b = document.getElementById("grade_bars");
       var i=0;
@@ -154,8 +154,8 @@
       }
     
       function reset_text(){
-        document.getElementById("dh").innerHTML = "title";
-        document.getElementById("dp").innerHTML = "Hover text";
+        document.getElementById("dh").innerHTML = "Κεφάλαιο";
+        document.getElementById("dp").innerHTML = "Τίτλος κεφαλαίου";
       }
       
     </script>
