@@ -25,16 +25,6 @@
     //print_r($_SESSION);
 
 
-    //function is_Updated($init_result,$final_result){
-        //$array_difference = array_diff($init_result, $final_result);
-        //if(sizeof(($array_difference))==0){
-          //  return false;
-        //}
-        //else{
-        //    return true;
-        //}
-    //}
-
     function check_user_level_upgrade($user_id,$user_current_level){
         $db_server="localhost";
         $db_user="root";
