@@ -4,7 +4,6 @@ if (!isset($_SESSION['user'])){
 } ?>
 
 
-
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -64,6 +63,9 @@ if (!isset($_SESSION['user'])){
     <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
   </symbol>
 </svg>
+
+
+
   <!-- ================ header ================= -->
   <header class="default-header">
     <nav class="navbar navbar-expand-lg  navbar-light">
@@ -73,15 +75,6 @@ if (!isset($_SESSION['user'])){
         </a>
 
 		<div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <div class="text-end">
-                <a href="sign-in.php">
-                <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.php">
-                  <button type="button" class="btn btn-signup">Εγγραφή</button></a>
-              </div>
-            </div>
-        </div>
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
@@ -167,6 +160,17 @@ if (!isset($_SESSION['user'])){
 </div>
 <br><br><br><br><br><br><br><br><br>
 </main>
+
+
+<?php if (isset($_GET['msg1'])): ?>
+        <p style="text-align: center; font: size 20px; background: palegreen; border: 2px solid green; border-radius: 20px; color: #000; padding:1em">Συγχαρητήρια, έχεις ξεκλειδώσει το μεσαίο επίπεδο δυσκολίας!
+         Τώρα μπορείς να εξερευνήσεις το υλικό του δεύτερου επιπέδου και να λύσεις τα κουίζ του! </p>
+<?php endif; ?>
+
+<?php if (isset($_GET['msg2'])): ?>
+        <p style="text-align: center; font: size 20px; background: palegreen; border: 2px solid green; border-radius: 20px; color: #000; padding:1em">Συγχαρητήρια, έχεις ξεκλειδώσει το προχωρημένο επίπεδο δυσκολίας!
+         Τώρα μπορείς να εξερευνήσεις το υλικό του τρίτου επιπέδου και να λύσεις τα κουίζ του! </p>
+<?php endif; ?>
 
 <!-- ================================= -->
 
