@@ -217,7 +217,7 @@ if (!isset($_SESSION['user'])){
                     <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                         aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">intermediate <span
+                <h4 class="small font-weight-bold">Intermediate <span
                         class="float-right">50%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar2" role="progressbar" style="width: 50%"
@@ -248,7 +248,7 @@ if (!isset($_SESSION['user'])){
                   <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                       aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <h4 class="small font-weight-bold">intermediate <span
+              <h4 class="small font-weight-bold">Intermediate <span
                       class="float-right">50%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar2" role="progressbar" style="width: 50%"
@@ -276,7 +276,7 @@ if (!isset($_SESSION['user'])){
           </div>
           <div class="card-body" id="grade_bars">
             <button type="button" class="btn btn-custom1" onclick="set_novice()">Novice</button>
-            <button type="button" class="btn btn-custom2" onclick="set_intermediate()">intermediate</button>
+            <button type="button" class="btn btn-custom2" onclick="set_intermediate()">Intermediate</button>
             <button type="button" class="btn btn-custom3" onclick="set_advanced()">Advanced</button>
             <br><br><br>
               <div id="gr"></div>
@@ -305,7 +305,7 @@ if (!isset($_SESSION['user'])){
               <button type="button" class="btn btn-lg btn-custom1" data-toggle="popover" title="Completed all puzzles in novice mode" data-content="Completed after completing all the novice tests">Novice complete</button>
                 </div>
               <div class="row align-items-center">
-              <button type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intermediate mode" data-content="Completed after completing all the intermediate tests">intermediate complete</button>
+              <button type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intermediate mode" data-content="Completed after completing all the intermediate tests">Intermediate complete</button>
             </div>
               <div class="row align-items-center">
               <button type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Completed all puzzles in advanced mode" data-content="Completed after completing all the advanced tests">Advanced complete</button>
