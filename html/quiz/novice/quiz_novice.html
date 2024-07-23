@@ -20,7 +20,7 @@
       <div class="container-center bg-body-tertiary bordered-container">
         <div class="btn-top-right">
           <div class="btn-group">
-            <a href="../../quiz.html" class="btn btn-outline-dark">Quiz</a>
+            <a href="../../quiz.php" class="btn btn-outline-dark">Quiz</a>
             <a href="../novice.html" class="btn btn-outline-dark">Ακύρωση</a>
           </div>
         </div>
@@ -195,7 +195,6 @@
             function complete_quiz() {
               if(options[question].length == 0){
                 for(let i = 0;i<answers[question].length;i++){
-                  console.log(answers[question][i]);
                 if(!( $('#q' + i).val() == answers[question][i])) grade -= 100/ans_n;
                 }
                 }
