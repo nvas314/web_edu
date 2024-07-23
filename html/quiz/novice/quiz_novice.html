@@ -189,8 +189,8 @@
                 }
               
               }
-              if (question == 4) document.getElementById("nextb").style.display = "none";
-              if (question == 4) document.getElementById("compb").style.display = "block";
+              if (question == questions.length-1) document.getElementById("nextb").style.display = "none";
+              if (question == questions.length-1) document.getElementById("compb").style.display = "block";
             }
     
             function complete_quiz() {
@@ -206,6 +206,10 @@
                     return;
                 }
                 if (!document.getElementById(answers[question]).checked) grade -= 20;//ans_n = 5
+              }
+              grade = Math.floor(grade);
+              if(grade<0){
+                grade=0;
               }
                 alert("Bravo, your grade is " + grade);
                 document.getElementById('grade_v').value = grade;
@@ -242,7 +246,7 @@
                 b.insertBefore(aa, my_div);
             }
                 var i = 0;
-            title.forEach((item, index) => {
+                answers.forEach((item, index) => {
                 addElement(title[index], subtitle[index], index);
             }); 
           }
