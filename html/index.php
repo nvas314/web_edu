@@ -148,14 +148,14 @@
               </p>
             </div>
             <div class="carousel-item">
-              <h3 class="text-white">Discover Your Learning Path</h3>
+              <h3 class="text-white">Εξερευνήστε Νέες Γνώσεις</h3>
               <p class="mx-auto text-white mt-20 mb-40">
-                Από Αρχάριος σε Μεσαίο και έπειτα σε Προχωρημένο επίπεδο.
+              Αρχάριο, Μεσαίο και Προχωρημένο επίπεδο
             </div>
 			<div class="carousel-item">
-              <h3 class="text-white">Engage and Progress</h3>
+              <h3 class="text-white">Συμμετοχή και Πρόοδος</h3>
               <p class="mx-auto text-white mt-20 mb-40">
-                Interactive quizzes and tailored content for every user's needs.
+              Διαδραστικά κουίζ και εξατομικευμένο περιεχόμενο για κάθε ανάγκη.
               </p>
             </div>
           </div>
@@ -185,9 +185,9 @@
           <div class="feature-item d-flex">
             <i class="ti-book"></i>
             <div class="ml-20">
-              <h4>Quizzes & Learning</h4>
+              <h4>Κουίζ και Μάθηση</h4>
               <p>
-                Test your knowledge and explore the secrets of the Acropolis.
+              Ελέγξτε τις γνώσεις σας και ανακαλύψτε τα μυστικά της Ακρόπολης.
               </p>
             </div>
           </div>
@@ -196,9 +196,9 @@
           <div class="feature-item d-flex">
             <i class="ti-cup"></i>
             <div class="ml-20">
-              <h4>Rich Content</h4>
+              <h4>Πλούσιο Περιεχόμενο</h4>
               <p>
-                Dive into detailed insights about Acropolis history and architecture.
+              Ανακαλύψτε λεπτομέρειες για την ιστορία και την αρχιτεκτονική της Ακρόπολης.
               </p>
             </div>
           </div>
@@ -207,9 +207,9 @@
           <div class="feature-item d-flex border-right-0">
             <i class="ti-desktop"></i>
             <div class="ml-20">
-              <h4>Progress Tracking</h4>
+              <h4>Παρακολούθηση Προόδου</h4>
               <p>
-                Monitor your learning journey with our interactive dashboard.
+              Παρακολουθήστε την πρόοδό σας μέσω του πίνακα παρακολούθησης προόδου.
               </p>
             </div>
           </div>
