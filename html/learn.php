@@ -138,7 +138,7 @@ if (!isset($_SESSION['user'])){
         <div class="card-body text-warning">
           <h5 class="card-title text-dark">Εμβάθυνση στην ανάλυση των καλλιτεχνικών και ιστορικών πτυχών της Ακρόπολης.</h5>
           <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
-          <a href="learning/intermediate/intermediate.html">
+          <a href="learning/intermediate/intermediate.php">
             <button type="button" class="btn btn-custom2">Μαθήματα lvl 2</button>
           </a>
         </div>

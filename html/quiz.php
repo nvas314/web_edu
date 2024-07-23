@@ -143,7 +143,7 @@ if (!isset($_SESSION['user'])){
         <h5 class="card-title">Μεσαίο επίπεδο</h5>
         <p class="card-text">Αναλυτική εξέταση της καλλιτεχνικής και ιστορικής πλευράς της Ακρόπολης.</p>
         <br>
-        <a href="quiz/intermediate.html" class="btn btn-custom2">Έναρξη Quiz lvl 2</a>
+        <a href="quiz/intermediate.php" class="btn btn-custom2">Έναρξη Quiz lvl 2</a>
       </div>
     </div>
   </div>
@@ -170,6 +170,11 @@ if (!isset($_SESSION['user'])){
 <?php if (isset($_GET['msg2'])): ?>
         <p style="text-align: center; font: size 20px; background: palegreen; border: 2px solid green; border-radius: 20px; color: #000; padding:1em">Συγχαρητήρια, έχεις ξεκλειδώσει το προχωρημένο επίπεδο δυσκολίας!
          Τώρα μπορείς να εξερευνήσεις το υλικό του τρίτου επιπέδου και να λύσεις τα κουίζ του! </p>
+<?php endif; ?>
+
+<?php if (isset($_GET['msg3'])): ?>
+  <p style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">
+    Δεν έχεις ξεκλειδώσει ακόμα τα κουίζ αυτού του επιπέδου. Συνέχισε να εκπαιδεύεσαι και λύσε ολα τα κουίζ του επιπέδου στο οποιο βρίσκεσαι, ώστε να ανέβεις επίπεδο! </p>
 <?php endif; ?>
 
 <!-- ================================= -->

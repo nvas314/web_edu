@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['user']['current_level']<2){
+  header('Location: ../quiz.php?msg3=user_level_error');
+
+} ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,9 +60,9 @@
           <div class="card border-warning mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 4</div>
             <div class="card-body">
-              <a href="intermediate/quiz_intermediate.html?quizId=10"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 10</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=11"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 11</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=12"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 12</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=10"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 10</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=11"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 11</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=12"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 12</button></a>
             </div>
           </div>
         </div>
@@ -62,9 +70,9 @@
           <div class="card border-warning mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 5</div>
             <div class="card-body">
-              <a href="intermediate/quiz_intermediate.html?quizId=13"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 13</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=14"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 14</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=15"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 15</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=13"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 13</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=14"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 14</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=15"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 15</button></a>
             </div>
           </div>
         </div>
@@ -72,9 +80,9 @@
           <div class="card border-warning mb-3" style="text-align:center;max-width: 12rem;">
             <div class="card-header">Κεφάλαιο 6</div>
             <div class="card-body">
-              <a href="intermediate/quiz_intermediate.html?quizId=16"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 16</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=17"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 17</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=18"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 18</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=16"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 16</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=17"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 17</button></a>
+              <a href="intermediate/quiz_intermediate.php?quizId=18"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 18</button></a>
             </div>
           </div>
         </div>

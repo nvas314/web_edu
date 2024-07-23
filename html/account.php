@@ -140,6 +140,7 @@ if (!isset($_SESSION['user'])){
               <br>Time active:
               <br>Username:<b> Something &ensp; </b><a href="#">Αλλαγή</a>
               <br>Κωδικός:<b> ********* &ensp; </b><a href="#">Αλλαγή</a>
+              <br>Επίπεδο:<b> <?php echo $_SESSION['user']['current_level'];?>
               <br><br>
               <!-- Button trigger modal -->
 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">
