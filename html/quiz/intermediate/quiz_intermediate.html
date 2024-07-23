@@ -64,10 +64,9 @@
               <button class="btn btn-outline-dark" type="button" id="nextb" onclick="next()">Επόμενη ερώτηση</button>
               <button class="btn btn-outline-dark" type="button" id="compb">Υποβολή</button>
             </div>
-            <form id="send_grade" action="../../control.php" method="post">
-              <input type="hidden" name="id" value="<?php echo $_SESSION[username'] ?>;">
+            <form id="send_grade" action="../../control.php" method="post">;
               <input type="hidden" id="quiz_id" name="quiz_id">
-              <input type="hidden" id="grade_v" name="grade_v">
+              <input type="hidden" id="grade" name="grade">
               <input type="hidden" id="form_name" name="form_name">
             </form>
           </div>
@@ -211,13 +210,13 @@
             if(grade<0){
               grade=0;
             }
-              alert("Bravo, your grade is " + grade);
-              document.getElementById('grade_v').value = grade;
-              document.getElementById('quiz_id').value = quizId;
-              document.getElementById('form_name').value = 'grade_form';
-              //document.getElementById('send_grade').submit();
-              // Save grade to db
-          }
+            alert("Bravo, your grade is " + grade);
+                document.getElementById('grade').value = grade;
+                document.getElementById('quiz_id').value = quizId;
+                document.getElementById('form_name').value = 'grade_form';
+                document.getElementById('send_grade').submit();
+                // Save grade to db
+            }
           start();
           document.getElementById("nextb").onclick = function() { next() };
           document.getElementById("compb").onclick = function() { complete_quiz() };

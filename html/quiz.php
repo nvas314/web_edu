@@ -164,7 +164,7 @@ if (!isset($_SESSION['user'])){
 
 <?php if (isset($_GET['msg1'])): ?>
         <p style="text-align: center; font: size 20px; background: palegreen; border: 2px solid green; border-radius: 20px; color: #000; padding:1em">Συγχαρητήρια, έχεις ξεκλειδώσει το μεσαίο επίπεδο δυσκολίας!
-         Τώρα μπορείς να εξερευνήσεις το υλικό του δεύτερου επιπέδου και να λύσεις τα κουίζ του! </p>
+         Τώρα μπορείς  εξερευνήσεις το υλικό του δεύτερου επιπέδου και  λύσεις τα κουίζ του! </p>
 <?php endif; ?>
 
 <?php if (isset($_GET['msg2'])): ?>
