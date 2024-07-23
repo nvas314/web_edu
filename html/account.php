@@ -72,15 +72,6 @@ if (!isset($_SESSION['user'])){
         </a>
 
 		<div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <div class="text-end">
-                <a href="sign-in.php">
-                <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
-                <a href="sign-up.php">
-                  <button type="button" class="btn btn-signup">Εγγραφή</button></a>
-              </div>
-            </div>
-        </div>
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
@@ -170,7 +161,7 @@ if (!isset($_SESSION['user'])){
         </button>
       </div>
       <div class="modal-body">
-        ...
+        Do you want to delete your account?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
