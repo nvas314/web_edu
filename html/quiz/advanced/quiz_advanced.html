@@ -147,7 +147,6 @@
               for(let i = 0;i<answers[question].length;i++){
               if(!( $('#q' + i).val() == answers[question][i])) grade -= 100/ans_n;//ans_n = how many false answers you can get (if all false answers then ans_n almost 0)
               }
-              console.log(grade);
               }
               else{
               if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
@@ -196,7 +195,6 @@
           function complete_quiz() {
             if(options[question].length == 0){
               for(let i = 0;i<answers[question].length;i++){
-                console.log(answers[question][i]);
               if(!( $('#q' + i).val() == answers[question][i])) grade -= 100/ans_n;
               }
               }

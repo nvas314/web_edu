@@ -146,7 +146,6 @@
                 for(let i = 0;i<answers[question].length;i++){
                 if(!( $('#q' + i).val() == answers[question][i])) grade -= 100/ans_n;//ans_n = how many false answers you can get (if all false answers then ans_n almost 0)
                 }
-                console.log(grade);
                 }
                 else{
                 if (document.querySelectorAll('input[type="radio"]:checked').length === 0) {
