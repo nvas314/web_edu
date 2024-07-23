@@ -43,6 +43,7 @@
                 $_SESSION['user']['current_level'] =2;
                 header('Location: quiz.php?msg1=level_up');
             }
+            else{ header('Location: quiz.php');}
         }
         // else means that current_level==2
         else{
@@ -63,6 +64,7 @@
                 $_SESSION['user']['current_level'] =3;
                 header('Location: quiz.php?msg2=level_up');
             }
+            else{ header('Location: quiz.php');}
         }
     }
 
