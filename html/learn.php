@@ -97,7 +97,7 @@ if (!isset($_SESSION['user'])){
 				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
 				  <use xlink:href="#grid"/>
 				</svg>
-				Γνώση?
+				Γνώση
 			  </a>
 			</li>
             <li>
