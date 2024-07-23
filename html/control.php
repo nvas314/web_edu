@@ -1,11 +1,11 @@
 <?php
         require_once "database_conn.php";
         $form_name=$_POST["form_name"];
-        $username=$_POST["username"];
-        $password=$_POST["password"];
     
 
     if($form_name==='register_form'){
+        $username=$_POST["username"];
+        $password=$_POST["password"];
         $last_name=$_POST["lastname"];
         $first_name=$_POST["firstname"];
         $email=$_POST["email"];
@@ -29,6 +29,8 @@
     }
 
     if($form_name==='login_form'){
+        $username=$_POST["username"];
+        $password=$_POST["password"];
 
         $query1="select * from users 
         where username = '" . $username . "' ";
