@@ -217,7 +217,7 @@ if (!isset($_SESSION['user'])){
                     <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                         aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">intermediate <span
+                <h4 class="small font-weight-bold">Intermediate <span
                         class="float-right">50%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar2" role="progressbar" style="width: 50%"
