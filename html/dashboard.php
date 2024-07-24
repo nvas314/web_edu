@@ -6,16 +6,30 @@ if (!isset($_SESSION['user'])){
 <?php
 $user_id=$_SESSION['user']['user_id'];
 
-function find_query_count($query) {
+  function find_query_count($query) {
+      $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+      $result= mysqli_query($conn,$query);
+      if ($result) {
+        $rowcount = $result->num_rows;
+        return $rowcount;
+      } else {
+                return 0;
+              }
+    } 
+
+  function find_quiz_grade($user_id, $quiz_id){
     $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+    $query="SELECT grade from quiz_grades where  user_id = '" . $user_id . "' AND quiz_id = '" . $quiz_id . "' ";
     $result= mysqli_query($conn,$query);
-    if ($result) {
-      $rowcount = $result->num_rows;
-      return $rowcount;
-    } else {
-              return 0;
-            }
-  } 
+    if($result->num_rows==1){
+      $grade=$result['grade'];
+      return $grade;
+    } else{
+      return 0;
+    }
+  }
+    
+
 ?>
 
 <!DOCTYPE html>
