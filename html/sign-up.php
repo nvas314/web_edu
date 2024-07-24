@@ -37,7 +37,7 @@
 <main>
   <div class="container">
 	<div class="d-flex justify-content-center h-100">
-		<div class="card" style="height:520px;">
+		<div class="card" style="height:575px;">
 			<div class="card-header">
 				<h3>Δημιουργία νέου λογαριασμού</h3>
 			</div>
@@ -85,22 +85,18 @@
 					<div class="form-group">
 						<input type="submit" value="Εγγραφή" class="btn float-right login_btn">
 					</div>
-  <!-- Modified today start-->
-						
 					<input type="hidden" name="form_name" value="register_form">
- <!-- Modified today end-->			
 				</form>
 			</div>
-  <!-- Modified today start-->
-			<?php if (isset($_GET['msg2'])): ?>
-				<p class="text-middle" style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">Username already exists! Use another username to create your account.</p>
-			<?php endif; ?>
- <!-- Modified today end-->
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
 					Έχετε ήδη λογαριασμό;<a href="sign-in.php">Σύνδεση</a>
 				</div>
-			</div><br>
+			</div>
+			<?php if (isset($_GET['msg2'])): ?>
+				<p class="text-middle" style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">Username already exists! Use another username to create your account.</p>
+			<?php endif; ?>
+			<br>
 			<a href="index.php" class="btn btn-outline-secondary" role="button" aria-pressed="true">Επιστροφή στην αρχική</a>
 		</div>
 	</div>
@@ -110,14 +106,18 @@
 <script >
 	function emfanish_kwdikou() //show password
         {
-            var x = document.getElementById("password");
-            if (x.type === "password")
+			var x = document.getElementById("password");
+			var y = document.getElementById("password2");
+            if (x.type === "password" || y.type === "password2")
                 {
                     x.type = "text";
+					y.type = "text";
                 }
                 else
                 {
                     x.type = "password";
+					y.type = "password";
+					
                 }
         }
 		
