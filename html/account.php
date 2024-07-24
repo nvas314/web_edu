@@ -129,25 +129,25 @@ if (!isset($_SESSION['user'])){
         </div>
       </div>
     </div>
-    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto">
+    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto d-flex justify-content-center">
       <div class="d-grid gap-2">
-        <div class="card border-secondary mb-3" style="max-width: 18rem;">
+        <div class="card border-secondary mb-3" >
           <div class="card-header">Λεπτομέρειες λογαριασμού</div>
           <div class="card-body text-secondary">
             <h5 class="card-title">Στοιχεία χρήστη:</h5>
             <p class="card-text">
-            <br>Username:<b><?php echo $_SESSION['user']['username'];?></b>
-            <br>Όνομα:<b><?php echo $_SESSION['user']['first_name'];?></b>
-            <br>Επώνυμο:<b><?php echo $_SESSION['user']['last_name'];?></b>
-            <br>Email:<b><?php echo $_SESSION['user']['email'];?></b>
-            <br>Επίπεδο:<b> <?php if($_SESSION['user']['current_level']==1){echo 'Αρχάριο';}
-                              elseif($_SESSION['user']['current_level']==1){echo 'Μεσαίο';}
+            <br>Username: <b><?php echo $_SESSION['user']['username'];?></b>
+            <br>Όνομα: <b><?php echo $_SESSION['user']['first_name'];?></b>
+            <br>Επώνυμο: <b><?php echo $_SESSION['user']['last_name'];?></b>
+            <br>Email: <b><?php echo $_SESSION['user']['email'];?></b>
+            <br>Επίπεδο: <b> <?php if($_SESSION['user']['current_level']==1){echo 'Αρχάριο';}
+                              elseif($_SESSION['user']['current_level']==2){echo 'Μεσαίο';}
                               else{echo 'Προχωρημένο';}?></b>
               <br><br>
               <!-- Button trigger modal -->
 
 
-<!-- Modal -->
+<!-- Modal (not used)-->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
