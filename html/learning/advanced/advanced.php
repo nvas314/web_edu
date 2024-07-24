@@ -5,9 +5,6 @@ if ($_SESSION['user']['current_level']<3){
 
 } ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,7 +79,6 @@ if ($_SESSION['user']['current_level']<3){
             <a class="nav-link" href="#item-4">Κεφάλαιο 12</a>
             <nav class="nav nav-pills flex-column">
               <a class="nav-link ms-3 my-1" href="#item-4-1">Ενότητα 12.1</a>
-              <a class="nav-link ms-3 my-1" href="#item-4-2">Ενότητα 12.2</a>
             </nav>
 
           </nav>

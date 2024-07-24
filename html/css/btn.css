@@ -35,12 +35,4 @@
       background-color: rgb(108, 117, 125,0.6) !important;
       color: black;
     }
-    a .btn-logout{
-      background-color: rgb(120,172,153) !important;
-    }
-    a .btn-logout:hover{
-      background-color: rgb(108, 117, 125,0.6) !important;
-      color: black;
-    }
-
     

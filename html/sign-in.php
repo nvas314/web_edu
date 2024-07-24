@@ -69,7 +69,7 @@
 					Δεν έχετε λογαριασμό;<a href="sign-up.php">Εγγραφή</a>
 				</div>
 				<div class="d-flex justify-content-center">
-					<a href="forget.html">Ξεχάσατε τον κωδικό σας;</a>
+					<a href="#">Ξεχάσατε τον κωδικό σας;</a>
 				</div>
 			</div>
 			<br>

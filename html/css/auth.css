@@ -2,7 +2,6 @@
 align-content: center;
 align-items: center;
 height: 95vh;
-
 }
 
 .card{
@@ -26,7 +25,6 @@ border:0;
 input:focus{
 outline: 0 0 0 0;
 box-shadow: 0 0 0 0;
-
 }
 
 .show{
