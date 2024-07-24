@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ($_SESSION['user']['current_level']<3){
+  header('Location:  ../../learn.php?msg1=user_level_error');
+
+} ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
