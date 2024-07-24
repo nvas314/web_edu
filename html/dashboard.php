@@ -342,16 +342,16 @@ function find_query_count($query) {
               <div class="container">
                 <div class="d-grid gap-3">
                 <div class="row align-items-center">
-              <button type="button" class="btn btn-lg btn-custom1" data-toggle="popover" title="Completed all puzzles in novice mode" data-content="Completed after completing all the novice tests">Novice complete</button>
+              <button id="b1" type="button" class="btn btn-lg btn-custom1" data-toggle="popover" title="Completed all puzzles in novice mode" data-content="Completed after completing all the novice tests">Novice complete</button>
                 </div>
               <div class="row align-items-center">
-              <button type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intermediate mode" data-content="Completed after completing all the intermediate tests">Intermediate complete</button>
+              <button id="b2" type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intermediate mode" data-content="Completed after completing all the intermediate tests">Intermediate complete</button>
             </div>
               <div class="row align-items-center">
-              <button type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Completed all puzzles in advanced mode" data-content="Completed after completing all the advanced tests">Advanced complete</button>
+              <button id="b3" type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Completed all puzzles in advanced mode" data-content="Completed after completing all the advanced tests">Advanced complete</button>
             </div>
               <div class="row align-items-center">
-              <button type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Finish all advanced puzzles with grade 100" data-content="Completed after completing all the advanced tests with grade 100%">Advanced master</button>
+              <button id="b4" type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Finish all advanced puzzles with grade 100" data-content="Completed after completing all the advanced tests with grade 100%">Advanced master</button>
             </div>
           </div>
             </div>
@@ -368,15 +368,15 @@ function find_query_count($query) {
   $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
   });
-  
+  //take grades from swl to php and pass them as JSON
   grades = JSON.parse('<?php $query = "SELECT * FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 1 AND 9";echo json_encode(return_array($query)); ?>');
 
-  set_values();
+  set_values();//set non dynamic bars
 
 
   var b = document.getElementById("grade_bars");
   var i = 0;
-  function addElement(g, i, c) {
+  function addElement(g, i, c) {//Add dynamic html for bar
     var newh = document.createElement("h4");
     newh.className = "small font-weight-bold";
     newh.id = "ppp";
@@ -398,10 +398,7 @@ function find_query_count($query) {
     b.insertBefore(newDiv, my_div);
   }
   
-  function add(accumulator, a) {
-    return accumulator + a;
-  }
-  function remove() {
+  function remove() {//Remove current bars
     for (let j = 0; j < total_questions *2 ; j++) {
       document.getElementById("ppp").remove();
     }
@@ -410,7 +407,6 @@ function find_query_count($query) {
   var total_questions = 0;
   function showgrades(d) {
     remove();
-    console.log(total_questions);
     total_questions = 0;
     start=Math.floor(Object.keys(grades).length * (d-1)/3)
     finish=Math.floor(Object.keys(grades).length * d/3)
@@ -433,26 +429,43 @@ function find_query_count($query) {
 
   function set_values(){  
     a=[0,0,0,0];
-    s=[<?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 AND quiz_id BETWEEN 1 AND 9";echo find_query_count($query);?>,
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 AND quiz_id BETWEEN 10 AND 18";echo find_query_count($query);?>,
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 AND quiz_id BETWEEN 19 AND 27";echo find_query_count($query);?>,
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 ";echo find_query_count($query);?>]
+    b1=1;//Novice Complete
+    b2=1;//Intimidate Complete
+    b3=1;//Advanced Complete
+    b4=1;//Advanced master
     for (let j = 0; j < 3; j++) {
     sum=0;
     for (let i = j*9; i < j*9+9; i++) {
       sum+= +grades[i];
-      console.log(sum);
+      if(j==0){
+        if(grades[i] < 50){//if a test is not completed
+          document.getElementById("b1").style.visibility = "hidden";//Remove badge
+        }
+      }
+      if(j==1){
+        if(grades[i] < 50){
+          document.getElementById("b2").style.visibility = "hidden";
+        }
+      }
+      if(j==2){
+        if(grades[i] < 50){
+          document.getElementById("b3").style.visibility = "hidden";
+        }
+        if(grades[i] < 100){
+          document.getElementById("b4").style.visibility = "hidden";
+        }
+      }
     }
     a[j] = Math.floor(sum/9);
     }
-    a[3]= Math.floor((a[0]+a[1]+a[2])/9);
+    a[3]= Math.floor((a[0]+a[1]+a[2])/9);//Total average
     
 
     for(let i=1;i<=4;i++){
     document.getElementById("total_bar"+i).innerHTML = s[i-1]+"%";
-    document.getElementById("total_bar"+i+"2").style = "width: "+ s[i-1]+"%";
+    document.getElementById("total_bar"+i+"2").style = "width: "+ s[i-1]+"%";//Progression % Completed values
     document.getElementById("average_bar"+i).innerHTML = a[i-1]+"%";
-    document.getElementById("average_bar"+i+"2").style = "width: "+ a[i-1]+"%";
+    document.getElementById("average_bar"+i+"2").style = "width: "+ a[i-1]+"%";//Average Grade % values
     }
   }
   </script>
