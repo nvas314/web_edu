@@ -208,7 +208,13 @@
               if(grade<0){
                 grade=0;
               }
-                alert("Bravo, your grade is " + grade);
+              alert("Your grade is " + grade);
+              if(grade<50){
+                alert("Better luck next time.");
+              }
+              else{
+                alert("You Passed!");
+              }
                 document.getElementById('grade').value = grade;
                 document.getElementById('quiz_id').value = quizId;
                 document.getElementById('form_name').value = 'grade_form';
