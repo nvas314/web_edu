@@ -15,7 +15,19 @@ function find_query_count($query) {
     } else {
               return 0;
             }
-  } 
+  }
+
+  function return_array($query) {
+    //$a=array();
+    $a = new SplFixedArray(27);
+    $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+    $result= mysqli_query($conn,$query);
+    while($row = $result->fetch_assoc()) {
+      //array_push($a,$row['grade']);
+      $a[$row['quiz_id']-1]=$row['grade'];
+    }
+    return $a;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -154,8 +166,8 @@ function find_query_count($query) {
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για αρχάριους:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 1 AND 9";
+						<div id="total_novice" class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50 AND quiz_id BETWEEN 1 AND 9";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -174,8 +186,8 @@ function find_query_count($query) {
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>μεσαίου επιπέδου:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 10 AND 18";
+						<div id="total_intimidtate" class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50 AND quiz_id BETWEEN 10 AND 18";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -194,8 +206,8 @@ function find_query_count($query) {
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για προχωρημένους:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 19 AND 27";
+						<div id="total_advanced" class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50 AND quiz_id BETWEEN 19 AND 27";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -240,28 +252,28 @@ function find_query_count($query) {
             </div>
             <div class="card-body">
                 <h4 class="small font-weight-bold">Novice <span
-                        class="float-right">70%</span></h4>
+                        id="total_bar1" class="float-right">70%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar1" role="progressbar" style="width: 70%"
-                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    id="total_bar12" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <h4 class="small font-weight-bold">Intermediate <span
-                        class="float-right">50%</span></h4>
+                id="total_bar2" class="float-right">50%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar2" role="progressbar" style="width: 50%"
-                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    id="total_bar22" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <h4 class="small font-weight-bold">Advanced <span
-                        class="float-right">20%</span></h4>
+                id="total_bar3" class="float-right">20%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar3" role="progressbar" style="width: 20%"
-                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    id="total_bar32" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <h4 class="small font-weight-bold">Total <span
-                        class="float-right">45%</span></h4>
+                id="total_bar4" class="float-right">45%</span></h4>
                 <div class="progress">
                     <div class="progress-bar bar4" role="progressbar" style="width: 45%"
-                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
+                    id="total_bar42" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
                 </div>
             </div>
         </div>
@@ -271,28 +283,28 @@ function find_query_count($query) {
           </div>
           <div class="card-body">
               <h4 class="small font-weight-bold">Novice <span
-                      class="float-right">70%</span></h4>
+              id="average_bar1" class="float-right">70%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar1" role="progressbar" style="width: 70%"
-                      aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                  id="average_bar12" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               <h4 class="small font-weight-bold">Intermediate <span
-                      class="float-right">50%</span></h4>
+              id="average_bar2" class="float-right">50%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar2" role="progressbar" style="width: 50%"
-                      aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  id="average_bar22"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               <h4 class="small font-weight-bold">Advanced <span
-                      class="float-right">20%</span></h4>
+              id="average_bar3" class="float-right">20%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar3" role="progressbar" style="width: 20%"
-                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  id="average_bar32" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               <h4 class="small font-weight-bold">Total <span
-                      class="float-right">45%</span></h4>
+              id="average_bar4" class="float-right">45%</span></h4>
               <div class="progress">
                   <div class="progress-bar bar4" role="progressbar" style="width: 45%"
-                      aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
+                  id="average_bar42" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
               </div>
             </div>
           </div>
@@ -303,15 +315,15 @@ function find_query_count($query) {
               <h6 class="m-0 font-weight-bold text-dark">Βαθμολογία ανά επίπεδο</h6>
           </div>
           <div class="card-body" id="grade_bars">
-            <button type="button" class="btn btn-custom1" onclick="set_novice()">Novice</button>
-            <button type="button" class="btn btn-custom2" onclick="set_intermediate()">Intermediate</button>
-            <button type="button" class="btn btn-custom3" onclick="set_advanced()">Advanced</button>
+            <button type="button" class="btn btn-custom1" onclick="showgrades(1)">Novice</button>
+            <button type="button" class="btn btn-custom2" onclick="showgrades(2)">Intermediate</button>
+            <button type="button" class="btn btn-custom3" onclick="showgrades(3)">Advanced</button>
             <br><br><br>
               <div id="gr"></div>
-              <h4 class="small font-weight-bold">Total: <span
-                      class="float-right" id="prgth">70%</span></h4>
-              <div class="progress">
-                  <div class="progress-bar bar4" id="prgt" role="progressbar" style="width: 70%"
+              <h4 class="small font-weight-bold" id="total_levels">Total: <span
+                      class="float-right" id="prgth">0%</span></h4>
+              <div class="progress"  id="total_levels2">
+                  <div class="progress-bar bar4" id="prgt" role="progressbar" style="width: 0%"
                       aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
           </div>
@@ -357,17 +369,18 @@ function find_query_count($query) {
     $('[data-toggle="popover"]').popover();   
   });
   
-  grades_novice = [70,50,60,20,30,10,15];
-  grades_intermediate = [60,30,20,70,20,50,40];
-  grades_advanced = [20,10,10,10,30,10,20];
+  grades = JSON.parse('<?php $query = "SELECT * FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 1 AND 9";echo json_encode(return_array($query)); ?>');
+
+  set_values();
+
+
   var b = document.getElementById("grade_bars");
   var i = 0;
-  
   function addElement(g, i, c) {
     var newh = document.createElement("h4");
     newh.className = "small font-weight-bold";
     newh.id = "ppp";
-    newh.innerHTML = i + ": " + g + "%";
+    newh.innerHTML = i + ": " + g;
     var news = document.createElement("span");
     news.className = "float-right";
     var newDiv = document.createElement("div");
@@ -375,7 +388,7 @@ function find_query_count($query) {
     newDiv.id = "ppp";
     var newContent = document.createElement("div");
     newContent.className = "progress-bar " + c;
-    newContent.style = "width: " + g + "%";
+    newContent.style = "width: " + g;
     newh.appendChild(news);
     newDiv.appendChild(newh);
     newDiv.appendChild(newContent);
@@ -388,42 +401,59 @@ function find_query_count($query) {
   function add(accumulator, a) {
     return accumulator + a;
   }
-  
   function remove() {
-    for (let j = 0; j < i * 2; j++) {
+    for (let j = 0; j < total_questions *2 ; j++) {
       document.getElementById("ppp").remove();
     }
     i = 0;
   }
-  
-  function set_novice() {
+  var total_questions = 0;
+  function showgrades(d) {
     remove();
-    grades_novice.forEach(g => {
-      i += 1;
-      addElement(g, "Level " + i, "bar1");
-    });
-    document.getElementById("prgth").innerHTML = parseInt(grades_novice.reduce(add, 0) / 7) + "%";
-    document.getElementById("prgt").style = "width: " + parseInt(grades_novice.reduce(add, 0) / 7) + "%";
+    console.log(total_questions);
+    total_questions = 0;
+    start=Math.floor(Object.keys(grades).length * (d-1)/3)
+    finish=Math.floor(Object.keys(grades).length * d/3)
+    total=0
+    for (let i=start;i<finish;i++){
+      count=i+1
+      if (grades[i]==null){
+        addElement("Not played", "Level " +count, "bar1");
+      }
+      else{
+        addElement(grades[i]+"%", "Level " +count, "bar1");
+      }
+      total+=grades[i]/(Object.keys(grades).length/3);
+      total=Math.floor(total);
+      total_questions += 1;
+    }
+    document.getElementById("prgth").innerHTML = total + "%";
+    document.getElementById("prgt").style = "width: " + total + "%";
   }
-  
-  function set_intermediate() {
-    remove();
-    grades_intermediate.forEach(g => {
-      i += 1;
-      addElement(g, "Level " + i, "bar2");
-    });
-    document.getElementById("prgth").innerHTML = parseInt(grades_intermediate.reduce(add, 0) / 7) + "%";
-    document.getElementById("prgt").style = "width: " + parseInt(grades_intermediate.reduce(add, 0) / 7) + "%";
-  }
-  
-  function set_advanced() {
-    remove();
-    grades_advanced.forEach(g => {
-      i += 1;
-      addElement(g, "Level " + i, "bar3");
-    });
-    document.getElementById("prgth").innerHTML = parseInt(grades_advanced.reduce(add, 0) / 7) + "%";
-    document.getElementById("prgt").style = "width: " + parseInt(grades_advanced.reduce(add, 0) / 7) + "%";
+
+  function set_values(){  
+    a=[0,0,0,0];
+    s=[<?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 AND quiz_id BETWEEN 1 AND 9";echo find_query_count($query);?>,
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 AND quiz_id BETWEEN 10 AND 18";echo find_query_count($query);?>,
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 AND quiz_id BETWEEN 19 AND 27";echo find_query_count($query);?>,
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade=>50 ";echo find_query_count($query);?>]
+    for (let j = 0; j < 3; j++) {
+    sum=0;
+    for (let i = j*9; i < j*9+9; i++) {
+      sum+= +grades[i];
+      console.log(sum);
+    }
+    a[j] = Math.floor(sum/9);
+    }
+    a[3]= Math.floor((a[0]+a[1]+a[2])/9);
+    
+
+    for(let i=1;i<=4;i++){
+    document.getElementById("total_bar"+i).innerHTML = s[i-1]+"%";
+    document.getElementById("total_bar"+i+"2").style = "width: "+ s[i-1]+"%";
+    document.getElementById("average_bar"+i).innerHTML = a[i-1]+"%";
+    document.getElementById("average_bar"+i+"2").style = "width: "+ a[i-1]+"%";
+    }
   }
   </script>
 
