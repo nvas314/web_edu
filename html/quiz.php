@@ -153,7 +153,7 @@ if (!isset($_SESSION['user'])){
       <div class="card-body">
         <h5 class="card-title">Προχωρημένο επίπεδο</h5>
         <p class="card-text">Συνεκτική μελέτη της τέχνης και της επιρροής της Ακρόπολης στην παγκόσμια κληρονομιά.</p>
-        <a href="quiz/advanced.html" class="btn btn-custom3">Έναρξη Quiz lvl 3</a>
+        <a href="quiz/advanced.php" class="btn btn-custom3">Έναρξη Quiz lvl 3</a>
       </div>
     </div>
   </div>
