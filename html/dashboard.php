@@ -178,7 +178,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για αρχάριους:</div>
 						<div id="total_novice" class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND quiz_id BETWEEN 1 AND 9";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND grade>=50 AND quiz_id BETWEEN 1 AND 9";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -198,7 +198,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>μεσαίου επιπέδου:</div>
 						<div id="total_intimidtate" class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND quiz_id BETWEEN 10 AND 18";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50  AND quiz_id BETWEEN 10 AND 18";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -218,7 +218,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για προχωρημένους:</div>
 						<div id="total_advanced" class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND quiz_id BETWEEN 19 AND 27";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50  AND quiz_id BETWEEN 19 AND 27";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -238,7 +238,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Συνολικά quiz που <br> ολοκληρώθηκαν:</div>
 						<div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' ";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND grade>=50";
             echo find_query_count($query);?>
             </div>
 					</div>
