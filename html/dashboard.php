@@ -259,28 +259,29 @@ $user_id=$_SESSION['user']['user_id'];
           <!-- Project Card Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-dark">Progression % Completed</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Πρόοδος % Ολοκλήρωσης ανά επίπεδο
+                </h6>
             </div>
             <div class="card-body">
-                <h4 class="small font-weight-bold">Novice <span
+                <h4 class="small font-weight-bold">Αρχάριο <span
                         id="total_bar1" class="float-right">70%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                     id="total_bar12" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">Intermediate <span
+                <h4 class="small font-weight-bold">Μεσαίο <span
                 id="total_bar2" class="float-right">50%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar2" role="progressbar" style="width: 50%"
                     id="total_bar22" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">Advanced <span
+                <h4 class="small font-weight-bold">Προχωρημένο <span
                 id="total_bar3" class="float-right">20%</span></h4>
                 <div class="progress mb-4">
                     <div class="progress-bar bar3" role="progressbar" style="width: 20%"
                     id="total_bar32" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <h4 class="small font-weight-bold">Total <span
+                <h4 class="small font-weight-bold">Σύνολο <span
                 id="total_bar4" class="float-right">45%</span></h4>
                 <div class="progress">
                     <div class="progress-bar bar4" role="progressbar" style="width: 45%"
@@ -290,28 +291,28 @@ $user_id=$_SESSION['user']['user_id'];
         </div>
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-dark">Average Grade %</h6>
+              <h6 class="m-0 font-weight-bold text-dark">Μέσος Όρος Βαθμολογίας % ανά επίπεδο</h6>
           </div>
           <div class="card-body">
-              <h4 class="small font-weight-bold">Novice <span
+              <h4 class="small font-weight-bold">Αρχάριο <span
               id="average_bar1" class="float-right">70%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar1" role="progressbar" style="width: 70%"
                   id="average_bar12" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <h4 class="small font-weight-bold">Intermediate <span
+              <h4 class="small font-weight-bold">μεσαίο <span
               id="average_bar2" class="float-right">50%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar2" role="progressbar" style="width: 50%"
                   id="average_bar22"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <h4 class="small font-weight-bold">Advanced <span
+              <h4 class="small font-weight-bold">Προχωρημένο <span
               id="average_bar3" class="float-right">20%</span></h4>
               <div class="progress mb-4">
                   <div class="progress-bar bar3" role="progressbar" style="width: 20%"
                   id="average_bar32" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-              <h4 class="small font-weight-bold">Total <span
+              <h4 class="small font-weight-bold">Σύνολο <span
               id="average_bar4" class="float-right">45%</span></h4>
               <div class="progress">
                   <div class="progress-bar bar4" role="progressbar" style="width: 45%"
@@ -326,9 +327,9 @@ $user_id=$_SESSION['user']['user_id'];
               <h6 class="m-0 font-weight-bold text-dark">Βαθμολογία ανά επίπεδο</h6>
           </div>
           <div class="card-body" id="grade_bars">
-            <button type="button" class="btn btn-custom1" onclick="showgrades(1)">Novice</button>
-            <button type="button" class="btn btn-custom2" onclick="showgrades(2)">Intermediate</button>
-            <button type="button" class="btn btn-custom3" onclick="showgrades(3)">Advanced</button>
+            <button type="button" class="btn btn-custom1" onclick="showgrades(1)">Αρχάριο</button>
+            <button type="button" class="btn btn-custom2" onclick="showgrades(2)">Μεσαίο</button>
+            <button type="button" class="btn btn-custom3" onclick="showgrades(3)">Προχωρημένο</button>
             <br><br><br>
               <div id="gr"></div>
               <h4 class="small font-weight-bold" id="total_levels">Total: <span
@@ -347,22 +348,22 @@ $user_id=$_SESSION['user']['user_id'];
       <div class="col-lg-6 mb-4" style="width:1000px;">
           <div class="card shadow mb-4 col-4" >
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-dark">Badges</h6>
+                <h6 class="m-0 font-weight-bold text-dark">Κονκάρδες</h6>
             </div>
             <div class="card-body">
               <div class="container">
                 <div class="d-grid gap-3">
                 <div class="row align-items-center">
-              <button id="b1" type="button" class="btn btn-lg btn-custom1" data-toggle="popover" title="Completed all puzzles in novice mode" data-content="Completed after completing all the novice tests">Novice complete</button>
+              <button id="b1" type="button" class="btn btn-lg btn-custom1" data-toggle="popover" title="Ολοκληρώθηκαν όλα τα κουίζ στο αρχάριο επίπεδο" data-content="Completed after completing all the novice tests">Αρχάριο ολοκληρωμένο</button>
                 </div>
               <div class="row align-items-center">
-              <button id="b2" type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Completed all puzzles in intermediate mode" data-content="Completed after completing all the intermediate tests">Intermediate complete</button>
+              <button id="b2" type="button" class="btn btn-lg btn-custom2" data-toggle="popover" title="Ολοκληρώθηκαν όλα τα κουίζ στο μεσαίο επίπεδο" data-content="Completed after completing all the intermediate tests">Μεσαίο ολοκληρωμένο</button>
             </div>
               <div class="row align-items-center">
-              <button id="b3" type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Completed all puzzles in advanced mode" data-content="Completed after completing all the advanced tests">Advanced complete</button>
+              <button id="b3" type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Ολοκληρώθηκαν όλα τα κουίζ στο προχωρημένο επίπεδο" data-content="Completed after completing all the advanced tests">Προχωρημένο ολοκληρωμένο</button>
             </div>
               <div class="row align-items-center">
-              <button id="b4" type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Finish all advanced puzzles with grade 100" data-content="Completed after completing all the advanced tests with grade 100%">Advanced master</button>
+              <button id="b4" type="button" class="btn btn-lg btn-custom3" data-toggle="popover" title="Ολοκληρώθηκαν όλα τα κουίζ στο προχωρημένο επίπεδο με βαθμολογία 100%" data-content="Completed after completing all the advanced tests with grade 100%">Προχωρημένο ολοκληρωμένο με 100%</button>
             </div>
           </div>
             </div>
