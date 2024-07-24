@@ -345,7 +345,7 @@ $user_id=$_SESSION['user']['user_id'];
     <div class="row">
 
       <!-- Content Column -->
-      <div class="col-lg-6 mb-4" style="width:1000px;">
+      <div class="col-lg-6 mb-4" style="width:1500px;">
           <div class="card shadow mb-4 col-4" >
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-dark">Κονκάρδες</h6>
