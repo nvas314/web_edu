@@ -461,6 +461,8 @@ $user_id=$_SESSION['user']['user_id'];
     sum=0;
     for (let i = j*9; i < j*9+9; i++) {
       sum+= +grades[i];
+        console.log(a);
+        console.log(s);
       if(j==0){
         if(grades[i] < 50){//if a test is not completed
           document.getElementById("b1").style.visibility = "hidden";//Remove badge
@@ -494,8 +496,11 @@ $user_id=$_SESSION['user']['user_id'];
     }
     a[3]= (a[0]+a[1]+a[2])/3;//Total average
     s[3]= (s[0]+s[1]+s[2])/3;//Total completed
+    
+    console.log(a);
+        console.log(s);
     for(let i=0;i<4;i++){
-      a[i] = Math.floor(s[i]);
+      a[i] = Math.floor(a[i]);
       s[i] = Math.floor(s[i]);
     }
     if(a[3]==99){
@@ -505,6 +510,8 @@ $user_id=$_SESSION['user']['user_id'];
       s[3]=100;
     }
     
+    console.log(a);
+        console.log(s);
 
     for(let i=1;i<=4;i++){
     document.getElementById("total_bar"+i).innerHTML = s[i-1]+"%";
