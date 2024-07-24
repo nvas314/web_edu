@@ -135,11 +135,13 @@ if (!isset($_SESSION['user'])){
           <div class="card-body text-secondary">
             <h5 class="card-title">Στοιχεία χρήστη:</h5>
             <p class="card-text">
-              Όνομα: 
-              <br>Επώνυμο:
-              <br>Time active:
-              <br>Username:<b> Something &ensp; </b><a href="#">Αλλαγή</a>
-              <br>Κωδικός:<b> ********* &ensp; </b><a href="#">Αλλαγή</a>
+            <br>Username:<b><?php echo $_SESSION['user']['username'];?></b>
+            <br>Όνομα:<b><?php echo $_SESSION['user']['first_name'];?></b>
+            <br>Επώνυμο:<b><?php echo $_SESSION['user']['last_name'];?></b>
+            <br>Email:<b><?php echo $_SESSION['user']['email'];?></b>
+            <br>Επίπεδο:<b> <?php if($_SESSION['user']['current_level']==1){echo 'Αρχάριο';}
+                              elseif($_SESSION['user']['current_level']==1){echo 'Μεσαίο';}
+                              else{echo 'Προχωρημένο';}?></b>
               <br><br>
               <!-- Button trigger modal -->
 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">

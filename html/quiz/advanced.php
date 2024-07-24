@@ -1,13 +1,22 @@
+<?php
+session_start();
+if ($_SESSION['user']['current_level']<3){
+  header('Location: ../quiz.php?msg3=user_level_error');
+
+} ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Μεσαίο επίπεδο quiz</title>
+    <title>Προχωρημένο επίπεδο quiz</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <link rel="icon" href="../../ico.png">
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/btn.css" />
+
     <meta
       name="author"
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
@@ -20,16 +29,17 @@
       href="https://getbootstrap.com/docs/5.3/examples/sidebars/"
     />
     <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Lesson 1 / Advanced</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
     />
     <style>
       header {
-        background-image: url('../img/yellow.jpg');
+        background-image: url('../img/red.jpg');
       }
       .card-header{
-        background-image: url('../img/yellow_light.jpg');
+        background-image: url('../img/red_light.jpg');
       }
     </style>
   </head>
@@ -38,7 +48,7 @@
       <div class="row">
         <header class="py-3 mb-3 fixed-top">
           <div class="container-fluid d-flex justify-content-between align-items-center">
-            <span class="fs-4">Μεσαίο επίπεδο quiz</span>
+            <span class="fs-4">Προχωρημένο επίπεδο quiz</span>
             <div>
               <a href="../quiz.php"><button type="button" class="btn btn-outline-dark float-right">Επιστροφή</button></a>
             </div>
@@ -49,37 +59,37 @@
     <div class="container" style="padding-top:200px;">
       <div class="row">
         <div class="col-sm">
-          <div class="card border-warning mb-3" style="text-align:center;max-width: 12rem;">
-            <div class="card-header">Κεφάλαιο 4</div>
+          <div class="card border-danger mb-3" style="text-align:center;max-width: 12rem;">
+            <div class="card-header">Κεφάλαιο 7</div>
             <div class="card-body">
-              <a href="intermediate/quiz_intermediate.html?quizId=10"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 10</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=11"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 11</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=12"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 12</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=19"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 19</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=20"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(1)" onmouseout="reset_text()">Quiz 20</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=21"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 21</button></a>
             </div>
           </div>
         </div>
         <div class="col-sm">
-          <div class="card border-warning mb-3" style="text-align:center;max-width: 12rem;">
-            <div class="card-header">Κεφάλαιο 5</div>
+          <div class="card border-danger mb-3" style="text-align:center;max-width: 12rem;">
+            <div class="card-header">Κεφάλαιο 8</div>
             <div class="card-body">
-              <a href="intermediate/quiz_intermediate.html?quizId=13"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 13</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=14"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 14</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=15"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 15</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=22"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 22</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=23"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(2)" onmouseout="reset_text()">Quiz 23</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=24"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 24</button></a>
             </div>
           </div>
         </div>
         <div class="col-sm">
-          <div class="card border-warning mb-3" style="text-align:center;max-width: 12rem;">
-            <div class="card-header">Κεφάλαιο 6</div>
+          <div class="card border-danger mb-3" style="text-align:center;max-width: 12rem;">
+            <div class="card-header">Κεφάλαιο 9</div>
             <div class="card-body">
-              <a href="intermediate/quiz_intermediate.html?quizId=16"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 16</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=17"><button class="btn btn-custom2 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 17</button></a>
-              <a href="intermediate/quiz_intermediate.html?quizId=18"><button class="btn btn-custom2 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 18</button></a>
-            </div>
+              <a href="advanced/quiz_advanced.php?quizId=25"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 25</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=26"><button class="btn btn-custom3 rounded-pill px-3 mb-2" type="button" onmouseover="show_text(3)" onmouseout="reset_text()">Quiz 26</button></a>
+              <a href="advanced/quiz_advanced.php?quizId=27"><button class="btn btn-custom3 rounded-pill px-3" type="button" onmouseover="show_text(4)" onmouseout="reset_text()">Quiz 27</button></a>
+            </div> 
           </div>
         </div>
         <div class="col-sm">
-          <div class="card border-warning mb-3" style="max-width: 18rem;">
+          <div class="card border-danger mb-3" style="max-width: 18rem;">
             <div class="card-header">Περιγραφή</div>
             <div class="card-body">
               <h5 class="card-title" id="dh">Κεφάλαιο</h5>
@@ -91,8 +101,8 @@
     </div>
 
     <script>
-      title = ["Κεφάλαιο 5","Κεφάλαιο 6","Κεφάλαιο 7","Κεφάλαιο 8"];
-      description = ["Η ζωή στην αρχαία Ακρόπολη","Η τέχνη και η πολιτιστική σημασία της Ακρόπολης","Η αρχαία Ακρόπολη στη λογοτεχνία και την τέχνη του 21ου αιώνα","Η αρχιτεκτονική του Παρθενώνα\n(Συμπήρωση κενών)"];
+      title = ["Κεφάλαιο 9","Κεφάλαιο 10","Κεφάλαιο 11","Κεφάλαιο 12"];
+      description = ["Η τέχνη στην Ακρόπολη κατά τη ρωμαϊκή και βυζαντινή εποχή","Η αναγέννηση της Ακρόπολης στη μεταβυζαντινή περίοδο","Η Ακρόπολη ως παγκόσμιο μνημείο και πολιτιστική κληρονομιά","Η Θρησκευτική αξία της Ακροπόλεως\n(Συμπήρωση κενών)"];
       //level_name = ["Level 1","Level 2","Level 3","Level 4","Level 5"];
     
       var b = document.getElementById("grade_bars");
@@ -134,14 +144,14 @@
       i=0;
       }
     
-      function set_intermediate(){
+      function set_advanced(){
         remove();
-        grades_intermediate.forEach(g => {
+        grades_advanced.forEach(g => {
         i+=1;
         addElement(g,"Level "+i,"warning");
       });
-      document.getElementById("prgth").innerHTML = parseInt(grades_intermediate.reduce(add, 0)/7)+"%";
-      document.getElementById("prgt").style = "width: "+parseInt(grades_intermediate.reduce(add, 0)/7)+"%";
+      document.getElementById("prgth").innerHTML = parseInt(grades_advanced.reduce(add, 0)/7)+"%";
+      document.getElementById("prgt").style = "width: "+parseInt(grades_advanced.reduce(add, 0)/7)+"%";
       }
     
       function show_text(a){

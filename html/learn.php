@@ -63,6 +63,7 @@ if (!isset($_SESSION['user'])){
     <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
   </symbol>
 </svg>
+
   <!-- ================ header ================= -->
   <header class="default-header">
     <nav class="navbar navbar-expand-lg  navbar-light">
@@ -112,7 +113,6 @@ if (!isset($_SESSION['user'])){
     </nav>
     
   </header>
-	
 	<div class="container" style="padding:60px;">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
     </div>
@@ -138,7 +138,7 @@ if (!isset($_SESSION['user'])){
         <div class="card-body text-warning">
           <h5 class="card-title text-dark">Εμβάθυνση στην ανάλυση των καλλιτεχνικών και ιστορικών πτυχών της Ακρόπολης.</h5>
           <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
-          <a href="learning/intermediate/intermediate.html">
+          <a href="learning/intermediate/intermediate.php">
             <button type="button" class="btn btn-custom2">Μαθήματα lvl 2</button>
           </a>
         </div>
@@ -148,14 +148,22 @@ if (!isset($_SESSION['user'])){
         <div class="card-body text-danger">
           <h5 class="card-title text-dark">Εξειδικευμένη μελέτη στην τέχνη και την επίδραση στην παγκόσμια κληρονομιά.</h5>
           <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
-          <a href="learning/advanced/advanced.html">
+          <a href="learning/advanced/advanced.php">
             <button type="button" class="btn btn-custom3">Μαθήματα lvl 3</button>
           </a>
         </div>
       </div>
     </div>
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+  <br><br><br><br><br><br><br><br>
+  <?php if (isset($_GET['msg1'])): ?>
+  <p style="text-align: center; font: size 20px; background: pink; border: 2px solid maroon; border-radius: 20px; color: #000; padding:1em">
+    Δεν έχεις ξεκλειδώσει ακόμα το εκπαιδευτικό υλικό αυτού του επιπέδου. Συνέχισε να εκπαιδεύεσαι και λύσε ολα τα κουίζ του επιπέδου στο οποιο βρίσκεσαι, ώστε να ανέβεις επίπεδο! </p>
+<?php endif; ?>
+
+  <br><br><br><br><br><br><br><br>
 
 
 </main>
@@ -164,6 +172,10 @@ if (!isset($_SESSION['user'])){
 
 document.getElementById("adv").disabled = true;
 </script>
+
+
+
+
 <!-- ================================= -->
 
 <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
