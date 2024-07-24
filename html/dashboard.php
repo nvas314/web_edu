@@ -3,6 +3,20 @@ if (!isset($_SESSION['user'])){
     header('location: sign-in.php');
 } ?>
 
+<?php
+$user_id=$_SESSION['user']['user_id'];
+
+function find_query_count($query) {
+    $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+    $result= mysqli_query($conn,$query);
+    if ($result) {
+      $rowcount = $result->num_rows;
+      return $rowcount;
+    } else {
+              return 0;
+            }
+  } 
+?>
 
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
@@ -138,7 +152,10 @@ if (!isset($_SESSION['user'])){
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για αρχάριους:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+						<div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 1 AND 9";
+            echo find_query_count($query);?>
+            </div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -155,7 +172,10 @@ if (!isset($_SESSION['user'])){
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>μεσαίου επιπέδου:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+						<div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 10 AND 18";
+            echo find_query_count($query);?>
+            </div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -172,7 +192,10 @@ if (!isset($_SESSION['user'])){
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για προχωρημένους:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+						<div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 19 AND 27";
+            echo find_query_count($query);?>
+            </div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -189,7 +212,10 @@ if (!isset($_SESSION['user'])){
 					<div class="col mr-2">
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Συνολικά quiz που <br> ολοκληρώθηκαν:</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+						<div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' ";
+            echo find_query_count($query);?>
+            </div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>
