@@ -36,7 +36,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-  
 </head>
 
 <body onload="document.body.classList.add('loaded')">
@@ -79,7 +78,7 @@
                 <?php if (!isset($_SESSION['user'])): ?>
                   <button type="button" class="btn btn-outline-light me-2">Σύνδεση</button></a>
                   <a href="sign-up.php">
-                  <button type="button" class="btn" style="background-color:#78ac99;">Εγγραφή</button></a>
+                  <button type="button" class="btn btn-signup">Εγγραφή</button></a>
               <?php endif; ?>
               </div>
             </div>
@@ -101,13 +100,13 @@
             <li>
               <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
+                Κουίζ
               </a>
             </li>
             <li>
               <a href="learn.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Γνώση
+                Υλικό
               </a>
             </li>
             <li>
@@ -116,18 +115,13 @@
                 Προφίλ
               </a>
             </li>
-  <!-- Modified today start-->
-            <?php if (isset($_SESSION['user'])): ?>  
-            <li>
-              <a href="logout.php" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Log out
-              </a>
-            </li>
-            <?php endif; ?>
-  <!-- Modified today end-->
           </ul>
         </div>
+        <!-- Modified today start-->
+          <?php if (isset($_SESSION['user'])): ?>  
+          <a href="logout.php"><button type="button" class="btn btn-dark">Αποσύνδεση</button></a>
+          <?php endif; ?>
+  <!-- Modified today end-->
       </div>
     </nav>
     
@@ -185,7 +179,7 @@
           <div class="feature-item d-flex">
             <i class="ti-book"></i>
             <div class="ml-20">
-              <h4>Κουίζ και Μάθηση</h4>
+              <h4>Κουίζ και<br> Μάθηση</h4>
               <p>
               Ελέγξτε τις γνώσεις σας και ανακαλύψτε τα μυστικά της Ακρόπολης.
               </p>
