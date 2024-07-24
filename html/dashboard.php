@@ -28,8 +28,17 @@ $user_id=$_SESSION['user']['user_id'];
       return 0;
     }
   }
-    
-
+  function return_array($query) {
+    //$a=array();
+    $a = new SplFixedArray(27);
+    $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+    $result= mysqli_query($conn,$query);
+    while($row = $result->fetch_assoc()) {
+      //array_push($a,$row['grade']);
+      $a[$row['quiz_id']-1]=$row['grade'];
+    }
+    return $a;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -169,7 +178,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για αρχάριους:</div>
 						<div id="total_novice" class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND quiz_id BETWEEN 1 AND 9";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND grade>=50 AND quiz_id BETWEEN 1 AND 9";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -189,7 +198,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>μεσαίου επιπέδου:</div>
 						<div id="total_intimidtate" class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND quiz_id BETWEEN 10 AND 18";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50  AND quiz_id BETWEEN 10 AND 18";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -209,7 +218,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Ολοκληρωμένα quiz <br>για προχωρημένους:</div>
 						<div id="total_advanced" class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND quiz_id BETWEEN 19 AND 27";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50  AND quiz_id BETWEEN 19 AND 27";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -229,7 +238,7 @@ $user_id=$_SESSION['user']['user_id'];
 						<div class="text-xs font-weight-bold text-secondary mb-1">
 							Συνολικά quiz που <br> ολοκληρώθηκαν:</div>
 						<div class="h5 mb-0 font-weight-bold text-gray-800">
-            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' ";
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "'  AND grade>=50";
             echo find_query_count($query);?>
             </div>
 					</div>
@@ -371,7 +380,7 @@ $user_id=$_SESSION['user']['user_id'];
     $('[data-toggle="popover"]').popover();   
   });
   //take grades from swl to php and pass them as JSON
-  grades = JSON.parse('<?php $query = "SELECT * FROM quiz_grades WHERE user_id = '" . $user_id . "' AND quiz_id BETWEEN 1 AND 9";echo json_encode(return_array($query)); ?>');
+  grades = JSON.parse('<?php $query = "SELECT * FROM quiz_grades WHERE user_id = '" . $user_id . "'";echo json_encode(return_array($query)); ?>');
 
   set_values();//set non dynamic bars
 
@@ -413,17 +422,29 @@ $user_id=$_SESSION['user']['user_id'];
     start=Math.floor(Object.keys(grades).length * (d-1)/3)
     finish=Math.floor(Object.keys(grades).length * d/3)
     total=0
+    if (d==1) {
+      c = "bar1";
+    }
+    else if (d==2){
+      c = "bar2";
+    }
+    else {
+      c = "bar3";
+    }
     for (let i=start;i<finish;i++){
       count=i+1
       if (grades[i]==null){
-        addElement("Not played", "Level " +count, "bar1");
+        addElement("Not played", "Level " +count, c);
       }
       else{
-        addElement(grades[i]+"%", "Level " +count, "bar1");
+        addElement(grades[i]+"%", "Level " +count, c);
       }
       total+=grades[i]/(Object.keys(grades).length/3);
       total=Math.floor(total);
       total_questions += 1;
+    }
+    if(total==99){
+      total=100;//When flouring , the maximum is 99
     }
     document.getElementById("prgth").innerHTML = total + "%";
     document.getElementById("prgt").style = "width: " + total + "%";
@@ -469,10 +490,20 @@ $user_id=$_SESSION['user']['user_id'];
       }
     }
     a[j] = Math.floor(sum/9);
-    s[j] = Math.floor(s[j]*100/9);
+    s[j] = s[j]*100/9;
     }
-    a[3]= Math.floor((a[0]+a[1]+a[2])/3);//Total average
-    s[3]= Math.floor((s[0]+s[1]+s[2])/3);//Total completed
+    a[3]= (a[0]+a[1]+a[2])/3;//Total average
+    s[3]= (s[0]+s[1]+s[2])/3;//Total completed
+    for(let i=0;i<4;i++){
+      a[i] = Math.floor(s[i]);
+      s[i] = Math.floor(s[i]);
+    }
+    if(a[3]==99){
+      a[3]=100;
+    }
+    if(s[3]==99){
+      s[3]=100;
+    }
     
 
     for(let i=1;i<=4;i++){
