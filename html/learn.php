@@ -3,8 +3,21 @@ if (!isset($_SESSION['user'])){
     header('location: sign-in.php');
 } ?>
 
+<?php
+$user_id=$_SESSION['user']['user_id'];
 
+function find_query_count($query) {
+    $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+    $result= mysqli_query($conn,$query);
+    if ($result) {
+      $rowcount = $result->num_rows;
+      return $rowcount;
+    } else {
+              return 0;
+            }
+  }
 
+?>
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -72,7 +85,6 @@ if (!isset($_SESSION['user'])){
           <img src="img/logo2.png" alt="Logo" />
         </a>
 
-		<div class="container">
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
@@ -90,17 +102,15 @@ if (!isset($_SESSION['user'])){
             <li>
               <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
+                Κουίζ
               </a>
             </li>
             <li>
-			  <a href="#" class="nav-link text-secondary">
-				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
-				  <use xlink:href="#grid"/>
-				</svg>
-				Γνώση
-			  </a>
-			</li>
+              <a href="#" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;"><use xlink:href="#grid"/></svg>
+                Υλικό
+              </a>
+            </li>
             <li>
               <a href="account.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
@@ -109,6 +119,11 @@ if (!isset($_SESSION['user'])){
             </li>
           </ul>
         </div>
+        <!-- Modified today start-->
+          <?php if (isset($_SESSION['user'])): ?>  
+          <a href="logout.php"><button type="button" class="btn btn-dark">Αποσύνδεση</button></a>
+          <?php endif; ?>
+  <!-- Modified today end-->
       </div>
     </nav>
     
@@ -127,7 +142,9 @@ if (!isset($_SESSION['user'])){
         <div class="card-header text-dark">Αρχάριο επίπεδο μάθησης</div>
         <div class="card-body text-primary">
           <h5 class="card-title text-dark">Βασική γνώση για την ιστορία και την αρχιτεκτονική της Ακρόπολης.</h5>
-          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50 AND quiz_id BETWEEN 1 AND 9";
+            echo find_query_count($query);?></span></h2>
           <a href="learning/novice/novice.html">
             <button type="button" class="btn btn-custom1">Μαθήματα lvl 1</button>
           </a>
@@ -137,7 +154,9 @@ if (!isset($_SESSION['user'])){
         <div class="card-header text-dark">Μεσαίο επίπεδο μάθησης</div>
         <div class="card-body text-warning">
           <h5 class="card-title text-dark">Εμβάθυνση στην ανάλυση των καλλιτεχνικών και ιστορικών πτυχών της Ακρόπολης.</h5>
-          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50 AND quiz_id BETWEEN 10 AND 18";
+            echo find_query_count($query);?></span></h2>
           <a href="learning/intermediate/intermediate.php">
             <button type="button" class="btn btn-custom2">Μαθήματα lvl 2</button>
           </a>
@@ -147,7 +166,9 @@ if (!isset($_SESSION['user'])){
         <div class="card-header text-dark">Προχωρημένο επίπεδο μάθησης</div>
         <div class="card-body text-danger">
           <h5 class="card-title text-dark">Εξειδικευμένη μελέτη στην τέχνη και την επίδραση στην παγκόσμια κληρονομιά.</h5>
-          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>3</span></h2>
+          <h2 class="text-right"><i class="fa fa-check-circle" aria-hidden="true"></i><span>
+            <?php $query = "SELECT grade FROM quiz_grades WHERE user_id = '" . $user_id . "' AND grade>=50 AND quiz_id BETWEEN 19 AND 27";
+            echo find_query_count($query);?></span></h2>
           <a href="learning/advanced/advanced.php">
             <button type="button" class="btn btn-custom3">Μαθήματα lvl 3</button>
           </a>

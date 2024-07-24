@@ -74,7 +74,6 @@ if (!isset($_SESSION['user'])){
           <img src="img/logo2.png" alt="Logo" />
         </a>
 
-		<div class="container">
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
@@ -90,17 +89,15 @@ if (!isset($_SESSION['user'])){
               </a>
             </li>
             <li>
-			  <a href="#" class="nav-link text-secondary">
-				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
-				  <use xlink:href="#table"/>
-				</svg>
-				Quiz
-			  </a>
-			</li>
+              <a href="#" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;"><use xlink:href="#table"/></svg>
+                Κουίζ
+              </a>
+            </li>
             <li>
               <a href="learn.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Γνώση
+                Υλικό
               </a>
             </li>
             <li>
@@ -111,6 +108,11 @@ if (!isset($_SESSION['user'])){
             </li>
           </ul>
         </div>
+        <!-- Modified today start-->
+          <?php if (isset($_SESSION['user'])): ?>  
+          <a href="logout.php"><button type="button" class="btn btn-dark">Αποσύνδεση</button></a>
+          <?php endif; ?>
+  <!-- Modified today end-->
       </div>
     </nav>
     

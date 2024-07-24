@@ -71,7 +71,6 @@ if (!isset($_SESSION['user'])){
           <img src="img/logo2.png" alt="Logo" />
         </a>
 
-		<div class="container">
         <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
@@ -89,26 +88,28 @@ if (!isset($_SESSION['user'])){
             <li>
               <a href="quiz.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Quiz
+                Κουίζ
               </a>
             </li>
             <li>
               <a href="learn.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Γνώση
+                Υλικό
               </a>
             </li>
             <li>
-			  <a href="#" class="nav-link text-secondary">
-				<svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;">
-				  <use xlink:href="#people-circle"/>
-				</svg>
-				Προφίλ
-			  </a>
-			</li>
-
+              <a href="#" class="nav-link text-secondary">
+                <svg class="bi d-block mx-auto mb-1" width="24" height="24" style="fill: currentColor;"><use xlink:href="#people-circle"/></svg>
+                Προφίλ
+              </a>
+            </li>
           </ul>
         </div>
+        <!-- Modified today start-->
+          <?php if (isset($_SESSION['user'])): ?>  
+          <a href="logout.php"><button type="button" class="btn btn-dark">Αποσύνδεση</button></a>
+          <?php endif; ?>
+  <!-- Modified today end-->
       </div>
     </nav>
     
@@ -128,31 +129,25 @@ if (!isset($_SESSION['user'])){
         </div>
       </div>
     </div>
-    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto">
+    <div class="col-xxl-6 col-xxl-4 my-5 mx-auto d-flex justify-content-center">
       <div class="d-grid gap-2">
-        <div class="card border-secondary mb-3" style="max-width: 18rem;">
+        <div class="card border-secondary mb-3" >
           <div class="card-header">Λεπτομέρειες λογαριασμού</div>
           <div class="card-body text-secondary">
             <h5 class="card-title">Στοιχεία χρήστη:</h5>
             <p class="card-text">
-            <br>Username:<b><?php echo $_SESSION['user']['username'];?></b>
-            <br>Όνομα:<b><?php echo $_SESSION['user']['first_name'];?></b>
-            <br>Επώνυμο:<b><?php echo $_SESSION['user']['last_name'];?></b>
-            <br>Email:<b><?php echo $_SESSION['user']['email'];?></b>
-            <br>Επίπεδο:<b> <?php if($_SESSION['user']['current_level']==1){echo 'Αρχάριο';}
-                              elseif($_SESSION['user']['current_level']==1){echo 'Μεσαίο';}
+            <br>Username: <b><?php echo $_SESSION['user']['username'];?></b>
+            <br>Όνομα: <b><?php echo $_SESSION['user']['first_name'];?></b>
+            <br>Επώνυμο: <b><?php echo $_SESSION['user']['last_name'];?></b>
+            <br>Email: <b><?php echo $_SESSION['user']['email'];?></b>
+            <br>Επίπεδο: <b> <?php if($_SESSION['user']['current_level']==1){echo 'Αρχάριο';}
+                              elseif($_SESSION['user']['current_level']==2){echo 'Μεσαίο';}
                               else{echo 'Προχωρημένο';}?></b>
               <br><br>
               <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-x" viewBox="0 0 16 16">
-    <path d="M6.146 6.146a.5.5 0 0 1 .708 0L8 7.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 8l1.147 1.146a.5.5 0 0 1-.708.708L8 8.707 6.854 9.854a.5.5 0 0 1-.708-.708L7.293 8 6.146 6.854a.5.5 0 0 1 0-.708"/>
-    <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
-  </svg>
-  Διαγραφή λογαριασμού
-</button>
 
-<!-- Modal -->
+
+<!-- Modal (not used)-->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
