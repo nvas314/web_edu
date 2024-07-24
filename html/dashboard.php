@@ -28,8 +28,17 @@ $user_id=$_SESSION['user']['user_id'];
       return 0;
     }
   }
-    
-
+  function return_array($query) {
+    //$a=array();
+    $a = new SplFixedArray(27);
+    $conn = new mysqli("localhost", "root", "", "ergasia_acropolis_db");
+    $result= mysqli_query($conn,$query);
+    while($row = $result->fetch_assoc()) {
+      //array_push($a,$row['grade']);
+      $a[$row['quiz_id']-1]=$row['grade'];
+    }
+    return $a;
+  }
 ?>
 
 <!DOCTYPE html>
