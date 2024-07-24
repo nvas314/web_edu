@@ -429,6 +429,7 @@ function find_query_count($query) {
 
   function set_values(){  
     a=[0,0,0,0];
+    s=[0,0,0,0];
     b1=1;//Novice Complete
     b2=1;//Intimidate Complete
     b3=1;//Advanced Complete
@@ -441,15 +442,24 @@ function find_query_count($query) {
         if(grades[i] < 50){//if a test is not completed
           document.getElementById("b1").style.visibility = "hidden";//Remove badge
         }
+        else{
+          s[j] += +1;
+        }
       }
       if(j==1){
         if(grades[i] < 50){
           document.getElementById("b2").style.visibility = "hidden";
         }
+        else{
+          s[j] += +1;
+        }
       }
       if(j==2){
         if(grades[i] < 50){
           document.getElementById("b3").style.visibility = "hidden";
+        }
+        else{
+          s[j] += +1;
         }
         if(grades[i] < 100){
           document.getElementById("b4").style.visibility = "hidden";
@@ -457,8 +467,10 @@ function find_query_count($query) {
       }
     }
     a[j] = Math.floor(sum/9);
+    s[j] = Math.floor(s[j]*100/9);
     }
-    a[3]= Math.floor((a[0]+a[1]+a[2])/9);//Total average
+    a[3]= Math.floor((a[0]+a[1]+a[2])/3);//Total average
+    s[3]= Math.floor((s[0]+s[1]+s[2])/3);//Total completed
     
 
     for(let i=1;i<=4;i++){
